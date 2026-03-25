@@ -1,0 +1,1176 @@
+
+
+  <!-- Custom Cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- Scroll Progress -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- ===================== NAVBAR ===================== -->
+  <nav id="navbar">
+    <a class="logo" onclick="navigate('home')">VIENTO BLINDS</a>
+    <ul class="nav-links">
+      <li><a onclick="navigate('home')">Home</a></li>
+      <li>
+        <span class="nav-btn">Products ▾</span>
+        <div class="dropdown-menu">
+          <div class="dropdown-item" onclick="navigate('product','Wooden Blinds')">
+            <div class="di-img img-placeholder" style="height:55px">WOOD</div>
+            <span>Wooden Blinds</span>
+          </div>
+          <div class="dropdown-item" onclick="navigate('product','Honeycomb Blinds')">
+            <div class="di-img img-placeholder" style="height:55px">COMB</div>
+            <span>Honeycomb Blinds</span>
+          </div>
+          <div class="dropdown-item" onclick="navigate('product','Shangri-La Blinds')">
+            <div class="di-img img-placeholder" style="height:55px">SHNG</div>
+            <span>Shangri-La Blinds</span>
+          </div>
+          <div class="dropdown-item" onclick="navigate('product','Zebra Blinds')">
+            <div class="di-img img-placeholder" style="height:55px">ZBRА</div>
+            <span>Zebra Blinds</span>
+          </div>
+          <div class="dropdown-item" onclick="navigate('product','Screen Blinds')">
+            <div class="di-img img-placeholder" style="height:55px">SCRN</div>
+            <span>Screen Blinds</span>
+          </div>
+          <div class="dropdown-item" onclick="navigate('product','Blackout Blinds')">
+            <div class="di-img img-placeholder" style="height:55px">BLKT</div>
+            <span>Blackout Blinds</span>
+          </div>
+          <div class="dropdown-item" onclick="navigate('product','Translucent Blinds')">
+            <div class="di-img img-placeholder" style="height:55px">TRNS</div>
+            <span>Translucent Blinds</span>
+          </div>
+          <div class="dropdown-item" onclick="navigate('product','Roman Style Blinds')">
+            <div class="di-img img-placeholder" style="height:55px">ROMN</div>
+            <span>Roman Blinds</span>
+          </div>
+        </div>
+      </li>
+      <li><a onclick="navigate('about')">About</a></li>
+      <li><a onclick="navigate('blogs')">Blogs</a></li>
+      <li><a onclick="navigate('contact')" class="nav-cta">Contact Us</a></li>
+    </ul>
+    <button class="hamburger" onclick="toggleMobileMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ===================== HOME PAGE ===================== -->
+  <div id="page-home" class="page active">
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-panel" onclick="navigate('product','Wooden Blinds')">
+        <div class="hero-panel-bg img-placeholder">LUXURY</div>
+        <div class="hero-panel-content">
+          <span class="hero-tag">Discover Collection</span>
+          <h2>Luxury</h2>
+          <p>Premium blinds crafted for modern homes, perfected for every mood.</p>
+        </div>
+      </div>
+      <div class="hero-panel" onclick="navigate('product','Zebra Blinds')">
+        <div class="hero-panel-bg img-placeholder">DESIGN</div>
+        <div class="hero-panel-content">
+          <span class="hero-tag">Explore Design</span>
+          <h2>Design</h2>
+          <p>From blackout to sheer, blend privacy and sunlight like never before.</p>
+        </div>
+      </div>
+      <div class="hero-panel" onclick="navigate('product','Shangri-La Blinds')">
+        <div class="hero-panel-bg img-placeholder">CRAFT</div>
+        <div class="hero-panel-content">
+          <span class="hero-tag">Fine Craft</span>
+          <h2>Craft</h2>
+          <p>Beauty and function in perfect balance with Viento's designer blinds.</p>
+        </div>
+      </div>
+      <div class="hero-badge" onclick="navigate('about')">
+        <span>Viento</span>
+        <span>Est. 2015</span>
+      </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="section products-section">
+      <div class="products-header">
+        <div>
+          <span class="section-label">Our Collection</span>
+          <h2 class="section-title">Our Products</h2>
+        </div>
+        <button class="btn-outline" onclick="navigate('allproducts')">View All Products →</button>
+      </div>
+      <div class="products-grid">
+        <div class="product-card" onclick="navigate('product','Wooden Blinds')">
+          <div class="product-card-img img-placeholder">WOODEN</div>
+          <div class="product-card-info">
+            <h3>Wooden Blinds</h3>
+            <div class="explore-link">Explore ↗</div>
+          </div>
+        </div>
+        <div class="product-card" onclick="navigate('product','Honeycomb Blinds')">
+          <div class="product-card-img img-placeholder">HONEYCOMB</div>
+          <div class="product-card-info">
+            <h3>Honeycomb Blinds</h3>
+            <div class="explore-link">Explore ↗</div>
+          </div>
+        </div>
+        <div class="product-card" onclick="navigate('product','Shangri-La Blinds')">
+          <div class="product-card-img img-placeholder">SHANGRI-LA</div>
+          <div class="product-card-info">
+            <h3>Shangri-La Blinds</h3>
+            <div class="explore-link">Explore ↗</div>
+          </div>
+        </div>
+        <div class="product-card" onclick="navigate('product','Zebra Blinds')">
+          <div class="product-card-img img-placeholder">ZEBRA</div>
+          <div class="product-card-info">
+            <h3>Zebra Blinds</h3>
+            <div class="explore-link">Explore ↗</div>
+          </div>
+        </div>
+        <div class="product-card" onclick="navigate('product','Screen Blinds')">
+          <div class="product-card-img img-placeholder">SCREEN</div>
+          <div class="product-card-info">
+            <h3>Screen Blinds</h3>
+            <div class="explore-link">Explore ↗</div>
+          </div>
+        </div>
+        <div class="product-card" onclick="navigate('product','Blackout Blinds')">
+          <div class="product-card-img img-placeholder">BLACKOUT</div>
+          <div class="product-card-info">
+            <h3>Blackout Blinds</h3>
+            <div class="explore-link">Explore ↗</div>
+          </div>
+        </div>
+        <div class="product-card" onclick="navigate('product','Translucent Blinds')">
+          <div class="product-card-img img-placeholder">TRANSLUCENT</div>
+          <div class="product-card-info">
+            <h3>Translucent Blinds</h3>
+            <div class="explore-link">Explore ↗</div>
+          </div>
+        </div>
+        <div class="product-card" onclick="navigate('product','Roman Style Blinds')">
+          <div class="product-card-img img-placeholder">ROMAN</div>
+          <div class="product-card-info">
+            <h3>Roman Style Blinds</h3>
+            <div class="explore-link">Explore ↗</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="section features-section">
+      <span class="section-label">Why Viento</span>
+      <h2 class="section-title">Features</h2>
+      <p class="section-subtitle">Every Viento blind is engineered to deliver superior performance across five essential
+        dimensions.</p>
+      <div class="features-tabs">
+        <nav class="features-nav">
+          <div class="feature-tab active" onclick="window.showFeature(0, this)">
+            <span class="feature-tab-num">01</span>
+            <span class="feature-tab-title">Light Control & Privacy</span>
+          </div>
+          <div class="feature-tab" onclick="window.showFeature(1, this)">
+            <span class="feature-tab-num">02</span>
+            <span class="feature-tab-title">Premium Durability</span>
+          </div>
+          <div class="feature-tab" onclick="window.showFeature(2, this)">
+            <span class="feature-tab-num">03</span>
+            <span class="feature-tab-title">Energy Efficiency</span>
+          </div>
+          <div class="feature-tab" onclick="window.showFeature(3, this)">
+            <span class="feature-tab-num">04</span>
+            <span class="feature-tab-title">UV Protection</span>
+          </div>
+          <div class="feature-tab" onclick="window.showFeature(4, this)">
+            <span class="feature-tab-num">05</span>
+            <span class="feature-tab-title">Smart Automation</span>
+          </div>
+        </nav>
+        <div class="features-content">
+          <div class="feature-panel active">
+            <div class="feature-panel-img img-placeholder">LIGHT CONTROL</div>
+            <div class="feature-panel-text">
+              <h3>Superior Light Control & Privacy</h3>
+              <p>Viento blinds offer precise control over how light enters your space — whether you want brightness,
+                softness, or complete blackout. And while you shape the mood, your privacy stays protected with fabrics
+                designed to shield without compromising style.</p>
+              <button class="btn-outline-light" onclick="window.navigate('contact')">Get a Free Quote →</button>
+            </div>
+          </div>
+          <div class="feature-panel">
+            <div class="feature-panel-img img-placeholder">MATERIAL</div>
+            <div class="feature-panel-text">
+              <h3>Premium Material Durability</h3>
+              <p>Crafted from high-quality, tested materials, Viento blinds are built to last. Our fabrics resist
+                fading, warping, and wear — ensuring they stay as beautiful and functional as the day they're installed,
+                even with daily use and changing seasons.</p>
+              <button class="btn-outline-light" onclick="window.navigate('contact')">Get a Free Quote →</button>
+            </div>
+          </div>
+          <div class="feature-panel">
+            <div class="feature-panel-img img-placeholder">ENERGY</div>
+            <div class="feature-panel-text">
+              <h3>Energy Efficiency & Insulation</h3>
+              <p>Viento blinds do more than control light — they help regulate temperature too. By reducing heat gain in
+                summer and retaining warmth in winter, our fabrics improve insulation and lower energy costs, making
+                your space more comfortable year-round.</p>
+              <button class="btn-outline-light" onclick="window.navigate('contact')">Get a Free Quote →</button>
+            </div>
+          </div>
+          <div class="feature-panel">
+            <div class="feature-panel-img img-placeholder">UV PROTECT</div>
+            <div class="feature-panel-text">
+              <h3>UV Protection & Fade Resistance</h3>
+              <p>Viento blinds are designed to block harmful UV rays, protecting your interiors from sun damage. Our
+                fade-resistant fabrics help preserve the color and quality of your furniture, flooring, and décor so
+                your space stays vibrant, longer.</p>
+              <button class="btn-outline-light" onclick="window.navigate('contact')">Get a Free Quote →</button>
+            </div>
+          </div>
+          <div class="feature-panel">
+            <div class="feature-panel-img img-placeholder">SMART HOME</div>
+            <div class="feature-panel-text">
+              <h3>Smart Automation Compatibility</h3>
+              <p>Viento blinds integrate seamlessly with leading smart home systems, allowing you to control light and
+                privacy with a simple voice command or tap. Set schedules, automate scenes, and adjust your blinds
+                remotely for comfort, convenience, and modern living at its finest.</p>
+              <button class="btn-outline-light" onclick="window.navigate('contact')">Get a Free Quote →</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Factory Video -->
+    <section class="section factory-video-section">
+      <span class="section-label">Inside Viento</span>
+      <h2 class="section-title">Our Factory</h2>
+      <p class="section-subtitle">A quick look at how we design, craft, and finish every blind with precision.</p>
+      <div class="factory-video-wrap">
+        <video controls preload="metadata" playsinline>
+          <source src="/assets/factory-video.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <p class="factory-video-fallback">
+        If the video does not load, confirm <code>/public/assets/factory-video.mp4</code> exists.
+      </p>
+    </section>
+
+    <!-- Marquee -->
+    <div class="marquee-section">
+      <div class="marquee-track">
+        <span class="marquee-item">Premium Blinds</span>
+        <span class="marquee-item">Wooden Blinds</span>
+        <span class="marquee-item">Zebra Blinds</span>
+        <span class="marquee-item">Honeycomb Blinds</span>
+        <span class="marquee-item">Smart Automation</span>
+        <span class="marquee-item">Custom Fit</span>
+        <span class="marquee-item">Blackout Series</span>
+        <span class="marquee-item">Shangri-La Collection</span>
+        <span class="marquee-item">Premium Blinds</span>
+        <span class="marquee-item">Wooden Blinds</span>
+        <span class="marquee-item">Zebra Blinds</span>
+        <span class="marquee-item">Honeycomb Blinds</span>
+        <span class="marquee-item">Smart Automation</span>
+        <span class="marquee-item">Custom Fit</span>
+        <span class="marquee-item">Blackout Series</span>
+        <span class="marquee-item">Shangri-La Collection</span>
+      </div>
+    </div>
+
+    <!-- Partners Section -->
+    <section class="partners-section">
+      <span class="section-label">Trusted By</span>
+      <h2 class="section-title" style="font-size:1.8rem">Our Partners</h2>
+      <div class="partners-track">
+        <div class="partner-logo">PARTNER 01</div>
+        <div class="partner-logo">PARTNER 02</div>
+        <div class="partner-logo">PARTNER 03</div>
+        <div class="partner-logo">PARTNER 04</div>
+        <div class="partner-logo">PARTNER 05</div>
+        <div class="partner-logo">PARTNER 06</div>
+        <div class="partner-logo">PARTNER 07</div>
+        <div class="partner-logo">PARTNER 08</div>
+      </div>
+    </section>
+
+    <!-- Blogs Section -->
+    <section class="section blogs-section">
+      <div class="blogs-header">
+        <div>
+          <span class="section-label">Insights</span>
+          <h2 class="section-title">Latest Blogs</h2>
+        </div>
+        <button class="btn-outline" onclick="navigate('blogs')">More Blogs →</button>
+      </div>
+      <div class="blogs-grid">
+        <div class="blog-card" onclick="navigate('blogdetail','Transform Your Space')">
+          <div class="blog-card-img img-placeholder">BLOG 01</div>
+          <div class="blog-card-body">
+            <span class="blog-card-date">15 March 2025</span>
+            <h3 class="blog-card-title">Transform Your Space: How Window Blinds Influence Interior Design</h3>
+            <span class="blog-card-link">Read More →</span>
+          </div>
+        </div>
+        <div class="blog-card" onclick="navigate('blogdetail','Choose the Perfect Blinds')">
+          <div class="blog-card-img img-placeholder">BLOG 02</div>
+          <div class="blog-card-body">
+            <span class="blog-card-date">15 July 2025</span>
+            <h3 class="blog-card-title">How to Choose the Perfect Window Blinds for Every Room in Your Home</h3>
+            <span class="blog-card-link">Read More →</span>
+          </div>
+        </div>
+        <div class="blog-card" onclick="navigate('blogdetail','Blind Trends 2025')">
+          <div class="blog-card-img img-placeholder">BLOG 03</div>
+          <div class="blog-card-body">
+            <span class="blog-card-date">1 Aug 2025</span>
+            <h3 class="blog-card-title">Top Window Blind Trends for Modern Interiors in 2025</h3>
+            <span class="blog-card-link">Read More →</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="logo" onclick="navigate('home')">VIENTO BLINDS</a>
+          <p class="footer-desc">Premium window blinds crafted for modern homes. Discover the perfect balance of beauty,
+            function, and innovation.</p>
+        </div>
+        <div>
+          <p class="footer-title">Products</p>
+          <ul class="footer-links">
+            <li onclick="navigate('product','Wooden Blinds')">Wooden Blinds</li>
+            <li onclick="navigate('product','Honeycomb Blinds')">Honeycomb Blinds</li>
+            <li onclick="navigate('product','Shangri-La Blinds')">Shangri-La Blinds</li>
+            <li onclick="navigate('product','Zebra Blinds')">Zebra Blinds</li>
+            <li onclick="navigate('product','Screen Blinds')">Screen Blinds</li>
+            <li onclick="navigate('product','Blackout Blinds')">Blackout Blinds</li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer-title">Company</p>
+          <ul class="footer-links">
+            <li onclick="navigate('about')">About Viento</li>
+            <li onclick="navigate('blogs')">Our Blog</li>
+            <li onclick="navigate('contact')">Contact Us</li>
+            <li>Privacy Policy</li>
+            <li>Sitemap</li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer-title">Contact</p>
+          <ul class="footer-links">
+            <li><a href="/cdn-cgi/l/email-protection" class="__cf_email__"
+                data-cfemail="5038353c3c3f102639353e243f7e393e">[email&#160;protected]</a></li>
+            <li>+91 98765 43210</li>
+            <li>Mumbai, India</li>
+            <li style="margin-top:1.2rem;color:var(--gold);cursor:pointer">Instagram</li>
+            <li style="color:var(--gold);cursor:pointer">LinkedIn</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Viento Blinds. All Rights Reserved.</p>
+        <p>Crafted with precision.</p>
+      </div>
+    </footer>
+  </div>
+
+  <!-- ===================== ABOUT PAGE ===================== -->
+  <div id="page-about" class="page">
+    <div class="about-hero">
+      <div>
+        <span class="section-label">Our Story</span>
+        <h1>Crafting <em>Light</em>,<br>Framing <em>Life</em></h1>
+      </div>
+    </div>
+
+    <div class="about-content">
+      <div class="about-grid">
+        <div class="about-img-block">
+          <div class="about-main-img img-placeholder">VIENTO STUDIO</div>
+          <div class="about-accent-img img-placeholder img-placeholder-light">CRAFTSMANSHIP</div>
+        </div>
+        <div class="about-text-block">
+          <span class="section-label">Who We Are</span>
+          <h2 class="section-title">More Than Just Blinds</h2>
+          <div class="divider"></div>
+          <p>Founded in 2015, Viento began with a singular vision: to transform the way light interacts with living
+            spaces. What started as a small workshop in Mumbai has grown into one of India's most trusted premium blinds
+            brands.</p>
+          <p>We believe that every window tells a story. The way light filters through a room shapes its mood, its
+            comfort, and ultimately, its soul. Viento blinds are engineered to give you complete authorship over that
+            narrative.</p>
+          <p>From our precision-cut Wooden Blinds to our innovative Honeycomb series, each product reflects our
+            obsession with quality, design, and the subtle art of controlling light.</p>
+          <button class="btn-primary" onclick="navigate('contact')">Work With Us →</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stats -->
+    <div class="stats-row">
+      <div class="stat-item">
+        <span class="stat-num">5000<sup style="font-size:1.5rem">+</sup></span>
+        <span class="stat-label">Projects Completed</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">10</span>
+        <span class="stat-label">Years of Excellence</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">8</span>
+        <span class="stat-label">Product Lines</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">98%</span>
+        <span class="stat-label">Customer Satisfaction</span>
+      </div>
+    </div>
+
+    <!-- Values -->
+    <section class="section" style="background:var(--cream)">
+      <span class="section-label">Our Foundation</span>
+      <h2 class="section-title">What We Stand For</h2>
+      <p class="section-subtitle">Our values are the threads that weave through every blind we craft.</p>
+      <div class="values-grid" style="margin-top:3.5rem">
+        <div class="value-card">
+          <div class="value-num">01</div>
+          <h3 class="value-title">Craftsmanship</h3>
+          <p class="value-desc">Every blind is hand-finished by skilled artisans who have spent years mastering their
+            craft. No shortcuts. No compromises.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-num">02</div>
+          <h3 class="value-title">Sustainability</h3>
+          <p class="value-desc">We source responsibly and design for longevity. Our materials are chosen not just for
+            beauty, but for their environmental footprint.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-num">03</div>
+          <h3 class="value-title">Innovation</h3>
+          <p class="value-desc">From smart-home integration to our proprietary weaving techniques, we're always seeking
+            better ways to serve your living space.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-num">04</div>
+          <h3 class="value-title">Precision</h3>
+          <p class="value-desc">Measured to the millimeter. Our installation team ensures every blind fits and functions
+            exactly as designed — no gaps, no guesswork.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-num">05</div>
+          <h3 class="value-title">Service</h3>
+          <p class="value-desc">Our relationship with you doesn't end at installation. We offer lifetime support,
+            regular maintenance, and a dedicated after-sales team.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-num">06</div>
+          <h3 class="value-title">Elegance</h3>
+          <p class="value-desc">Design that endures. We create pieces that feel at home in any interior — from
+            contemporary urban lofts to traditional heritage spaces.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="section" style="background:var(--warm-white)">
+      <span class="section-label">How It Works</span>
+      <h2 class="section-title">Our Process</h2>
+      <div class="divider"></div>
+      <div
+        style="display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:3rem;border:1px solid var(--border)">
+        <div style="padding:2.5rem;border-right:1px solid var(--border)">
+          <div style="font-family:'Cormorant Garamond',serif;font-size:3rem;color:var(--gold);opacity:0.3">01</div>
+          <h4 style="font-family:'Cormorant Garamond',serif;font-size:1.2rem;margin:0.8rem 0">Consultation</h4>
+          <p style="font-size:0.78rem;color:var(--muted);line-height:1.7">We visit your space, understand your needs,
+            and recommend the perfect solutions.</p>
+        </div>
+        <div style="padding:2.5rem;border-right:1px solid var(--border)">
+          <div style="font-family:'Cormorant Garamond',serif;font-size:3rem;color:var(--gold);opacity:0.3">02</div>
+          <h4 style="font-family:'Cormorant Garamond',serif;font-size:1.2rem;margin:0.8rem 0">Measurement</h4>
+          <p style="font-size:0.78rem;color:var(--muted);line-height:1.7">Precision measurements taken by our expert
+            team for a perfect custom fit.</p>
+        </div>
+        <div style="padding:2.5rem;border-right:1px solid var(--border)">
+          <div style="font-family:'Cormorant Garamond',serif;font-size:3rem;color:var(--gold);opacity:0.3">03</div>
+          <h4 style="font-family:'Cormorant Garamond',serif;font-size:1.2rem;margin:0.8rem 0">Fabrication</h4>
+          <p style="font-size:0.78rem;color:var(--muted);line-height:1.7">Handcrafted in our facility using the finest
+            materials and rigorous QC checks.</p>
+        </div>
+        <div style="padding:2.5rem">
+          <div style="font-family:'Cormorant Garamond',serif;font-size:3rem;color:var(--gold);opacity:0.3">04</div>
+          <h4 style="font-family:'Cormorant Garamond',serif;font-size:1.2rem;margin:0.8rem 0">Installation</h4>
+          <p style="font-size:0.78rem;color:var(--muted);line-height:1.7">Professional installation with zero-damage
+            promise and post-install walkthrough.</p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="logo" onclick="navigate('home')">VIENTO BLINDS</a>
+          <p class="footer-desc">Premium window blinds crafted for modern homes.</p>
+        </div>
+        <div>
+          <p class="footer-title">Products</p>
+          <ul class="footer-links">
+            <li onclick="navigate('product','Wooden Blinds')">Wooden Blinds</li>
+            <li onclick="navigate('product','Zebra Blinds')">Zebra Blinds</li>
+            <li onclick="navigate('product','Honeycomb Blinds')">Honeycomb Blinds</li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer-title">Company</p>
+          <ul class="footer-links">
+            <li onclick="navigate('about')">About</li>
+            <li onclick="navigate('blogs')">Blogs</li>
+            <li onclick="navigate('contact')">Contact</li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer-title">Contact</p>
+          <ul class="footer-links">
+            <li><a href="/cdn-cgi/l/email-protection" class="__cf_email__"
+                data-cfemail="1c74797070735c6a7579726873327572">[email&#160;protected]</a></li>
+            <li>+91 98765 43210</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Viento Blinds.</p>
+        <p>Crafted with precision.</p>
+      </div>
+    </footer>
+  </div>
+
+  <!-- ===================== ALL PRODUCTS PAGE ===================== -->
+  <div id="page-allproducts" class="page">
+    <div class="all-products-hero">
+      <span class="section-label">Full Collection</span>
+      <h2 class="section-title">All Products</h2>
+      <p class="section-subtitle" style="color:rgba(245,240,232,0.45)">Eight distinct collections, each engineered for a
+        specific mood, function, and aesthetic.</p>
+    </div>
+    <div class="all-products-grid">
+      <div class="product-card" onclick="navigate('product','Wooden Blinds')">
+        <div class="product-card-img img-placeholder" style="height:100%">WOODEN</div>
+        <div class="product-card-info">
+          <h3>Wooden Blinds</h3>
+          <div class="explore-link">Explore ↗</div>
+        </div>
+      </div>
+      <div class="product-card" onclick="navigate('product','Honeycomb Blinds')">
+        <div class="product-card-img img-placeholder" style="height:100%">HONEYCOMB</div>
+        <div class="product-card-info">
+          <h3>Honeycomb Blinds</h3>
+          <div class="explore-link">Explore ↗</div>
+        </div>
+      </div>
+      <div class="product-card" onclick="navigate('product','Shangri-La Blinds')">
+        <div class="product-card-img img-placeholder" style="height:100%">SHANGRI-LA</div>
+        <div class="product-card-info">
+          <h3>Shangri-La Blinds</h3>
+          <div class="explore-link">Explore ↗</div>
+        </div>
+      </div>
+      <div class="product-card" onclick="navigate('product','Zebra Blinds')">
+        <div class="product-card-img img-placeholder" style="height:100%">ZEBRA</div>
+        <div class="product-card-info">
+          <h3>Zebra Blinds</h3>
+          <div class="explore-link">Explore ↗</div>
+        </div>
+      </div>
+      <div class="product-card" onclick="navigate('product','Screen Blinds')">
+        <div class="product-card-img img-placeholder" style="height:100%">SCREEN</div>
+        <div class="product-card-info">
+          <h3>Screen Blinds</h3>
+          <div class="explore-link">Explore ↗</div>
+        </div>
+      </div>
+      <div class="product-card" onclick="navigate('product','Blackout Blinds')">
+        <div class="product-card-img img-placeholder" style="height:100%">BLACKOUT</div>
+        <div class="product-card-info">
+          <h3>Blackout Blinds</h3>
+          <div class="explore-link">Explore ↗</div>
+        </div>
+      </div>
+      <div class="product-card" onclick="navigate('product','Translucent Blinds')">
+        <div class="product-card-img img-placeholder" style="height:100%">TRANSLUCENT</div>
+        <div class="product-card-info">
+          <h3>Translucent Blinds</h3>
+          <div class="explore-link">Explore ↗</div>
+        </div>
+      </div>
+      <div class="product-card" onclick="navigate('product','Roman Style Blinds')">
+        <div class="product-card-img img-placeholder" style="height:100%">ROMAN</div>
+        <div class="product-card-info">
+          <h3>Roman Style Blinds</h3>
+          <div class="explore-link">Explore ↗</div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div class="footer-grid">
+        <div class="footer-brand"><a class="logo" onclick="navigate('home')">VIENTO BLINDS</a>
+          <p class="footer-desc">Premium window blinds crafted for modern homes.</p>
+        </div>
+        <div>
+          <p class="footer-title">Products</p>
+          <ul class="footer-links">
+            <li onclick="navigate('product','Wooden Blinds')">Wooden Blinds</li>
+            <li onclick="navigate('product','Zebra Blinds')">Zebra Blinds</li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer-title">Company</p>
+          <ul class="footer-links">
+            <li onclick="navigate('about')">About</li>
+            <li onclick="navigate('contact')">Contact</li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer-title">Contact</p>
+          <ul class="footer-links">
+            <li><a href="/cdn-cgi/l/email-protection" class="__cf_email__"
+                data-cfemail="acc4c9c0c0c3ecdac5c9c2d8c382c5c2">[email&#160;protected]</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Viento Blinds.</p>
+      </div>
+    </footer>
+  </div>
+
+  <!-- ===================== PRODUCT DETAIL PAGE ===================== -->
+  <div id="page-product" class="page">
+    <div class="pd-hero">
+      <div class="pd-hero-text">
+        <span class="back-link" onclick="navigate('allproducts')">← Back to Products</span>
+        <h1 id="pd-title">Wooden Blinds</h1>
+        <p id="pd-subtitle">Natural warmth meets precision engineering. Our Wooden Blinds are crafted from sustainably
+          sourced hardwoods, offering timeless elegance with exceptional light control.</p>
+        <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:2rem">
+          <button class="btn-primary" onclick="navigate('contact')">Request a Quote</button>
+          <button class="btn-outline-light">Download Brochure ↓</button>
+        </div>
+      </div>
+      <div class="pd-hero-img img-placeholder" id="pd-hero-img">PRODUCT IMAGE</div>
+    </div>
+
+    <div class="pd-details">
+      <div>
+        <span class="section-label">Product Features</span>
+        <h2 class="section-title" style="font-size:2rem">Why This Collection?</h2>
+        <div class="divider"></div>
+        <ul class="pd-feature-list">
+          <li id="pd-f1">Premium quality, sustainably sourced materials</li>
+          <li id="pd-f2">Custom sizing from 25cm to 300cm width</li>
+          <li id="pd-f3">Available in 30+ finishes and stains</li>
+          <li id="pd-f4">UV-resistant coating for lasting colour</li>
+          <li id="pd-f5">Easy-clean, warp-resistant construction</li>
+          <li id="pd-f6">Compatible with motorisation / smart home</li>
+        </ul>
+      </div>
+      <div>
+        <span class="section-label">Available Colours</span>
+        <h2 class="section-title" style="font-size:2rem">Choose Your Shade</h2>
+        <div class="divider"></div>
+        <div class="color-swatches">
+          <div class="swatch swatch-w1 active" title="Natural"></div>
+          <div class="swatch swatch-w2" title="Honey Oak"></div>
+          <div class="swatch swatch-w3" title="Walnut"></div>
+          <div class="swatch swatch-w4" title="Ebony"></div>
+          <div class="swatch swatch-w5" title="Gilded"></div>
+          <div class="swatch swatch-w6" title="Washed"></div>
+        </div>
+        <p style="font-size:0.72rem;color:var(--muted);margin-top:1rem;line-height:1.7">All colours available as
+          samples. Request physical swatches to see the true finish in your light conditions.</p>
+        <div style="margin-top:2rem;padding:2rem;background:var(--cream);border:1px solid var(--border)">
+          <span class="section-label" style="margin-bottom:0.5rem">Technical Specs</span>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.8rem 2rem;margin-top:1rem">
+            <div>
+              <p style="font-size:0.6rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted)">Width Range
+              </p>
+              <p style="font-size:0.82rem;color:var(--charcoal);margin-top:0.2rem">25mm – 300mm</p>
+            </div>
+            <div>
+              <p style="font-size:0.6rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted)">Slat Size
+              </p>
+              <p style="font-size:0.82rem;color:var(--charcoal);margin-top:0.2rem">25mm / 50mm</p>
+            </div>
+            <div>
+              <p style="font-size:0.6rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted)">Control</p>
+              <p style="font-size:0.82rem;color:var(--charcoal);margin-top:0.2rem">Cord / Motorised</p>
+            </div>
+            <div>
+              <p style="font-size:0.6rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted)">Warranty</p>
+              <p style="font-size:0.82rem;color:var(--charcoal);margin-top:0.2rem">5 Years</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Gallery -->
+    <div class="pd-gallery">
+      <div class="pd-gallery-img img-placeholder">GALLERY 1</div>
+      <div class="pd-gallery-img img-placeholder">GALLERY 2</div>
+      <div class="pd-gallery-img img-placeholder">GALLERY 3</div>
+      <div class="pd-gallery-img img-placeholder">GALLERY 4</div>
+      <div class="pd-gallery-img img-placeholder">GALLERY 5</div>
+    </div>
+
+    <!-- Related Products -->
+    <section class="section" style="background:var(--cream);padding-top:3rem">
+      <span class="section-label">Explore More</span>
+      <h2 class="section-title" style="font-size:1.8rem">Related Products</h2>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1.5px;margin-top:2.5rem">
+        <div class="product-card" style="aspect-ratio:3/4" onclick="navigate('product','Zebra Blinds')">
+          <div class="product-card-img img-placeholder" style="height:100%">ZEBRA</div>
+          <div class="product-card-info">
+            <h3>Zebra Blinds</h3>
+            <div class="explore-link">Explore ↗</div>
+          </div>
+        </div>
+        <div class="product-card" style="aspect-ratio:3/4" onclick="navigate('product','Honeycomb Blinds')">
+          <div class="product-card-img img-placeholder" style="height:100%">HONEYCOMB</div>
+          <div class="product-card-info">
+            <h3>Honeycomb Blinds</h3>
+            <div class="explore-link">Explore ↗</div>
+          </div>
+        </div>
+        <div class="product-card" style="aspect-ratio:3/4" onclick="navigate('product','Shangri-La Blinds')">
+          <div class="product-card-img img-placeholder" style="height:100%">SHANGRI-LA</div>
+          <div class="product-card-info">
+            <h3>Shangri-La Blinds</h3>
+            <div class="explore-link">Explore ↗</div>
+          </div>
+        </div>
+        <div class="product-card" style="aspect-ratio:3/4" onclick="navigate('product','Blackout Blinds')">
+          <div class="product-card-img img-placeholder" style="height:100%">BLACKOUT</div>
+          <div class="product-card-info">
+            <h3>Blackout Blinds</h3>
+            <div class="explore-link">Explore ↗</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-grid">
+        <div class="footer-brand"><a class="logo" onclick="navigate('home')">VIENTO BLINDS</a>
+          <p class="footer-desc">Premium window blinds crafted for modern homes.</p>
+        </div>
+        <div>
+          <p class="footer-title">Products</p>
+          <ul class="footer-links">
+            <li onclick="navigate('product','Wooden Blinds')">Wooden Blinds</li>
+            <li onclick="navigate('product','Zebra Blinds')">Zebra Blinds</li>
+            <li onclick="navigate('product','Honeycomb Blinds')">Honeycomb Blinds</li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer-title">Company</p>
+          <ul class="footer-links">
+            <li onclick="navigate('about')">About</li>
+            <li onclick="navigate('blogs')">Blogs</li>
+            <li onclick="navigate('contact')">Contact</li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer-title">Contact</p>
+          <ul class="footer-links">
+            <li><a href="/cdn-cgi/l/email-protection" class="__cf_email__"
+                data-cfemail="d3bbb6bfbfbc93a5bab6bda7bcfdbabd">[email&#160;protected]</a></li>
+            <li>+91 98765 43210</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Viento Blinds.</p>
+      </div>
+    </footer>
+  </div>
+
+  <!-- ===================== BLOGS PAGE ===================== -->
+  <div id="page-blogs" class="page">
+    <div class="blogs-page-hero">
+      <span class="section-label">Viento Insights</span>
+      <h2 class="section-title">Our Blog</h2>
+      <p class="section-subtitle">Inspiration, guides, and trends from the world of premium window treatments.</p>
+    </div>
+    <div class="blogs-page-grid">
+      <div class="blog-card blog-card-featured" onclick="navigate('blogdetail','Transform Your Space')">
+        <div class="blog-card-img img-placeholder">FEATURED ARTICLE</div>
+        <div class="blog-card-body" style="display:flex;flex-direction:column;justify-content:center">
+          <span class="blog-card-date">15 March 2025 · Featured</span>
+          <h3 class="blog-card-title">Transform Your Space: How Window Blinds Influence Interior Design</h3>
+          <p style="font-size:0.8rem;color:rgba(245,240,232,0.5);line-height:1.7;margin-bottom:1.2rem">Discover how the
+            right window treatment can dramatically reshape the mood, proportion, and aesthetic of any room in your
+            home.</p>
+          <span class="blog-card-link" style="color:rgba(245,240,232,0.5)">Read Full Article →</span>
+        </div>
+      </div>
+      <div class="blog-card" onclick="navigate('blogdetail','Choose the Perfect Blinds')">
+        <div class="blog-card-img img-placeholder">ARTICLE 02</div>
+        <div class="blog-card-body">
+          <span class="blog-card-date">15 July 2025</span>
+          <h3 class="blog-card-title">How to Choose the Perfect Window Blinds for Every Room in Your Home</h3>
+          <span class="blog-card-link">Read More →</span>
+        </div>
+      </div>
+      <div class="blog-card" onclick="navigate('blogdetail','Blind Trends 2025')">
+        <div class="blog-card-img img-placeholder">ARTICLE 03</div>
+        <div class="blog-card-body">
+          <span class="blog-card-date">1 Aug 2025</span>
+          <h3 class="blog-card-title">Top Window Blind Trends for Modern Interiors in 2025</h3>
+          <span class="blog-card-link">Read More →</span>
+        </div>
+      </div>
+      <div class="blog-card" onclick="navigate('blogdetail','Smart Blinds Guide')">
+        <div class="blog-card-img img-placeholder">ARTICLE 04</div>
+        <div class="blog-card-body">
+          <span class="blog-card-date">10 Sep 2025</span>
+          <h3 class="blog-card-title">Smart Blinds: A Complete Guide to Motorised Window Treatments</h3>
+          <span class="blog-card-link">Read More →</span>
+        </div>
+      </div>
+      <div class="blog-card" onclick="navigate('blogdetail','Energy Savings')">
+        <div class="blog-card-img img-placeholder">ARTICLE 05</div>
+        <div class="blog-card-body">
+          <span class="blog-card-date">20 Oct 2025</span>
+          <h3 class="blog-card-title">How Energy-Efficient Blinds Can Reduce Your Electricity Bill</h3>
+          <span class="blog-card-link">Read More →</span>
+        </div>
+      </div>
+      <div class="blog-card" onclick="navigate('blogdetail','Care Guide')">
+        <div class="blog-card-img img-placeholder">ARTICLE 06</div>
+        <div class="blog-card-body">
+          <span class="blog-card-date">5 Nov 2025</span>
+          <h3 class="blog-card-title">The Ultimate Guide to Cleaning and Maintaining Your Window Blinds</h3>
+          <span class="blog-card-link">Read More →</span>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div class="footer-grid">
+        <div class="footer-brand"><a class="logo" onclick="navigate('home')">VIENTO BLINDS</a>
+          <p class="footer-desc">Premium window blinds for modern homes.</p>
+        </div>
+        <div>
+          <p class="footer-title">Products</p>
+          <ul class="footer-links">
+            <li onclick="navigate('product','Wooden Blinds')">Wooden Blinds</li>
+            <li onclick="navigate('product','Zebra Blinds')">Zebra Blinds</li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer-title">Company</p>
+          <ul class="footer-links">
+            <li onclick="navigate('about')">About</li>
+            <li onclick="navigate('contact')">Contact</li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer-title">Contact</p>
+          <ul class="footer-links">
+            <li><a href="/cdn-cgi/l/email-protection" class="__cf_email__"
+                data-cfemail="ff979a939390bf89969a918b90d19691">[email&#160;protected]</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Viento Blinds.</p>
+      </div>
+    </footer>
+  </div>
+
+  <!-- ===================== BLOG DETAIL PAGE ===================== -->
+  <div id="page-blogdetail" class="page">
+    <div class="blog-detail-hero">
+      <div class="blog-card-img img-placeholder" style="position:absolute;inset:0;height:100%;opacity:0.2">HERO</div>
+      <div class="blog-detail-hero-content">
+        <span class="blog-card-date" id="bd-date" style="color:var(--gold);letter-spacing:0.2em;font-size:0.65rem">15
+          MARCH 2025 · INTERIOR DESIGN</span>
+        <h1 id="bd-title">Transform Your Space: How Window Blinds Influence Interior Design</h1>
+        <div style="display:flex;align-items:center;gap:1rem;margin-top:1.2rem">
+          <div style="width:36px;height:36px;border-radius:50%;background:var(--tan)"></div>
+          <span style="font-size:0.72rem;color:rgba(245,240,232,0.55);letter-spacing:0.08em">By Viento Editorial Team ·
+            8 min read</span>
+        </div>
+      </div>
+    </div>
+    <div class="blog-detail-body">
+      <p>Window blinds are often considered a purely functional element — a tool for managing light and privacy. But the
+        most skilled interior designers know that the right blind can be the defining element that elevates a room from
+        merely pleasant to truly extraordinary.</p>
+      <p>The relationship between window treatments and interior design is intricate, affecting everything from the
+        perceived size of a room to its mood, its colour story, and even its acoustics. In this comprehensive guide, we
+        explore how Viento's range of premium blinds can become a cornerstone of your interior design strategy.</p>
+      <blockquote>"Light is not just illumination — it is architecture. The blind is the instrument through which you
+        compose it."</blockquote>
+      <h2>The Psychology of Light in Interior Spaces</h2>
+      <p>Natural light triggers emotional and physiological responses in humans. Bright, diffused light tends to create
+        feelings of openness, energy, and optimism, while softer, filtered light induces calm, intimacy, and focus.
+        Understanding this relationship is the first step toward using blinds as a design tool.</p>
+      <p>Viento's Translucent Blinds, for example, transform harsh afternoon sunlight into a soft, golden warmth that
+        enhances wood tones, enriches textiles, and flatters skin — essentially acting as a photographic diffuser for
+        your entire room.</p>
+      <h2>Proportion and the Illusion of Space</h2>
+      <p>The way a blind is installed — its width, how far it extends beyond the window frame, how high it's mounted —
+        can dramatically affect the perceived dimensions of a room. Mounting blinds close to the ceiling and extending
+        them several inches past the window frame on each side can make a window appear significantly larger, drawing
+        the eye upward and creating a sense of loftier ceilings.</p>
+      <p>For smaller rooms, Viento's Zebra Blinds in lighter tones maintain visual flow while providing privacy,
+        avoiding the 'closing in' effect that heavy curtains or dark blinds can create.</p>
+      <h2>Colour, Texture and Material Language</h2>
+      <p>Every interior has a material language — a vocabulary of textures, finishes, and tones that should speak
+        coherently to each other. Wooden blinds with a honey-oak stain, for instance, naturally harmonise with parquet
+        floors, brass hardware, and linen upholstery. Our Shangri-La blinds, with their layered sheers, echo the
+        softness of velvet cushions and organic ceramics.</p>
+      <p>Choosing the right Viento collection is about understanding which material story you want your room to tell,
+        then finding the blind that speaks the same language.</p>
+      <div style="margin:3rem 0;padding:2rem;background:var(--cream);border-left:2px solid var(--gold)">
+        <span style="font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold)">Expert
+          Tip</span>
+        <p style="margin-top:0.8rem;font-size:0.85rem;line-height:1.7;color:var(--mid-brown)">Always request physical
+          fabric samples before making your final decision. The way a fabric renders in your specific light conditions —
+          morning sun, afternoon shade, artificial evening light — can be dramatically different from a photo.</p>
+      </div>
+      <div style="display:flex;gap:1rem;margin-top:3rem;padding-top:2rem;border-top:1px solid var(--border)">
+        <button class="btn-primary" onclick="navigate('blogs')">← Back to Blogs</button>
+        <button class="btn-outline" onclick="navigate('contact')">Book a Consultation</button>
+      </div>
+    </div>
+    <!-- Related blogs -->
+    <section style="padding:2rem 5vw 5rem;background:var(--cream)">
+      <span class="section-label">Continue Reading</span>
+      <h2 class="section-title" style="font-size:1.8rem">Related Articles</h2>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:2.5rem">
+        <div class="blog-card" onclick="navigate('blogdetail','Choose the Perfect Blinds')">
+          <div class="blog-card-img img-placeholder">ARTICLE</div>
+          <div class="blog-card-body"><span class="blog-card-date">15 July 2025</span>
+            <h3 class="blog-card-title">How to Choose the Perfect Window Blinds for Every Room</h3><span
+              class="blog-card-link">Read More →</span>
+          </div>
+        </div>
+        <div class="blog-card" onclick="navigate('blogdetail','Blind Trends 2025')">
+          <div class="blog-card-img img-placeholder">ARTICLE</div>
+          <div class="blog-card-body"><span class="blog-card-date">1 Aug 2025</span>
+            <h3 class="blog-card-title">Top Window Blind Trends for Modern Interiors in 2025</h3><span
+              class="blog-card-link">Read More →</span>
+          </div>
+        </div>
+        <div class="blog-card" onclick="navigate('blogdetail','Smart Blinds Guide')">
+          <div class="blog-card-img img-placeholder">ARTICLE</div>
+          <div class="blog-card-body"><span class="blog-card-date">10 Sep 2025</span>
+            <h3 class="blog-card-title">Smart Blinds: A Complete Guide to Motorised Window Treatments</h3><span
+              class="blog-card-link">Read More →</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="footer-grid">
+        <div class="footer-brand"><a class="logo" onclick="navigate('home')">VIENTO BLINDS</a>
+          <p class="footer-desc">Premium window blinds for modern homes.</p>
+        </div>
+        <div>
+          <p class="footer-title">Products</p>
+          <ul class="footer-links">
+            <li onclick="navigate('product','Wooden Blinds')">Wooden Blinds</li>
+            <li onclick="navigate('product','Zebra Blinds')">Zebra Blinds</li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer-title">Company</p>
+          <ul class="footer-links">
+            <li onclick="navigate('about')">About</li>
+            <li onclick="navigate('contact')">Contact</li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer-title">Contact</p>
+          <ul class="footer-links">
+            <li><a href="/cdn-cgi/l/email-protection" class="__cf_email__"
+                data-cfemail="3b535e5757547b4d525e554f54155255">[email&#160;protected]</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Viento Blinds.</p>
+      </div>
+    </footer>
+  </div>
+
+  <!-- ===================== CONTACT PAGE ===================== -->
+  <div id="page-contact" class="page">
+    <div class="contact-page">
+      <div class="contact-info">
+        <span class="section-label">Get In Touch</span>
+        <h2 class="section-title">Let's Create Something <em
+            style="font-style:italic;color:var(--gold-light)">Beautiful</em></h2>
+        <div class="divider"></div>
+        <p class="section-subtitle">Whether you're outfitting a new home, renovating a space, or specifying for a
+          commercial project — our team is ready to help.</p>
+        <div class="contact-details">
+          <div class="contact-detail-item">
+            <div class="cd-icon">✉</div>
+            <div class="cd-text">
+              <span class="cd-label">Email Us</span>
+              <span class="cd-value"><a href="/cdn-cgi/l/email-protection" class="__cf_email__"
+                  data-cfemail="caa2afa6a6a58abca3afa4bea5e4a3a4">[email&#160;protected]</a></span>
+            </div>
+          </div>
+          <div class="contact-detail-item">
+            <div class="cd-icon">☎</div>
+            <div class="cd-text">
+              <span class="cd-label">Call Us</span>
+              <span class="cd-value">+91 98765 43210</span>
+            </div>
+          </div>
+          <div class="contact-detail-item">
+            <div class="cd-icon">◉</div>
+            <div class="cd-text">
+              <span class="cd-label">Studio</span>
+              <span class="cd-value">Bandra Kurla Complex, Mumbai 400051</span>
+            </div>
+          </div>
+          <div class="contact-detail-item">
+            <div class="cd-icon">◷</div>
+            <div class="cd-text">
+              <span class="cd-label">Working Hours</span>
+              <span class="cd-value">Mon – Sat, 9:00 AM – 7:00 PM</span>
+            </div>
+          </div>
+        </div>
+        <div style="margin-top:3rem;padding-top:2rem;border-top:1px solid rgba(245,240,232,0.08)">
+          <span class="section-label">Follow Us</span>
+          <div style="display:flex;gap:1rem;margin-top:0.8rem">
+            <div
+              style="width:40px;height:40px;border:1px solid rgba(200,169,110,0.3);display:flex;align-items:center;justify-content:center;cursor:pointer;color:var(--gold);font-size:0.8rem;transition:all 0.2s"
+              onmouseover="this.style.background='rgba(200,169,110,0.15)'"
+              onmouseout="this.style.background='transparent'">in</div>
+            <div
+              style="width:40px;height:40px;border:1px solid rgba(200,169,110,0.3);display:flex;align-items:center;justify-content:center;cursor:pointer;color:var(--gold);font-size:0.8rem;transition:all 0.2s"
+              onmouseover="this.style.background='rgba(200,169,110,0.15)'"
+              onmouseout="this.style.background='transparent'">ig</div>
+            <div
+              style="width:40px;height:40px;border:1px solid rgba(200,169,110,0.3);display:flex;align-items:center;justify-content:center;cursor:pointer;color:var(--gold);font-size:0.8rem;transition:all 0.2s"
+              onmouseover="this.style.background='rgba(200,169,110,0.15)'"
+              onmouseout="this.style.background='transparent'">fb</div>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form-section">
+        <span class="section-label">Send a Message</span>
+        <h2 class="section-title" style="font-size:2rem">Request a Free Quote</h2>
+        <div class="divider"></div>
+        <div class="contact-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label>First Name</label>
+              <input type="text" placeholder="Aarav">
+            </div>
+            <div class="form-group">
+              <label>Last Name</label>
+              <input type="text" placeholder="Sharma">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Email Address</label>
+            <input type="email" placeholder="aarav@email.com">
+          </div>
+          <div class="form-group">
+            <label>Phone Number</label>
+            <input type="tel" placeholder="+91 00000 00000">
+          </div>
+          <div class="form-group">
+            <label>Product of Interest</label>
+            <select>
+              <option value="">Select a product...</option>
+              <option>Wooden Blinds</option>
+              <option>Honeycomb Blinds</option>
+              <option>Shangri-La Blinds</option>
+              <option>Zebra Blinds</option>
+              <option>Screen Blinds</option>
+              <option>Blackout Blinds</option>
+              <option>Translucent Blinds</option>
+              <option>Roman Style Blinds</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Project Type</label>
+            <select>
+              <option value="">Select type...</option>
+              <option>Residential</option>
+              <option>Commercial</option>
+              <option>Hospitality</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Your Message</label>
+            <textarea placeholder="Tell us about your project..."></textarea>
+          </div>
+          <button class="btn-primary" style="margin-top:1rem;width:100%;justify-content:center"
+            onclick="submitForm()">Send Message →</button>
+        </div>
+        <div id="form-success"
+          style="display:none;margin-top:2rem;padding:1.5rem;background:var(--cream);border:1px solid var(--gold);text-align:center">
+          <div
+            style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--charcoal);margin-bottom:0.5rem">
+            Thank You</div>
+          <p style="font-size:0.78rem;color:var(--muted)">We've received your message and will be in touch within 24
+            hours.</p>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div class="footer-grid">
+        <div class="footer-brand"><a class="logo" onclick="navigate('home')">VIENTO BLINDS</a>
+          <p class="footer-desc">Premium window blinds crafted for modern homes.</p>
+        </div>
+        <div>
+          <p class="footer-title">Products</p>
+          <ul class="footer-links">
+            <li onclick="navigate('product','Wooden Blinds')">Wooden Blinds</li>
+            <li onclick="navigate('product','Zebra Blinds')">Zebra Blinds</li>
+            <li onclick="navigate('product','Honeycomb Blinds')">Honeycomb Blinds</li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer-title">Company</p>
+          <ul class="footer-links">
+            <li onclick="navigate('about')">About</li>
+            <li onclick="navigate('blogs')">Blogs</li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer-title">Contact</p>
+          <ul class="footer-links">
+            <li><a href="/cdn-cgi/l/email-protection" class="__cf_email__"
+                data-cfemail="aec6cbc2c2c1eed8c7cbc0dac180c7c0">[email&#160;protected]</a></li>
+            <li>+91 98765 43210</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Viento Blinds.</p>
+      </div>
+    </footer>
+  </div>
+
+  
