@@ -14,11 +14,50 @@
       },
       'Zebra Blinds': {
         subtitle: 'Bold aesthetics meet flexible function. Zebra Blinds use alternating solid and sheer stripes that can be aligned for privacy or offset for diffused light.',
-        features: ['Alternating opaque and transparent stripes', 'Align or offset for instant privacy toggle', 'Available in 60+ colour combinations', 'Day & Night vision control', 'Motorisation compatible', 'Easy DIY installation kit included']
+        features: ['Alternating opaque and transparent stripes', 'Align or offset for instant privacy toggle', 'Available in 60+ colour combinations', 'Day & Night vision control', 'Motorisation compatible', 'Easy DIY installation kit included'],
+        catalogues: {
+          'Deco Shade': {
+            'Design 1': ['#EBE6DF', '#D7CEC2', '#C0B3A3', '#A89784', '#8C7A65', '#73624D', '#584936'],
+            'Design 2': ['#F4F1ED', '#E1D9CD', '#CDBEAB', '#B5A28A', '#9B8569', '#826A50', '#675138']
+          },
+          'Maple': {
+            'Classic Maple': ['#E5DBC5', '#D2C4A7', '#BDAB89', '#A8926C', '#917950', '#7A6237', '#624C24'],
+            'Premium Maple': ['#F0E8D7', '#DFD3BB', '#CBB89A', '#B59D7A', '#9F8259', '#896A3D', '#725425']
+          },
+          'Vibrant': {
+            'Solid Series': ['#C2D5D0', '#A3C0BA', '#84ABA4', '#68968E', '#4F8278', '#386D63', '#245950'],
+            'Texture Series': ['#E8D7D7', '#D6BDBD', '#C3A2A2', '#B08888', '#9C6E6E', '#895555', '#743E3E']
+          },
+          'B70-72 Series': {
+            'Standard': ['#E8E8E8', '#D1D1D1', '#BABABA', '#A3A3A3', '#8C8C8C', '#757575', '#5E5E5E']
+          },
+          'Sunshade': {
+            'Light Filter': ['#F7F4EE', '#E9E2D4', '#D9CDB7', '#C8B89A', '#B7A27D', '#A58C60', '#937746']
+          }
+        }
       },
-      'Screen Blinds': {
-        subtitle: 'Designed for views: Screen Blinds reduce glare while preserving your outside vista, making them ideal for offices and rooms with beautiful landscapes.',
-        features: ['1% – 14% openness factors available', 'Reduces glare up to 95%', 'Maintains outward views at all times', 'UV protection up to 90%', 'PVC-free, eco-friendly fabrics available', 'Ideal for commercial spaces']
+      'Roller Blinds': {
+        subtitle: 'Minimalist design for modern spaces. Our Roller Blinds offer effortless operation and a clean aesthetic with a wide range of performance fabrics.',
+        features: ['Sleek, low-profile design', 'Available in blackout, translucent, and sunscreen', 'Motorised options available', 'Easy to clean and maintain', 'Durable mechanism for daily use', 'Custom printed options'],
+        catalogues: {
+          'Contract Roller': {
+            'Eco Blackout': ['#EAEAEA', '#D4D4D4', '#BDBDBD', '#A6A6A6', '#8F8F8F', '#787878', '#616161'],
+            'Jute': ['#E0D4C3', '#CBB99F', '#B59E7C', '#9E845A', '#87693A', '#6F5121', '#573D11'],
+            'Foam Coated': ['#F0EAE1', '#DFD2C0', '#CDBA9F', '#BCA37F', '#A98B60', '#967443', '#835E28']
+          },
+          'FC1 and 2': {
+            'Standard Series': ['#E5DFD5', '#CEC4B4', '#B6A993', '#9D8E73', '#837456', '#695A3B', '#504224']
+          },
+          'FC 3': {
+            'Premium Series': ['#E8D9D0', '#D4BFB1', '#C0A593', '#A98C76', '#92735A', '#7A5B40', '#634529']
+          },
+          'FC 4': {
+            'Texture Series': ['#DEE3DE', '#C2CACC', '#A5B1B3', '#89989B', '#6D8083', '#53686A', '#3A5053']
+          },
+          'FC 5': {
+            'Pattern Series': ['#E5E0E5', '#CDCDCD', '#B5B5B5', '#9D9D9D', '#858585', '#6D6D6D', '#555555']
+          }
+        }
       },
       'Blackout Blinds': {
         subtitle: 'Total darkness on demand. Our Blackout Blinds are engineered for complete light elimination — perfect for bedrooms, home theatres, and nurseries.',
@@ -128,6 +167,49 @@
         for (let i = 0; i < 6; i++) {
           const el = document.getElementById('pd-f' + (i + 1));
           if (el) el.textContent = features[i] || '';
+        }
+
+        // Handle Catalogue Tabs
+        const catContainer = document.getElementById('pd-catalogues-container');
+        const flatSwatches = document.getElementById('pd-flat-swatches');
+        const catTabs = document.getElementById('pd-catalogue-tabs');
+        const catContent = document.getElementById('pd-catalogue-content');
+
+        if (pd.catalogues && catContainer) {
+          catContainer.style.display = 'block';
+          if (flatSwatches) flatSwatches.style.display = 'none';
+
+          catTabs.innerHTML = '';
+          const catalogueNames = Object.keys(pd.catalogues);
+
+          catalogueNames.forEach((catName, index) => {
+            const tab = document.createElement('div');
+            tab.className = 'catalogue-tab' + (index === 0 ? ' active' : '');
+            tab.textContent = catName;
+
+            tab.onclick = () => {
+              document.querySelectorAll('.catalogue-tab').forEach(t => t.classList.remove('active'));
+              tab.classList.add('active');
+
+              const designs = pd.catalogues[catName];
+              let contentHtml = '';
+              for (const [designName, colors] of Object.entries(designs)) {
+                contentHtml += `<div class="catalogue-design-group">
+                  <h4 class="catalogue-design-title">${designName}</h4>
+                  <div class="catalogue-swatch-grid">
+                    ${colors.map(color => `<div class="swatch" style="background: ${color}" title="${color}" onclick="document.querySelectorAll('.swatch').forEach(s => s.classList.remove('active')); this.classList.add('active');"></div>`).join('')}
+                  </div>
+                </div>`;
+              }
+              catContent.innerHTML = contentHtml;
+            };
+
+            catTabs.appendChild(tab);
+            if (index === 0) tab.click();
+          });
+        } else if (catContainer) {
+          catContainer.style.display = 'none';
+          if (flatSwatches) flatSwatches.style.display = 'flex';
         }
       }
 

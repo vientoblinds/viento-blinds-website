@@ -695,13 +695,19 @@
         <span class="section-label">Available Colours</span>
         <h2 class="section-title" style="font-size:2rem">Choose Your Shade</h2>
         <div class="divider"></div>
-        <div class="color-swatches">
+        <!-- Flat swatches: shown for products without catalogues -->
+        <div id="pd-flat-swatches" class="color-swatches">
           <div class="swatch swatch-w1 active" title="Natural"></div>
           <div class="swatch swatch-w2" title="Honey Oak"></div>
           <div class="swatch swatch-w3" title="Walnut"></div>
           <div class="swatch swatch-w4" title="Ebony"></div>
           <div class="swatch swatch-w5" title="Gilded"></div>
           <div class="swatch swatch-w6" title="Washed"></div>
+        </div>
+        <!-- Catalogue tabs: shown for products with catalogue data (e.g. Zebra, Roller) -->
+        <div id="pd-catalogues-container" style="display:none">
+          <div id="pd-catalogue-tabs" class="catalogue-tabs"></div>
+          <div id="pd-catalogue-content"></div>
         </div>
         <p style="font-size:0.72rem;color:var(--muted);margin-top:1rem;line-height:1.7">All colours available as
           samples. Request physical swatches to see the true finish in your light conditions.</p>

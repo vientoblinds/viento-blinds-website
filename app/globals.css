@@ -1734,3 +1734,52 @@
     .img-placeholder-light {
       background: linear-gradient(135deg, var(--cream) 0%, var(--gold-light) 100%);
     }
+
+    /* ===================== CATALOGUE TABS ===================== */
+    .catalogue-tabs {
+      display: flex;
+      gap: 1.5rem;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 1.5rem;
+      overflow-x: auto;
+      scrollbar-width: none; /* Firefox */
+    }
+    .catalogue-tabs::-webkit-scrollbar {
+      display: none; /* Chrome/Safari */
+    }
+    .catalogue-tab {
+      padding: 0.8rem 0;
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+      cursor: pointer;
+      white-space: nowrap;
+      border-bottom: 2px solid transparent;
+      transition: all 0.3s;
+    }
+    .catalogue-tab:hover {
+      color: var(--mid-brown);
+    }
+    .catalogue-tab.active {
+      color: var(--charcoal);
+      border-bottom-color: var(--gold);
+      font-weight: 500;
+    }
+
+    .catalogue-design-group {
+      margin-bottom: 2rem;
+      animation: fadeUp 0.4s ease forwards;
+    }
+    .catalogue-design-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-weight: 400;
+      color: var(--charcoal);
+      margin-bottom: 0.8rem;
+    }
+    .catalogue-swatch-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
