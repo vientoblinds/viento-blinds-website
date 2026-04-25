@@ -59,7 +59,7 @@ export default function FeaturesTabs() {
           <div className="feature-panel-text">
             <h3>{f.heading}</h3>
             <p>{f.body}</p>
-            <Link className="btn-outline-light" href="/legacy?page=contact">
+            <Link className="btn-outline-light" href="/contact">
               Get a Free Quote →
             </Link>
           </div>
