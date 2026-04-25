@@ -63,18 +63,19 @@ export default async function ProductPage({ params }) {
               <Link className="btn-primary" href="/legacy?page=contact">
                 Request a Quote
               </Link>
-              <button type="button" className="btn-outline-light">
-                Download Brochure ↓
-              </button>
             </div>
           </div>
-          <div className="pd-hero-img">
-            <img
-              src={product.image}
-              alt={product.name}
-              style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-            />
-          </div>
+          {product.image ? (
+            <div className="pd-hero-img">
+              <img
+                src={product.image}
+                alt={product.name}
+                style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+              />
+            </div>
+          ) : (
+            <div className="pd-hero-img img-placeholder">{product.name.toUpperCase()}</div>
+          )}
         </div>
 
         <div className="pd-details">
@@ -167,7 +168,7 @@ export default async function ProductPage({ params }) {
           <div
             style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(4,1fr)',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
               gap: '1.5px',
               marginTop: '2.5rem',
             }}
@@ -179,12 +180,21 @@ export default async function ProductPage({ params }) {
                 className="product-card"
                 style={{ aspectRatio: '3/4' }}
               >
-                <img
-                  src={p.image}
-                  alt={p.name}
-                  className="product-card-img"
-                  style={{ height: '100%' }}
-                />
+                {p.image ? (
+                  <img
+                    src={p.image}
+                    alt={p.name}
+                    className="product-card-img"
+                    style={{ height: '100%' }}
+                  />
+                ) : (
+                  <div
+                    className="product-card-img img-placeholder"
+                    style={{ height: '100%' }}
+                  >
+                    {p.name.toUpperCase()}
+                  </div>
+                )}
                 <div className="product-card-info">
                   <h3>{p.name}</h3>
                   <div className="explore-link">Explore ↗</div>
