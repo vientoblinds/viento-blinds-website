@@ -1,15 +1,214 @@
-import fs from 'node:fs';
-import path from 'node:path';
-import Script from 'next/script';
+import Link from 'next/link';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+import FeaturesTabs from './components/FeaturesTabs';
+
+export const metadata = {
+  title: 'Viento | Premium Blinds',
+  description:
+    'Premium window blinds crafted for modern homes. Discover wooden, zebra, roller, and designer blinds from Viento.',
+};
+
+const HERO_PANELS = [
+  {
+    slug: 'wooden-blinds',
+    tag: 'Discover Collection',
+    title: 'Luxury',
+    desc: 'Premium blinds crafted for modern homes, perfected for every mood.',
+    img: '/assets/luxary.png?v=20260417-2125',
+    alt: 'Luxury by Viento',
+  },
+  {
+    slug: 'zebra-blinds',
+    tag: 'Explore Design',
+    title: 'Design',
+    desc: 'From blackout to sheer, blend privacy and sunlight like never before.',
+    img: '/assets/craft.png?v=20260417-2125',
+    alt: 'Design by Viento',
+  },
+  {
+    slug: 'shangri-la-blinds',
+    tag: 'Fine Craft',
+    title: 'Craft',
+    desc: "Beauty and function in perfect balance with Viento's designer blinds.",
+    img: '/assets/design.png?v=20260417-2125',
+    alt: 'Craft by Viento',
+  },
+];
+
+const HOME_PRODUCTS = [
+  { href: '/products/wooden-blinds', img: '/assets/wooden%20blinds.png', alt: 'Wooden Blinds', name: 'Wooden Blinds' },
+  { href: '/products/shangri-la-blinds', img: '/assets/Triple-Shade.png', alt: 'Triple Shade Blinds', name: 'Triple Shade Blinds' },
+  { href: '/products/zebra-blinds', img: '/assets/zebra-blinds.png', alt: 'Zebra Blinds', name: 'Zebra Blinds' },
+  { href: '/products/roller-blinds', img: '/assets/Roller-blinds.png?v=20260417-2142', alt: 'Roller Blinds', name: 'Roller Blinds' },
+  { href: '/legacy?page=contact', img: '/assets/rollup.png', alt: 'Rollup Blinds', name: 'Rollup Blinds' },
+  { href: '/products/roman-style-blinds', img: '/assets/Roman.png', alt: 'Roman Blinds', name: 'Roman Blinds' },
+];
+
+const BLOGS = [
+  { slug: 'How to Choose the Perfect Blinds', img: '/assets/blog1.png', date: '10 FEB 2026', title: 'How to Choose the Perfect Blinds for Your Home ?' },
+  { slug: 'The Art Behind Premium Blind Fabrics', img: '/assets/blog2.png', date: '15 FEB 2026', title: 'The Art Behind Premium Blind Fabrics: What Makes Viento Different' },
+  { slug: 'Luxury vs Regular Blinds', img: '/assets/blog3.png', date: '20 FEB 2026', title: 'Luxury vs Regular Blinds: What Truly Makes the Difference?' },
+  { slug: 'Commercial Spaces and Productivity', img: '/assets/blog4.png', date: '25 FEB 2026', title: 'Commercial Spaces & Productivity: The Role of Window Treatments' },
+];
 
 export default function HomePage() {
-  const bodyContentPath = path.join(process.cwd(), 'content/home-body.html');
-  const bodyContent = fs.readFileSync(bodyContentPath, 'utf8');
-
   return (
     <>
-      <main dangerouslySetInnerHTML={{ __html: bodyContent }} />
-      <Script src="/js/main.js" strategy="afterInteractive" />
+      <Navbar />
+      <div className="page active">
+        <section className="hero">
+          {HERO_PANELS.map((panel) => (
+            <Link key={panel.slug} href={`/products/${panel.slug}`} className="hero-panel">
+              <img src={panel.img} alt={panel.alt} className="hero-panel-bg" />
+              <div className="hero-panel-content">
+                <span className="hero-tag">{panel.tag}</span>
+                <h2>{panel.title}</h2>
+                <p>{panel.desc}</p>
+              </div>
+            </Link>
+          ))}
+          <Link href="/legacy?page=about" className="hero-badge">
+            <span>Viento</span>
+            <span>Est. 2015</span>
+          </Link>
+        </section>
+
+        <section className="section products-section">
+          <div className="products-header">
+            <div>
+              <span className="section-label">Our Collection</span>
+              <h2 className="section-title">Our Products</h2>
+            </div>
+            <Link className="btn-outline" href="/legacy?page=allproducts">
+              View All Products →
+            </Link>
+          </div>
+          <div className="products-grid">
+            {HOME_PRODUCTS.map((p) => (
+              <Link key={p.name} href={p.href} className="product-card">
+                <img src={p.img} alt={p.alt} className="product-card-img" />
+                <div className="product-card-info">
+                  <h3>{p.name}</h3>
+                  <div className="explore-link">Explore ↗</div>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </section>
+
+        <section className="section features-section">
+          <span className="section-label">Why Viento</span>
+          <h2 className="section-title">Features</h2>
+          <p className="section-subtitle">
+            Every Viento blind is engineered to deliver superior performance across five essential
+            dimensions.
+          </p>
+          <FeaturesTabs />
+        </section>
+
+        <section className="section factory-video-section">
+          <span className="section-label">Inside Viento</span>
+          <h2 className="section-title">Our Factory</h2>
+          <p className="section-subtitle">
+            A quick look at how we design, craft, and finish every blind with precision.
+          </p>
+          <div className="factory-video-wrap">
+            <video controls preload="metadata" playsInline>
+              <source src="/assets/video.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </section>
+
+        <div className="marquee-section">
+          <div className="marquee-track">
+            {[
+              'Premium Blinds',
+              'Wooden Blinds',
+              'Zebra Blinds',
+              'Honeycomb Blinds',
+              'Smart Automation',
+              'Custom Fit',
+              'Blackout Series',
+              'Shangri-La Collection',
+            ]
+              .concat([
+                'Premium Blinds',
+                'Wooden Blinds',
+                'Zebra Blinds',
+                'Honeycomb Blinds',
+                'Smart Automation',
+                'Custom Fit',
+                'Blackout Series',
+                'Shangri-La Collection',
+              ])
+              .map((item, i) => (
+                <span key={i} className="marquee-item">
+                  {item}
+                </span>
+              ))}
+          </div>
+        </div>
+
+        <section className="partners-section">
+          <span className="section-label">Trusted By</span>
+          <h2 className="section-title" style={{ fontSize: '1.8rem' }}>
+            Our Partners
+          </h2>
+          <div className="partners-track">
+            {Array.from({ length: 8 }).map((_, i) => (
+              <div key={i} className="partner-logo">
+                PARTNER {String(i + 1).padStart(2, '0')}
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="section blogs-section">
+          <div className="blogs-header">
+            <div>
+              <span className="section-label">Insights</span>
+              <h2 className="section-title">Latest Blogs</h2>
+            </div>
+            <Link className="btn-outline" href="/legacy?page=blogs">
+              More Blogs →
+            </Link>
+          </div>
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
+              gap: '1rem',
+              marginTop: '2rem',
+            }}
+          >
+            {BLOGS.map((b) => (
+              <Link
+                key={b.slug}
+                href={`/legacy?page=blogdetail&data=${encodeURIComponent(b.slug)}`}
+                className="blog-card"
+              >
+                <div
+                  className="blog-card-img"
+                  style={{
+                    backgroundImage: `url('${b.img}')`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                  }}
+                />
+                <div className="blog-card-body">
+                  <span className="blog-card-date">{b.date}</span>
+                  <h3 className="blog-card-title">{b.title}</h3>
+                  <span className="blog-card-link">Read More →</span>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </section>
+
+        <Footer />
+      </div>
     </>
   );
 }
