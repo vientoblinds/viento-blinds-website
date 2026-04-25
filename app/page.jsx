@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import FeaturesTabs from './components/FeaturesTabs';
+import { blogs } from '../lib/blogs';
 
 export const metadata = {
   title: 'Viento | Premium Blinds',
@@ -41,16 +42,11 @@ const HOME_PRODUCTS = [
   { href: '/products/shangri-la-blinds', img: '/assets/Triple-Shade.png', alt: 'Triple Shade Blinds', name: 'Triple Shade Blinds' },
   { href: '/products/zebra-blinds', img: '/assets/zebra-blinds.png', alt: 'Zebra Blinds', name: 'Zebra Blinds' },
   { href: '/products/roller-blinds', img: '/assets/Roller-blinds.png?v=20260417-2142', alt: 'Roller Blinds', name: 'Roller Blinds' },
-  { href: '/legacy?page=contact', img: '/assets/rollup.png', alt: 'Rollup Blinds', name: 'Rollup Blinds' },
+  { href: '/contact', img: '/assets/rollup.png', alt: 'Rollup Blinds', name: 'Rollup Blinds' },
   { href: '/products/roman-style-blinds', img: '/assets/Roman.png', alt: 'Roman Blinds', name: 'Roman Blinds' },
 ];
 
-const BLOGS = [
-  { slug: 'How to Choose the Perfect Blinds', img: '/assets/blog1.png', date: '10 FEB 2026', title: 'How to Choose the Perfect Blinds for Your Home ?' },
-  { slug: 'The Art Behind Premium Blind Fabrics', img: '/assets/blog2.png', date: '15 FEB 2026', title: 'The Art Behind Premium Blind Fabrics: What Makes Viento Different' },
-  { slug: 'Luxury vs Regular Blinds', img: '/assets/blog3.png', date: '20 FEB 2026', title: 'Luxury vs Regular Blinds: What Truly Makes the Difference?' },
-  { slug: 'Commercial Spaces and Productivity', img: '/assets/blog4.png', date: '25 FEB 2026', title: 'Commercial Spaces & Productivity: The Role of Window Treatments' },
-];
+const BLOGS = blogs.slice(0, 4);
 
 export default function HomePage() {
   return (
@@ -68,7 +64,7 @@ export default function HomePage() {
               </div>
             </Link>
           ))}
-          <Link href="/legacy?page=about" className="hero-badge">
+          <Link href="/about" className="hero-badge">
             <span>Viento</span>
             <span>Est. 2015</span>
           </Link>
@@ -80,7 +76,7 @@ export default function HomePage() {
               <span className="section-label">Our Collection</span>
               <h2 className="section-title">Our Products</h2>
             </div>
-            <Link className="btn-outline" href="/legacy?page=allproducts">
+            <Link className="btn-outline" href="/products">
               View All Products →
             </Link>
           </div>
@@ -171,7 +167,7 @@ export default function HomePage() {
               <span className="section-label">Insights</span>
               <h2 className="section-title">Latest Blogs</h2>
             </div>
-            <Link className="btn-outline" href="/legacy?page=blogs">
+            <Link className="btn-outline" href="/blogs">
               More Blogs →
             </Link>
           </div>
@@ -186,13 +182,13 @@ export default function HomePage() {
             {BLOGS.map((b) => (
               <Link
                 key={b.slug}
-                href={`/legacy?page=blogdetail&data=${encodeURIComponent(b.slug)}`}
+                href={`/blog/${b.slug}`}
                 className="blog-card"
               >
                 <div
                   className="blog-card-img"
                   style={{
-                    backgroundImage: `url('${b.img}')`,
+                    backgroundImage: `url('${b.image}')`,
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
                   }}

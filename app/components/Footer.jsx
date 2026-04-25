@@ -31,13 +31,13 @@ export default function Footer({ variant = 'full' }) {
           <p className="footer-title">Company</p>
           <ul className="footer-links">
             <li>
-              <Link href="/legacy?page=about">About Viento</Link>
+              <Link href="/about">About Viento</Link>
             </li>
             <li>
-              <Link href="/legacy?page=blogs">Our Blog</Link>
+              <Link href="/blogs">Our Blog</Link>
             </li>
             <li>
-              <Link href="/legacy?page=contact">Contact Us</Link>
+              <Link href="/contact">Contact Us</Link>
             </li>
             <li>Privacy Policy</li>
             <li>Sitemap</li>

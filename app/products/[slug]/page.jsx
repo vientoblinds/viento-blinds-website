@@ -48,19 +48,19 @@ export default async function ProductPage({ params }) {
                 Home
               </Link>
               {' / '}
-              <Link href="/legacy?page=allproducts" style={{ color: 'inherit' }}>
+              <Link href="/products" style={{ color: 'inherit' }}>
                 Products
               </Link>
               {' / '}
               <span style={{ color: 'var(--charcoal)' }}>{product.name}</span>
             </div>
-            <Link className="back-link" href="/">
-              ← Back to Home
+            <Link className="back-link" href="/products">
+              ← Back to Products
             </Link>
             <h1>{product.name}</h1>
             <p>{product.subtitle}</p>
             <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginTop: '2rem' }}>
-              <Link className="btn-primary" href="/legacy?page=contact">
+              <Link className="btn-primary" href="/contact">
                 Request a Quote
               </Link>
             </div>

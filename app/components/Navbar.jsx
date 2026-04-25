@@ -82,21 +82,17 @@ export default function Navbar() {
             </div>
           </li>
           <li>
-            <Link href="/legacy?page=about" onClick={() => setMobileOpen(false)}>
+            <Link href="/about" onClick={() => setMobileOpen(false)}>
               About
             </Link>
           </li>
           <li>
-            <Link href="/legacy?page=blogs" onClick={() => setMobileOpen(false)}>
+            <Link href="/blogs" onClick={() => setMobileOpen(false)}>
               Blogs
             </Link>
           </li>
           <li>
-            <Link
-              href="/legacy?page=contact"
-              className="nav-cta"
-              onClick={() => setMobileOpen(false)}
-            >
+            <Link href="/contact" className="nav-cta" onClick={() => setMobileOpen(false)}>
               Contact Us
             </Link>
           </li>
