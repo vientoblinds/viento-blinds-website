@@ -1045,13 +1045,11 @@
 
     /* ===================== PRODUCT DETAIL PAGE ===================== */
     .pd-hero {
-      height: 70vh;
-      min-height: 500px;
+      min-height: 1100px;
       background: linear-gradient(to right, var(--deep-brown) 50%, var(--mid-brown) 100%);
       display: grid;
       grid-template-columns: 1fr 1fr;
       padding-top: 72px;
-      overflow: hidden;
     }
 
     .pd-hero-text {
@@ -1090,10 +1088,19 @@
     }
 
     .pd-hero-img {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: var(--tan);
+    }
+
+    .pd-hero-img img {
+      position: absolute;
+      inset: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
-      background: var(--tan);
     }
 
     .pd-details {

@@ -33,27 +33,6 @@ export default async function ProductPage({ params }) {
       <div className="page active">
         <div className="pd-hero">
           <div className="pd-hero-text">
-            <div
-              aria-label="Breadcrumb"
-              role="navigation"
-              style={{
-                fontSize: '0.72rem',
-                letterSpacing: '0.1em',
-                textTransform: 'uppercase',
-                color: 'var(--muted)',
-                marginBottom: '1rem',
-              }}
-            >
-              <Link href="/" style={{ color: 'inherit' }}>
-                Home
-              </Link>
-              {' / '}
-              <Link href="/products" style={{ color: 'inherit' }}>
-                Products
-              </Link>
-              {' / '}
-              <span style={{ color: 'var(--charcoal)' }}>{product.name}</span>
-            </div>
             <Link className="back-link" href="/products">
               ← Back to Products
             </Link>
@@ -63,6 +42,9 @@ export default async function ProductPage({ params }) {
               <Link className="btn-primary" href="/contact">
                 Request a Quote
               </Link>
+              <a className="btn-primary" href={`/catalogs/${product.slug}.pdf`} download>
+                Download Catalog
+              </a>
             </div>
           </div>
           {product.image ? (
@@ -90,29 +72,6 @@ export default async function ProductPage({ params }) {
                 <li key={feat}>{feat}</li>
               ))}
             </ul>
-          </div>
-          <div>
-            <span className="section-label">Available Colours</span>
-            <h2 className="section-title" style={{ fontSize: '2rem' }}>
-              Choose Your Shade
-            </h2>
-            <div className="divider" />
-            {product.catalogues ? (
-              <CatalogueTabs catalogues={product.catalogues} />
-            ) : (
-              <FlatSwatches />
-            )}
-            <p
-              style={{
-                fontSize: '0.72rem',
-                color: 'var(--muted)',
-                marginTop: '1rem',
-                lineHeight: 1.7,
-              }}
-            >
-              All colours available as samples. Request physical swatches to see the true finish in
-              your light conditions.
-            </p>
             <div
               style={{
                 marginTop: '2rem',
@@ -158,7 +117,87 @@ export default async function ProductPage({ params }) {
               </div>
             </div>
           </div>
+          <div>
+            <span className="section-label">Available Colours</span>
+            <h2 className="section-title" style={{ fontSize: '2rem' }}>
+              Choose Your Shade
+            </h2>
+            <div className="divider" />
+            {product.catalogues ? (
+              <CatalogueTabs catalogues={product.catalogues} />
+            ) : (
+              <FlatSwatches />
+            )}
+            <p
+              style={{
+                fontSize: '0.72rem',
+                color: 'var(--muted)',
+                marginTop: '1rem',
+                lineHeight: 1.7,
+              }}
+            >
+              All colours available as samples. Request physical swatches to see the true finish in
+              your light conditions.
+            </p>
+          </div>
         </div>
+
+        <section className="section" style={{ paddingTop: '3rem' }}>
+          <span className="section-label">In Real Homes</span>
+          <h2 className="section-title" style={{ fontSize: '2rem' }}>
+            Customer Images
+          </h2>
+          <div className="divider" />
+          <p className="section-subtitle">
+            Real {product.name.toLowerCase()} installations from our clients.
+          </p>
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
+              gap: '1rem',
+              marginTop: '2rem',
+            }}
+          >
+            {(product.customerImages?.length
+              ? product.customerImages
+              : [null, null, null, null]
+            ).map((img, i) => (
+              <div
+                key={i}
+                style={{
+                  aspectRatio: '4/5',
+                  background: 'var(--cream)',
+                  border: '1px solid var(--border)',
+                  overflow: 'hidden',
+                }}
+              >
+                {img ? (
+                  <img
+                    src={img.src}
+                    alt={img.alt || `${product.name} installation ${i + 1}`}
+                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                  />
+                ) : (
+                  <div
+                    className="img-placeholder"
+                    style={{
+                      width: '100%',
+                      height: '100%',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      fontSize: '0.7rem',
+                      letterSpacing: '0.15em',
+                    }}
+                  >
+                    PHOTO COMING SOON
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        </section>
 
         <section className="section" style={{ background: 'var(--cream)', paddingTop: '3rem' }}>
           <span className="section-label">Explore More</span>
