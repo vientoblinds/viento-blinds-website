@@ -7,32 +7,32 @@ const FEATURES = [
   {
     label: 'Light Control & Privacy',
     imgText: 'LIGHT CONTROL',
-    heading: 'Superior Light Control & Privacy',
-    body: 'Viento blinds offer precise control over how light enters your space — whether you want brightness, softness, or complete blackout. And while you shape the mood, your privacy stays protected with fabrics designed to shield without compromising style.',
+    heading: 'Exceptional Light Control & Refined Privacy',
+    body: 'Viento blinds are crafted to give you complete mastery over light — from soft ambient glow to full brightness or total blackout, tailored to your preference. As you curate the perfect atmosphere, your privacy remains effortlessly protected with premium fabrics designed to conceal while elevating the elegance of your space.',
   },
   {
     label: 'Premium Durability',
     imgText: 'MATERIAL',
-    heading: 'Premium Material Durability',
-    body: "Crafted from high-quality, tested materials, Viento blinds are built to last. Our fabrics resist fading, warping, and wear — ensuring they stay as beautiful and functional as the day they're installed, even with daily use and changing seasons.",
+    heading: 'Premium Material Integrity',
+    body: 'Viento blinds are meticulously engineered using high-grade components and finely selected fabrics, ensuring exceptional strength and longevity. From precision-crafted mechanisms to resilient slats and advanced textile weaves, every element is designed to withstand daily use with ease. Resistant to fading, warping, and wear, they retain their refined appearance and flawless performance across seasons — delivering lasting beauty with uncompromising reliability.',
   },
   {
     label: 'Energy Efficiency',
     imgText: 'ENERGY',
-    heading: 'Energy Efficiency & Insulation',
-    body: 'Viento blinds do more than control light — they help regulate temperature too. By reducing heat gain in summer and retaining warmth in winter, our fabrics improve insulation and lower energy costs, making your space more comfortable year-round.',
+    heading: 'Intelligent Insulation & Energy Efficiency',
+    body: 'Viento blinds are designed to enhance more than just light — they elevate the comfort of your space. Crafted with advanced fabric technologies, they help minimise heat ingress during warmer months while preserving indoor warmth in cooler seasons. This natural insulation not only creates a consistently comfortable environment but also contributes to improved energy efficiency, allowing your space to feel refined, balanced, and effortlessly efficient all year round.',
   },
   {
     label: 'UV Protection',
     imgText: 'UV PROTECT',
     heading: 'UV Protection & Fade Resistance',
-    body: 'Viento blinds are designed to block harmful UV rays, protecting your interiors from sun damage. Our fade-resistant fabrics help preserve the color and quality of your furniture, flooring, and décor so your space stays vibrant, longer.',
+    body: 'Viento blinds block harmful UV rays while preserving the richness of your interiors. Fade-resistant fabrics protect your furniture, flooring, and décor — keeping your space vibrant and refined for years to come.',
   },
   {
     label: 'Smart Automation',
     imgText: 'SMART HOME',
     heading: 'Smart Automation Compatibility',
-    body: 'Viento blinds integrate seamlessly with leading smart home systems, allowing you to control light and privacy with a simple voice command or tap. Set schedules, automate scenes, and adjust your blinds remotely for comfort, convenience, and modern living at its finest.',
+    body: 'Viento blinds are designed to integrate seamlessly with leading smart home systems, offering effortless control over light and privacy. Adjust your blinds with a simple voice command, a tap on your smartphone, or through automated schedules tailored to your routine. Create personalised scenes, operate them remotely, and enjoy a space that adapts intelligently to your lifestyle — delivering elevated comfort, convenience, and modern sophistication.',
   },
 ];
 
