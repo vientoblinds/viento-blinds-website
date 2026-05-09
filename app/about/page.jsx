@@ -92,19 +92,52 @@ export default function AboutPage() {
               <h2 className="section-title">More Than Just Blinds</h2>
               <div className="divider" />
               <p>
-                Founded in 2015, Viento began with a singular vision: to transform the way light
-                interacts with living spaces. What started as a small workshop in Mumbai has grown
-                into one of India's most trusted premium blinds brands.
+                Founded in 2001, Viento was born from the visionary ambition of Mr. Sameer Jain -
+                to redefine how light shapes and elevates living spaces. What began as a modest
+                workshop in Mumbai has evolved into one of India's most trusted names in premium
+                window solutions.
               </p>
               <p>
-                We believe that every window tells a story. The way light filters through a room
-                shapes its mood, its comfort, and ultimately, its soul. Viento blinds are
-                engineered to give you complete authorship over that narrative.
+                In its early years, Viento specialized in importing high-quality fabrics to craft
+                finely made blinds. As the brand grew, so did its commitment to excellence and
+                innovation, leading to the establishment of a state-of-the-art manufacturing
+                facility in GIDC, Gujarat - where Viento began producing its own superior fabrics
+                with precision and control.
               </p>
               <p>
-                From our precision-cut Wooden Blinds to our innovative Honeycomb series, each
-                product reflects our obsession with quality, design, and the subtle art of
-                controlling light.
+                At its core, Viento is a design-led window solutions brand, specializing in premium
+                blinds that seamlessly blend functionality with refined aesthetics. From zebra
+                blinds and roller systems to blackout and exterior solutions, we curate and
+                manufacture products that enhance light control, privacy, and comfort - while
+                elevating the overall character of a space. Every detail, from fabric selection to
+                mechanism engineering, is thoughtfully considered to deliver a sophisticated and
+                lasting experience.
+              </p>
+              <p>
+                Mr. Sameer Jain was more than a founder - he was a guiding force who inspired and
+                mentored countless professionals. His strategic foresight and relentless pursuit of
+                innovation propelled Viento to new heights, leaving behind a legacy defined by
+                excellence, resilience, and forward-thinking.
+              </p>
+              <p>
+                He didn't just start a business - he built something he genuinely loved. Blinds
+                were never just a product to him; they were a passion and a purpose - a way to bring
+                beauty, comfort, and intention into people's homes. Every texture was chosen with
+                care, every fitting perfected with pride, and every customer treated with utmost
+                importance. To him, each fabric held the potential to transform a space, elevate a
+                moment, and simply feel right - and that belief continues to shape the way we work
+                today.
+              </p>
+              <p>
+                We remain forever indebted to his vision, his values, and the foundation he so
+                passionately built. Every milestone we achieve stands as a reflection of his
+                dedication and unwavering belief in excellence. His spirit lives in every detail we
+                create, every space we transform, and every experience we deliver.
+              </p>
+              <p>
+                Today, that legacy continues to guide us forward. As we look ahead, we remain deeply
+                grateful and committed to building a future that reflects his vision - timeless,
+                refined, and enduring.
               </p>
               <Link className="btn-primary" href="/contact">
                 Work With Us →
