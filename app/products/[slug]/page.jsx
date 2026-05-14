@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
+import BackLink from '../../components/BackLink';
 import CatalogueTabs from '../../components/CatalogueTabs';
 import FlatSwatches from '../../components/FlatSwatches';
 import { getAllSlugs, getProductBySlug, getRelatedProducts } from '../../../lib/products';
@@ -33,9 +34,7 @@ export default async function ProductPage({ params }) {
       <div className="page active">
         <div className="pd-hero">
           <div className="pd-hero-text">
-            <Link className="back-link" href="/products">
-              ← Back to Products
-            </Link>
+            <BackLink fallback="/products">← Back</BackLink>
             <h1>{product.name}</h1>
             <p>{product.subtitle}</p>
             <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginTop: '2rem' }}>
