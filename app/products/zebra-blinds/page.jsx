@@ -75,14 +75,25 @@ export default function ZebraBlindsPage() {
                 key={family.slug}
                 href={`/products/zebra-blinds/${family.slug}`}
                 className="zebra-family-card"
-                style={{
-                  '--zebra-a': family.colors[0],
-                  '--zebra-b': family.colors[1],
-                  '--zebra-c': family.colors[2],
-                  '--zebra-d': family.colors[3],
-                }}
+                style={
+                  family.image
+                    ? {}
+                    : {
+                        '--zebra-a': family.colors[0],
+                        '--zebra-b': family.colors[1],
+                        '--zebra-c': family.colors[2],
+                        '--zebra-d': family.colors[3],
+                      }
+                }
               >
-                <div className="zebra-family-sample" />
+                <div
+                  className="zebra-family-sample"
+                  style={
+                    family.image
+                      ? { background: `url('${family.image}') center / cover no-repeat` }
+                      : {}
+                  }
+                />
                 <div className="zebra-family-content">
                   <span className="zebra-family-code">{String(index + 1).padStart(2, '0')}</span>
                   <h3>{family.name}</h3>

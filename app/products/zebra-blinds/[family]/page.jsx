@@ -46,12 +46,16 @@ export default async function ZebraFamilyPage({ params }) {
           <div className="zebra-detail-sample-wrap">
             <div
               className="zebra-detail-sample"
-              style={{
-                '--zebra-a': family.colors[0],
-                '--zebra-b': family.colors[1],
-                '--zebra-c': family.colors[2],
-                '--zebra-d': family.colors[3],
-              }}
+              style={
+                family.image
+                  ? { background: `url('${family.image}') center / cover no-repeat` }
+                  : {
+                      '--zebra-a': family.colors[0],
+                      '--zebra-b': family.colors[1],
+                      '--zebra-c': family.colors[2],
+                      '--zebra-d': family.colors[3],
+                    }
+              }
             />
           </div>
         </div>
