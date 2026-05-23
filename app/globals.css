@@ -1046,7 +1046,6 @@
       line-height: 1.7;
     }
 
-    /* ===================== PRODUCT DETAIL PAGE ===================== */
     .pd-hero {
       min-height: 92vh;
       background: linear-gradient(to right, var(--deep-brown) 50%, var(--mid-brown) 100%);
@@ -2134,7 +2133,6 @@
       .zebra-related-grid {
         grid-template-columns: 1fr;
       }
-
       .zebra-detail-sample {
         min-height: 340px;
       }
