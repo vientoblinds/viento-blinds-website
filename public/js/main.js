@@ -73,6 +73,113 @@
       }
     };
 
+    // Product hero images mapping
+    window.productImages = {
+      'Wooden Blinds': '/assets/wooden%20blinds.png',
+      'Honeycomb Blinds': '/assets/INSULATION%20__%20HOMEPAGE%20.png',
+      'Shangri-La Blinds': '/assets/Triple-Shade.png',
+      'Zebra Blinds': '/assets/zebra-blinds.png',
+      'Roller Blinds': '/assets/Roller-blinds.png',
+      'Blackout Blinds': '/assets/exterior-blinds.png',
+      'Translucent Blinds': '/assets/luxary.png',
+      'Roman Style Blinds': '/assets/Roman.png',
+      'Cello Zebra Shade': '/assets/Cello%20zebra.png',
+      'Deco Shade': '/assets/zebra-blinds.png',
+      'Sun Shade': '/assets/zebra-blinds.png',
+      'Maple Zebra': '/assets/zebra-blinds.png',
+      'Vibrant Zebra': '/assets/zebra-blinds.png',
+      'B70-72 Series': '/assets/zebra-blinds.png',
+      'Blackout Zebra': '/assets/zebra-blinds.png',
+      'Sheer Linen Zebra': '/assets/zebra-blinds.png'
+    };
+
+    window.zebraFamilies = {
+      'Deco Shade': {
+        kicker: 'Designer finish',
+        desc: 'Architectural texture with a soft designer finish. Great for living rooms where the blind should read like part of the interior palette.',
+        room: 'Living rooms',
+        light: 'Balanced glow',
+        texture: 'Woven matte',
+        colors: ['#efe9df', '#d7cbbb', '#b7a58d', '#8f7b62']
+      },
+      'Sun Shade': {
+        kicker: 'Heat and glare control',
+        desc: 'A brighter zebra family for sun-facing windows, softening glare while keeping rooms open and usable through the day.',
+        room: 'Balconies and offices',
+        light: 'Filtered daylight',
+        texture: 'Fine screen',
+        colors: ['#f6f1e8', '#e4dccf', '#c7b99f', '#9f8d6e']
+      },
+      'Cello Zebra Shade': {
+        kicker: 'Soft premium stripe',
+        desc: 'A refined, quieter stripe with a layered fabric feel, suited for bedrooms, lounges, and spaces that need gentle privacy.',
+        room: 'Bedrooms',
+        light: 'Soft privacy',
+        texture: 'Satin woven',
+        colors: ['#f0ece7', '#d8d0ca', '#b7aaa0', '#806f65']
+      },
+      'Maple Zebra': {
+        kicker: 'Warm natural tones',
+        desc: 'Maple Zebra brings wood-inspired warmth into the zebra format, pairing especially well with neutral interiors and timber furniture.',
+        room: 'Dining rooms',
+        light: 'Warm diffusion',
+        texture: 'Natural grain',
+        colors: ['#eadbc2', '#d3bc92', '#aa8554', '#765331']
+      },
+      'Vibrant Zebra': {
+        kicker: 'Colour-forward option',
+        desc: 'A bolder range for statement rooms, creative studios, and interiors that need an accent instead of a quiet background.',
+        room: 'Creative spaces',
+        light: 'Dynamic accent',
+        texture: 'Colour weave',
+        colors: ['#d8e2dd', '#89aaa1', '#9d6f6f', '#355f58']
+      },
+      'B70-72 Series': {
+        kicker: 'Commercial neutral',
+        desc: 'A practical, durable series with crisp neutral colourways for offices, rental properties, and repeatable project specifications.',
+        room: 'Commercial projects',
+        light: 'Clean control',
+        texture: 'Tight technical',
+        colors: ['#ededed', '#cdcdcd', '#9e9e9e', '#656565']
+      },
+      'Blackout Zebra': {
+        kicker: 'Maximum privacy',
+        desc: 'A darker zebra route for bedrooms and media spaces where the alternating stripe still matters, but privacy leads the decision.',
+        room: 'Bedrooms and media rooms',
+        light: 'Deep privacy',
+        texture: 'Dense coated',
+        colors: ['#d9d7d1', '#a8a49a', '#706a61', '#35322e']
+      },
+      'Sheer Linen Zebra': {
+        kicker: 'Airy linen look',
+        desc: 'A relaxed, sheer-forward family for soft daylight and elegant layering in calm living spaces.',
+        room: 'Lounges',
+        light: 'Airy daylight',
+        texture: 'Open linen',
+        colors: ['#faf6ee', '#e5d9c4', '#c8b693', '#a08b66']
+      }
+    };
+
+    Object.entries(window.zebraFamilies).forEach(([name, family]) => {
+      window.productData[name] = {
+        subtitle: family.desc,
+        features: [
+          `${family.kicker} for ${family.room.toLowerCase()}`,
+          `${family.light} with adjustable sheer and opaque bands`,
+          `${family.texture} fabric character`,
+          'Works with manual, cordless, or motorised controls',
+          'Made-to-measure with matching cassette options',
+          'Available as physical swatches before order'
+        ],
+        catalogues: {
+          [name]: {
+            'Signature Colours': family.colors,
+            'Extended Neutrals': family.colors.map((color) => color)
+          }
+        }
+      };
+    });
+
     window.blogData = {
       'How to Choose the Perfect Blinds': { title: 'How to Choose the Perfect Blinds for Your Home ?', date: '10 FEB 2026 · BUYING GUIDE', image: 'assets/blog1.png', content: `
         <p>Selecting the right blinds isn’t just about covering a window — it’s about transforming a space. The right choice improves privacy, enhances natural light, and elevates your interior aesthetic.</p>
@@ -154,7 +261,57 @@
       });
     }
 
-    window.navigate = function (page, data) {
+    window.showZebraFamily = function (name, clickedButton) {
+      const family = window.zebraFamilies[name];
+      if (!family) return;
+
+      document.querySelectorAll('.zebra-family').forEach(button => button.classList.remove('active'));
+      if (clickedButton) clickedButton.classList.add('active');
+
+      const setText = (id, value) => {
+        const el = document.getElementById(id);
+        if (el) el.textContent = value;
+      };
+
+      setText('zebra-preview-name', name);
+      setText('zebra-preview-note', family.desc);
+      setText('zebra-family-kicker', family.kicker);
+      setText('zebra-family-title', name);
+      setText('zebra-family-desc', family.desc);
+      setText('zebra-family-room', family.room);
+      setText('zebra-family-light', family.light);
+      setText('zebra-family-texture', family.texture);
+
+      const sample = document.getElementById('zebra-fabric-sample');
+      if (sample) {
+        sample.style.setProperty('--zebra-a', family.colors[0]);
+        sample.style.setProperty('--zebra-b', family.colors[1]);
+        sample.style.setProperty('--zebra-c', family.colors[2]);
+        sample.style.setProperty('--zebra-d', family.colors[3]);
+      }
+
+      const openButton = document.getElementById('zebra-family-open');
+      if (openButton) openButton.onclick = () => window.navigate('product', name);
+    }
+
+    function routeHash(page, data) {
+      const params = new URLSearchParams();
+      params.set('page', page);
+      if (data) params.set('item', data);
+      return '#' + params.toString();
+    }
+
+    function routeFromHash() {
+      const hash = window.location.hash.replace(/^#/, '');
+      if (!hash) return { page: 'home', data: null };
+      const params = new URLSearchParams(hash);
+      return {
+        page: params.get('page') || 'home',
+        data: params.get('item')
+      };
+    }
+
+    function renderPage(page, data, shouldScroll = true) {
       // Hide all pages
       document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
 
@@ -167,6 +324,21 @@
         for (let i = 0; i < 6; i++) {
           const el = document.getElementById('pd-f' + (i + 1));
           if (el) el.textContent = features[i] || '';
+        }
+
+        // Update hero image
+        const heroImgEl = document.getElementById('pd-hero-img');
+        const heroImgSrc = window.productImages[data];
+        if (heroImgEl) {
+          if (heroImgSrc) {
+            heroImgEl.innerHTML = '<img src="' + heroImgSrc + '" alt="' + data + '">';
+            heroImgEl.classList.remove('img-placeholder');
+            heroImgEl.style.background = 'var(--charcoal)';
+          } else {
+            heroImgEl.innerHTML = 'PRODUCT IMAGE';
+            heroImgEl.classList.add('img-placeholder');
+            heroImgEl.style.background = '';
+          }
         }
 
         // Handle Catalogue Tabs
@@ -236,9 +408,40 @@
       const pageEl = document.getElementById('page-' + page);
       if (pageEl) {
         pageEl.classList.add('active');
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        if (page === 'zebra') {
+          const activeFamily = document.querySelector('.zebra-family.active');
+          window.showZebraFamily(activeFamily?.dataset.zebra || 'Deco Shade', activeFamily);
+        }
+        if (shouldScroll) window.scrollTo({ top: 0, behavior: 'smooth' });
       }
     }
+
+    window.navigate = function (page, data, options = {}) {
+      const state = { app: 'viento', page, data: data || null };
+      if (options.replace) {
+        window.history.replaceState(state, '', routeHash(page, data));
+      } else {
+        window.__vientoHistoryDepth = (window.__vientoHistoryDepth || 0) + 1;
+        window.history.pushState(state, '', routeHash(page, data));
+      }
+      renderPage(page, data);
+    }
+
+    window.goBack = function (fallbackPage = 'home', fallbackData = null) {
+      if ((window.__vientoHistoryDepth || 0) > 0) {
+        window.history.back();
+      } else {
+        window.navigate(fallbackPage, fallbackData);
+      }
+    }
+
+    window.addEventListener('popstate', (event) => {
+      if (window.__vientoHistoryDepth > 0) window.__vientoHistoryDepth -= 1;
+      const route = event.state?.app === 'viento'
+        ? { page: event.state.page, data: event.state.data }
+        : routeFromHash();
+      renderPage(route.page || 'home', route.data, true);
+    });
 
     // Features tabs
     window.showFeature = function (index, clickedTab) {
@@ -319,5 +522,13 @@
     // Page entrance animation on load
     document.addEventListener('DOMContentLoaded', () => {
       renderBrandLogo();
-      document.querySelector('#page-home').style.animation = 'fadeUp 0.8s ease forwards';
+      window.__vientoHistoryDepth = 0;
+      const initialRoute = routeFromHash();
+      window.history.replaceState(
+        { app: 'viento', page: initialRoute.page, data: initialRoute.data || null },
+        '',
+        routeHash(initialRoute.page, initialRoute.data)
+      );
+      renderPage(initialRoute.page, initialRoute.data, false);
+      document.querySelector('#page-' + initialRoute.page)?.style.setProperty('animation', 'fadeUp 0.8s ease forwards');
     });

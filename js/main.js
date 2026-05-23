@@ -14,11 +14,50 @@
       },
       'Zebra Blinds': {
         subtitle: 'Bold aesthetics meet flexible function. Zebra Blinds use alternating solid and sheer stripes that can be aligned for privacy or offset for diffused light.',
-        features: ['Alternating opaque and transparent stripes', 'Align or offset for instant privacy toggle', 'Available in 60+ colour combinations', 'Day & Night vision control', 'Motorisation compatible', 'Easy DIY installation kit included']
+        features: ['Alternating opaque and transparent stripes', 'Align or offset for instant privacy toggle', 'Available in 60+ colour combinations', 'Day & Night vision control', 'Motorisation compatible', 'Easy DIY installation kit included'],
+        catalogues: {
+          'Deco Shade': {
+            'Design 1': ['#EBE6DF', '#D7CEC2', '#C0B3A3', '#A89784', '#8C7A65', '#73624D', '#584936'],
+            'Design 2': ['#F4F1ED', '#E1D9CD', '#CDBEAB', '#B5A28A', '#9B8569', '#826A50', '#675138']
+          },
+          'Maple': {
+            'Classic Maple': ['#E5DBC5', '#D2C4A7', '#BDAB89', '#A8926C', '#917950', '#7A6237', '#624C24'],
+            'Premium Maple': ['#F0E8D7', '#DFD3BB', '#CBB89A', '#B59D7A', '#9F8259', '#896A3D', '#725425']
+          },
+          'Vibrant': {
+            'Solid Series': ['#C2D5D0', '#A3C0BA', '#84ABA4', '#68968E', '#4F8278', '#386D63', '#245950'],
+            'Texture Series': ['#E8D7D7', '#D6BDBD', '#C3A2A2', '#B08888', '#9C6E6E', '#895555', '#743E3E']
+          },
+          'B70-72 Series': {
+            'Standard': ['#E8E8E8', '#D1D1D1', '#BABABA', '#A3A3A3', '#8C8C8C', '#757575', '#5E5E5E']
+          },
+          'Sunshade': {
+            'Light Filter': ['#F7F4EE', '#E9E2D4', '#D9CDB7', '#C8B89A', '#B7A27D', '#A58C60', '#937746']
+          }
+        }
       },
-      'Screen Blinds': {
-        subtitle: 'Designed for views: Screen Blinds reduce glare while preserving your outside vista, making them ideal for offices and rooms with beautiful landscapes.',
-        features: ['1% – 14% openness factors available', 'Reduces glare up to 95%', 'Maintains outward views at all times', 'UV protection up to 90%', 'PVC-free, eco-friendly fabrics available', 'Ideal for commercial spaces']
+      'Roller Blinds': {
+        subtitle: 'Minimalist design for modern spaces. Our Roller Blinds offer effortless operation and a clean aesthetic with a wide range of performance fabrics.',
+        features: ['Sleek, low-profile design', 'Available in blackout, translucent, and sunscreen', 'Motorised options available', 'Easy to clean and maintain', 'Durable mechanism for daily use', 'Custom printed options'],
+        catalogues: {
+          'Contract Roller': {
+            'Eco Blackout': ['#EAEAEA', '#D4D4D4', '#BDBDBD', '#A6A6A6', '#8F8F8F', '#787878', '#616161'],
+            'Jute': ['#E0D4C3', '#CBB99F', '#B59E7C', '#9E845A', '#87693A', '#6F5121', '#573D11'],
+            'Foam Coated': ['#F0EAE1', '#DFD2C0', '#CDBA9F', '#BCA37F', '#A98B60', '#967443', '#835E28']
+          },
+          'FC1 and 2': {
+            'Standard Series': ['#E5DFD5', '#CEC4B4', '#B6A993', '#9D8E73', '#837456', '#695A3B', '#504224']
+          },
+          'FC 3': {
+            'Premium Series': ['#E8D9D0', '#D4BFB1', '#C0A593', '#A98C76', '#92735A', '#7A5B40', '#634529']
+          },
+          'FC 4': {
+            'Texture Series': ['#DEE3DE', '#C2CACC', '#A5B1B3', '#89989B', '#6D8083', '#53686A', '#3A5053']
+          },
+          'FC 5': {
+            'Pattern Series': ['#E5E0E5', '#CDCDCD', '#B5B5B5', '#9D9D9D', '#858585', '#6D6D6D', '#555555']
+          }
+        }
       },
       'Blackout Blinds': {
         subtitle: 'Total darkness on demand. Our Blackout Blinds are engineered for complete light elimination — perfect for bedrooms, home theatres, and nurseries.',
@@ -34,8 +73,95 @@
       }
     };
 
+    window.zebraFamilies = {
+      'Deco Shade': {
+        kicker: 'Designer finish',
+        desc: 'Architectural texture with a soft designer finish. Great for living rooms where the blind should read like part of the interior palette.',
+        room: 'Living rooms',
+        light: 'Balanced glow',
+        texture: 'Woven matte',
+        colors: ['#efe9df', '#d7cbbb', '#b7a58d', '#8f7b62']
+      },
+      'Sun Shade': {
+        kicker: 'Heat and glare control',
+        desc: 'A brighter zebra family for sun-facing windows, softening glare while keeping rooms open and usable through the day.',
+        room: 'Balconies and offices',
+        light: 'Filtered daylight',
+        texture: 'Fine screen',
+        colors: ['#f6f1e8', '#e4dccf', '#c7b99f', '#9f8d6e']
+      },
+      'Cello Zebra Shade': {
+        kicker: 'Soft premium stripe',
+        desc: 'A refined, quieter stripe with a layered fabric feel, suited for bedrooms, lounges, and spaces that need gentle privacy.',
+        room: 'Bedrooms',
+        light: 'Soft privacy',
+        texture: 'Satin woven',
+        colors: ['#f0ece7', '#d8d0ca', '#b7aaa0', '#806f65']
+      },
+      'Maple Zebra': {
+        kicker: 'Warm natural tones',
+        desc: 'Maple Zebra brings wood-inspired warmth into the zebra format, pairing especially well with neutral interiors and timber furniture.',
+        room: 'Dining rooms',
+        light: 'Warm diffusion',
+        texture: 'Natural grain',
+        colors: ['#eadbc2', '#d3bc92', '#aa8554', '#765331']
+      },
+      'Vibrant Zebra': {
+        kicker: 'Colour-forward option',
+        desc: 'A bolder range for statement rooms, creative studios, and interiors that need an accent instead of a quiet background.',
+        room: 'Creative spaces',
+        light: 'Dynamic accent',
+        texture: 'Colour weave',
+        colors: ['#d8e2dd', '#89aaa1', '#9d6f6f', '#355f58']
+      },
+      'B70-72 Series': {
+        kicker: 'Commercial neutral',
+        desc: 'A practical, durable series with crisp neutral colourways for offices, rental properties, and repeatable project specifications.',
+        room: 'Commercial projects',
+        light: 'Clean control',
+        texture: 'Tight technical',
+        colors: ['#ededed', '#cdcdcd', '#9e9e9e', '#656565']
+      },
+      'Blackout Zebra': {
+        kicker: 'Maximum privacy',
+        desc: 'A darker zebra route for bedrooms and media spaces where the alternating stripe still matters, but privacy leads the decision.',
+        room: 'Bedrooms and media rooms',
+        light: 'Deep privacy',
+        texture: 'Dense coated',
+        colors: ['#d9d7d1', '#a8a49a', '#706a61', '#35322e']
+      },
+      'Sheer Linen Zebra': {
+        kicker: 'Airy linen look',
+        desc: 'A relaxed, sheer-forward family for soft daylight and elegant layering in calm living spaces.',
+        room: 'Lounges',
+        light: 'Airy daylight',
+        texture: 'Open linen',
+        colors: ['#faf6ee', '#e5d9c4', '#c8b693', '#a08b66']
+      }
+    };
+
+    Object.entries(window.zebraFamilies).forEach(([name, family]) => {
+      window.productData[name] = {
+        subtitle: family.desc,
+        features: [
+          `${family.kicker} for ${family.room.toLowerCase()}`,
+          `${family.light} with adjustable sheer and opaque bands`,
+          `${family.texture} fabric character`,
+          'Works with manual, cordless, or motorised controls',
+          'Made-to-measure with matching cassette options',
+          'Available as physical swatches before order'
+        ],
+        catalogues: {
+          [name]: {
+            'Signature Colours': family.colors,
+            'Extended Neutrals': family.colors.map((color) => color)
+          }
+        }
+      };
+    });
+
     window.blogData = {
-      'How to Choose the Perfect Blinds': { title: 'How to Choose the Perfect Blinds for Your Home ?', date: '10 FEB 2026 · BUYING GUIDE', content: `
+      'How to Choose the Perfect Blinds': { title: 'How to Choose the Perfect Blinds for Your Home ?', date: '10 FEB 2026 · BUYING GUIDE', image: 'assets/blog1.png', content: `
         <p>Selecting the right blinds isn’t just about covering a window — it’s about transforming a space. The right choice improves privacy, enhances natural light, and elevates your interior aesthetic.</p>
         <p>At Viento Blinds, we recommend considering:</p>
         <ul>
@@ -50,7 +176,7 @@
           <button class="btn-outline" onclick="navigate('contact')">Book a Consultation</button>
         </div>`
       },
-      'The Art Behind Premium Blind Fabrics': { title: 'The Art Behind Premium Blind Fabrics: What Makes Viento Different', date: '15 FEB 2026 · CRAFTSMANSHIP', content: `
+      'The Art Behind Premium Blind Fabrics': { title: 'The Art Behind Premium Blind Fabrics: What Makes Viento Different', date: '15 FEB 2026 · CRAFTSMANSHIP', image: 'assets/blog2.png', content: `
         <p>Behind every elegant blind is a fabric engineered with precision. At Viento Blinds, fabric is not just a material — it is the foundation of performance, durability, and design excellence.</p>
         <h2>A Manufacturing Setup Built for Precision</h2>
         <p>Premium fabric begins at the source. Our manufacturing setup is designed to maintain controlled weaving environments, advanced looms for uniform thread alignment, consistent tension control for structural stability, and high-precision coating machinery.</p>
@@ -71,7 +197,7 @@
           <button class="btn-outline" onclick="navigate('contact')">Book a Consultation</button>
         </div>`
       },
-      'Luxury vs Regular Blinds': { title: 'Luxury vs Regular Blinds: What Truly Makes the Difference?', date: '20 FEB 2026 · COMPARISON', content: `
+      'Luxury vs Regular Blinds': { title: 'Luxury vs Regular Blinds: What Truly Makes the Difference?', date: '20 FEB 2026 · COMPARISON', image: 'assets/blog3.png', content: `
         <p>At first glance, blinds may appear similar. They cover windows, provide privacy, and control light. But the real difference between luxury blinds and regular blinds is revealed over time — in their performance, precision, durability, and overall experience.</p>
         <p>The foundation of any blind lies in its materials. Regular blinds are often produced using standard fabrics and cost-focused components designed for large-scale manufacturing. Luxury blinds, on the other hand, begin with carefully selected high-density fabrics, precision-woven threads, fade-resistant dyeing processes, and advanced coating technologies.</p>
         <h2>Manufacturing Precision</h2>
@@ -88,7 +214,7 @@
           <button class="btn-outline" onclick="navigate('contact')">Book a Consultation</button>
         </div>`
       },
-      'Commercial Spaces and Productivity': { title: 'Commercial Spaces & Productivity: The Role of Window Treatments', date: '25 FEB 2026 · COMMERCIAL', content: `
+      'Commercial Spaces and Productivity': { title: 'Commercial Spaces & Productivity: The Role of Window Treatments', date: '25 FEB 2026 · COMMERCIAL', image: 'assets/blog4.png', content: `
         <p>In commercial interiors, window treatments are more than design elements — they directly impact performance and comfort.</p>
         <h2>Glare Control</h2>
         <p>Reduces screen reflections and eye strain, helping employees stay focused for longer hours.</p>
@@ -115,7 +241,57 @@
       });
     }
 
-    window.navigate = function (page, data) {
+    window.showZebraFamily = function (name, clickedButton) {
+      const family = window.zebraFamilies[name];
+      if (!family) return;
+
+      document.querySelectorAll('.zebra-family').forEach(button => button.classList.remove('active'));
+      if (clickedButton) clickedButton.classList.add('active');
+
+      const setText = (id, value) => {
+        const el = document.getElementById(id);
+        if (el) el.textContent = value;
+      };
+
+      setText('zebra-preview-name', name);
+      setText('zebra-preview-note', family.desc);
+      setText('zebra-family-kicker', family.kicker);
+      setText('zebra-family-title', name);
+      setText('zebra-family-desc', family.desc);
+      setText('zebra-family-room', family.room);
+      setText('zebra-family-light', family.light);
+      setText('zebra-family-texture', family.texture);
+
+      const sample = document.getElementById('zebra-fabric-sample');
+      if (sample) {
+        sample.style.setProperty('--zebra-a', family.colors[0]);
+        sample.style.setProperty('--zebra-b', family.colors[1]);
+        sample.style.setProperty('--zebra-c', family.colors[2]);
+        sample.style.setProperty('--zebra-d', family.colors[3]);
+      }
+
+      const openButton = document.getElementById('zebra-family-open');
+      if (openButton) openButton.onclick = () => window.navigate('product', name);
+    }
+
+    function routeHash(page, data) {
+      const params = new URLSearchParams();
+      params.set('page', page);
+      if (data) params.set('item', data);
+      return '#' + params.toString();
+    }
+
+    function routeFromHash() {
+      const hash = window.location.hash.replace(/^#/, '');
+      if (!hash) return { page: 'home', data: null };
+      const params = new URLSearchParams(hash);
+      return {
+        page: params.get('page') || 'home',
+        data: params.get('item')
+      };
+    }
+
+    function renderPage(page, data, shouldScroll = true) {
       // Hide all pages
       document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
 
@@ -129,6 +305,49 @@
           const el = document.getElementById('pd-f' + (i + 1));
           if (el) el.textContent = features[i] || '';
         }
+
+        // Handle Catalogue Tabs
+        const catContainer = document.getElementById('pd-catalogues-container');
+        const flatSwatches = document.getElementById('pd-flat-swatches');
+        const catTabs = document.getElementById('pd-catalogue-tabs');
+        const catContent = document.getElementById('pd-catalogue-content');
+
+        if (pd.catalogues && catContainer) {
+          catContainer.style.display = 'block';
+          if (flatSwatches) flatSwatches.style.display = 'none';
+
+          catTabs.innerHTML = '';
+          const catalogueNames = Object.keys(pd.catalogues);
+
+          catalogueNames.forEach((catName, index) => {
+            const tab = document.createElement('div');
+            tab.className = 'catalogue-tab' + (index === 0 ? ' active' : '');
+            tab.textContent = catName;
+
+            tab.onclick = () => {
+              document.querySelectorAll('.catalogue-tab').forEach(t => t.classList.remove('active'));
+              tab.classList.add('active');
+
+              const designs = pd.catalogues[catName];
+              let contentHtml = '';
+              for (const [designName, colors] of Object.entries(designs)) {
+                contentHtml += `<div class="catalogue-design-group">
+                  <h4 class="catalogue-design-title">${designName}</h4>
+                  <div class="catalogue-swatch-grid">
+                    ${colors.map(color => `<div class="swatch" style="background: ${color}" title="${color}" onclick="document.querySelectorAll('.swatch').forEach(s => s.classList.remove('active')); this.classList.add('active');"></div>`).join('')}
+                  </div>
+                </div>`;
+              }
+              catContent.innerHTML = contentHtml;
+            };
+
+            catTabs.appendChild(tab);
+            if (index === 0) tab.click();
+          });
+        } else if (catContainer) {
+          catContainer.style.display = 'none';
+          if (flatSwatches) flatSwatches.style.display = 'flex';
+        }
       }
 
       if (page === 'blogdetail' && data) {
@@ -136,6 +355,17 @@
           document.getElementById('bd-title').innerText = window.blogData[data].title;
           document.getElementById('bd-date').innerText = window.blogData[data].date;
           document.querySelector('.blog-detail-body').innerHTML = window.blogData[data].content;
+          
+          const heroEl = document.querySelector('#page-blogdetail .blog-card-img');
+          if(heroEl) {
+            heroEl.style.backgroundImage = 'url(/' + window.blogData[data].image + ')';
+            heroEl.style.backgroundSize = 'cover';
+            heroEl.style.backgroundPosition = 'center';
+            heroEl.style.opacity = '0.4';
+            heroEl.innerText = '';
+            heroEl.classList.remove('img-placeholder');
+          }
+
           window.scrollTo(0, 0);
         }
       }
@@ -143,9 +373,40 @@
       const pageEl = document.getElementById('page-' + page);
       if (pageEl) {
         pageEl.classList.add('active');
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        if (page === 'zebra') {
+          const activeFamily = document.querySelector('.zebra-family.active');
+          window.showZebraFamily(activeFamily?.dataset.zebra || 'Deco Shade', activeFamily);
+        }
+        if (shouldScroll) window.scrollTo({ top: 0, behavior: 'smooth' });
       }
     }
+
+    window.navigate = function (page, data, options = {}) {
+      const state = { app: 'viento', page, data: data || null };
+      if (options.replace) {
+        window.history.replaceState(state, '', routeHash(page, data));
+      } else {
+        window.__vientoHistoryDepth = (window.__vientoHistoryDepth || 0) + 1;
+        window.history.pushState(state, '', routeHash(page, data));
+      }
+      renderPage(page, data);
+    }
+
+    window.goBack = function (fallbackPage = 'home', fallbackData = null) {
+      if ((window.__vientoHistoryDepth || 0) > 0) {
+        window.history.back();
+      } else {
+        window.navigate(fallbackPage, fallbackData);
+      }
+    }
+
+    window.addEventListener('popstate', (event) => {
+      if (window.__vientoHistoryDepth > 0) window.__vientoHistoryDepth -= 1;
+      const route = event.state?.app === 'viento'
+        ? { page: event.state.page, data: event.state.data }
+        : routeFromHash();
+      renderPage(route.page || 'home', route.data, true);
+    });
 
     // Features tabs
     window.showFeature = function (index, clickedTab) {
@@ -226,5 +487,13 @@
     // Page entrance animation on load
     document.addEventListener('DOMContentLoaded', () => {
       renderBrandLogo();
-      document.querySelector('#page-home').style.animation = 'fadeUp 0.8s ease forwards';
+      window.__vientoHistoryDepth = 0;
+      const initialRoute = routeFromHash();
+      window.history.replaceState(
+        { app: 'viento', page: initialRoute.page, data: initialRoute.data || null },
+        '',
+        routeHash(initialRoute.page, initialRoute.data)
+      );
+      renderPage(initialRoute.page, initialRoute.data, false);
+      document.querySelector('#page-' + initialRoute.page)?.style.setProperty('animation', 'fadeUp 0.8s ease forwards');
     });

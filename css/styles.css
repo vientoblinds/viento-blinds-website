@@ -362,7 +362,7 @@
 
     .products-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 1.5px;
     }
 
@@ -1505,6 +1505,275 @@
       aspect-ratio: 2/3;
     }
 
+    /* ===================== ZEBRA COLLECTION HUB ===================== */
+    .zebra-hub {
+      min-height: 92vh;
+      padding: calc(72px + 4rem) 5vw 4rem;
+      background:
+        linear-gradient(90deg, rgba(47, 52, 47, 0.96), rgba(47, 52, 47, 0.78)),
+        url('/assets/zebra-blinds.png') center / cover;
+      display: grid;
+      grid-template-columns: minmax(0, 0.95fr) minmax(360px, 0.75fr);
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .zebra-hero-copy .back-link {
+      font-size: 0.62rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      cursor: pointer;
+      margin-bottom: 1.5rem;
+      display: inline-flex;
+    }
+
+    .zebra-hero-copy h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3.2rem, 8vw, 8rem);
+      font-weight: 300;
+      color: var(--cream);
+      line-height: 0.95;
+      letter-spacing: 0.04em;
+      margin-top: 0.6rem;
+    }
+
+    .zebra-hero-copy p {
+      max-width: 640px;
+      margin-top: 1.4rem;
+      color: rgba(245, 240, 232, 0.68);
+      font-size: 0.9rem;
+      line-height: 1.9;
+      letter-spacing: 0.03em;
+    }
+
+    .zebra-stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1px;
+      max-width: 560px;
+      margin-top: 2.4rem;
+      background: rgba(245, 240, 232, 0.14);
+    }
+
+    .zebra-stats div {
+      padding: 1.25rem;
+      background: rgba(47, 52, 47, 0.72);
+    }
+
+    .zebra-stats strong {
+      display: block;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.4rem;
+      font-weight: 300;
+      color: var(--gold-light);
+      line-height: 1;
+    }
+
+    .zebra-stats span {
+      display: block;
+      margin-top: 0.5rem;
+      color: rgba(245, 240, 232, 0.58);
+      font-size: 0.62rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .zebra-preview {
+      justify-self: end;
+      width: min(100%, 520px);
+    }
+
+    .zebra-window {
+      min-height: 540px;
+      border: 1px solid rgba(245, 240, 232, 0.32);
+      background: rgba(252, 252, 247, 0.08);
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      overflow: hidden;
+      backdrop-filter: blur(10px);
+    }
+
+    .zebra-window span {
+      background: repeating-linear-gradient(
+        to bottom,
+        rgba(245, 240, 232, 0.86) 0 34px,
+        rgba(245, 240, 232, 0.26) 34px 66px,
+        rgba(61, 67, 58, 0.46) 66px 96px
+      );
+      border-right: 1px solid rgba(245, 240, 232, 0.16);
+    }
+
+    .zebra-window span:nth-child(even) {
+      transform: translateY(34px);
+      opacity: 0.78;
+    }
+
+    .zebra-preview-note {
+      margin-top: 1rem;
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      color: var(--cream);
+      align-items: flex-start;
+    }
+
+    .zebra-preview-note span {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      color: var(--gold-light);
+    }
+
+    .zebra-preview-note small {
+      max-width: 260px;
+      color: rgba(245, 240, 232, 0.58);
+      line-height: 1.6;
+      text-align: right;
+    }
+
+    .zebra-browser {
+      padding: 5rem 5vw 6rem;
+      background: var(--warm-white);
+    }
+
+    .zebra-browser-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 2rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .zebra-map {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+    }
+
+    .zebra-family {
+      min-height: 118px;
+      padding: 1rem;
+      border: 0;
+      background: var(--warm-white);
+      color: var(--mid-brown);
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      text-align: left;
+      font-family: 'Jost', sans-serif;
+      transition: background 0.25s, color 0.25s;
+    }
+
+    .zebra-family:hover,
+    .zebra-family.active {
+      background: var(--charcoal);
+      color: var(--cream);
+    }
+
+    .zebra-family-code {
+      color: var(--gold);
+      font-size: 0.65rem;
+      letter-spacing: 0.16em;
+    }
+
+    .zebra-family span:last-child {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.35rem;
+      line-height: 1.1;
+    }
+
+    .zebra-stage {
+      margin-top: 1.5px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(360px, 0.95fr);
+      min-height: 520px;
+      background: var(--charcoal);
+      color: var(--cream);
+    }
+
+    .zebra-stage-visual {
+      padding: 2rem;
+      display: flex;
+    }
+
+    .zebra-fabric-sample {
+      --zebra-a: #efe9df;
+      --zebra-b: #d7cbbb;
+      --zebra-c: #b7a58d;
+      --zebra-d: #8f7b62;
+      flex: 1;
+      min-height: 420px;
+      background:
+        linear-gradient(90deg, rgba(47, 52, 47, 0.2), rgba(47, 52, 47, 0)),
+        repeating-linear-gradient(
+          to bottom,
+          var(--zebra-a) 0 38px,
+          rgba(255, 255, 255, 0.42) 38px 70px,
+          var(--zebra-c) 70px 104px,
+          rgba(255, 255, 255, 0.22) 104px 132px
+        );
+      box-shadow: inset 0 0 0 1px rgba(245, 240, 232, 0.18);
+    }
+
+    .zebra-stage-copy {
+      padding: 4rem;
+      align-self: center;
+    }
+
+    .zebra-stage-copy h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 4vw, 4.5rem);
+      font-weight: 300;
+      line-height: 1;
+      margin-top: 0.7rem;
+    }
+
+    .zebra-stage-copy p {
+      margin-top: 1.2rem;
+      color: rgba(245, 240, 232, 0.62);
+      line-height: 1.8;
+      font-size: 0.88rem;
+    }
+
+    .zebra-fit-grid {
+      margin-top: 2rem;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: rgba(245, 240, 232, 0.16);
+    }
+
+    .zebra-fit-grid div {
+      padding: 1rem;
+      background: rgba(61, 67, 58, 0.9);
+    }
+
+    .zebra-fit-grid span {
+      display: block;
+      color: var(--gold);
+      font-size: 0.58rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .zebra-fit-grid strong {
+      display: block;
+      margin-top: 0.45rem;
+      font-size: 0.78rem;
+      font-weight: 400;
+      color: var(--cream);
+    }
+
+    .zebra-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 0.5rem;
+    }
+
     /* ===================== ANIMATIONS ===================== */
     @keyframes fadeUp {
       from {
@@ -1646,6 +1915,42 @@
         grid-template-columns: repeat(2, 1fr);
       }
 
+      .zebra-hub {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+        min-height: auto;
+      }
+
+      .zebra-preview {
+        justify-self: stretch;
+      }
+
+      .zebra-window {
+        min-height: 340px;
+      }
+
+      .zebra-browser-head {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .zebra-map {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .zebra-stage {
+        grid-template-columns: 1fr;
+      }
+
+      .zebra-stage-copy {
+        padding: 2rem;
+      }
+
+      .zebra-fit-grid,
+      .zebra-stats {
+        grid-template-columns: 1fr;
+      }
+
       .logo-image {
         height: 52px;
       }
@@ -1733,4 +2038,53 @@
 
     .img-placeholder-light {
       background: linear-gradient(135deg, var(--cream) 0%, var(--gold-light) 100%);
+    }
+
+    /* ===================== CATALOGUE TABS ===================== */
+    .catalogue-tabs {
+      display: flex;
+      gap: 1.5rem;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 1.5rem;
+      overflow-x: auto;
+      scrollbar-width: none; /* Firefox */
+    }
+    .catalogue-tabs::-webkit-scrollbar {
+      display: none; /* Chrome/Safari */
+    }
+    .catalogue-tab {
+      padding: 0.8rem 0;
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+      cursor: pointer;
+      white-space: nowrap;
+      border-bottom: 2px solid transparent;
+      transition: all 0.3s;
+    }
+    .catalogue-tab:hover {
+      color: var(--mid-brown);
+    }
+    .catalogue-tab.active {
+      color: var(--charcoal);
+      border-bottom-color: var(--gold);
+      font-weight: 500;
+    }
+
+    .catalogue-design-group {
+      margin-bottom: 2rem;
+      animation: fadeUp 0.4s ease forwards;
+    }
+    .catalogue-design-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-weight: 400;
+      color: var(--charcoal);
+      margin-bottom: 0.8rem;
+    }
+    .catalogue-swatch-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
     }

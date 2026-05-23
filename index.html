@@ -5,13 +5,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Viento | Premium Blinds</title>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@200;300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
-    rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@200;300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
+
 
   <!-- Custom Cursor -->
   <div class="cursor" id="cursor"></div>
@@ -40,7 +39,7 @@
             <div class="di-img img-placeholder" style="height:55px">SHNG</div>
             <span>Shangri-La Blinds</span>
           </div>
-          <div class="dropdown-item" onclick="navigate('product','Zebra Blinds')">
+          <div class="dropdown-item" onclick="navigate('zebra')">
             <div class="di-img img-placeholder" style="height:55px">ZBRА</div>
             <span>Zebra Blinds</span>
           </div>
@@ -77,15 +76,15 @@
     <!-- Hero Section -->
     <section class="hero">
       <div class="hero-panel" onclick="navigate('product','Wooden Blinds')">
-        <div class="hero-panel-bg img-placeholder">LUXURY</div>
+        <img src="/assets/luxary.png?v=20260416-0122" alt="Luxury by Viento" class="hero-panel-bg">
         <div class="hero-panel-content">
           <span class="hero-tag">Discover Collection</span>
           <h2>Luxury</h2>
           <p>Premium blinds crafted for modern homes, perfected for every mood.</p>
         </div>
       </div>
-      <div class="hero-panel" onclick="navigate('product','Zebra Blinds')">
-        <div class="hero-panel-bg img-placeholder">DESIGN</div>
+      <div class="hero-panel" onclick="navigate('zebra')">
+        <img src="/assets/craft.png?v=20260416-0122" alt="Design by Viento" class="hero-panel-bg">
         <div class="hero-panel-content">
           <span class="hero-tag">Explore Design</span>
           <h2>Design</h2>
@@ -93,7 +92,7 @@
         </div>
       </div>
       <div class="hero-panel" onclick="navigate('product','Shangri-La Blinds')">
-        <div class="hero-panel-bg img-placeholder">CRAFT</div>
+        <img src="/assets/design.png?v=20260416-0122" alt="Craft by Viento" class="hero-panel-bg">
         <div class="hero-panel-content">
           <span class="hero-tag">Fine Craft</span>
           <h2>Craft</h2>
@@ -117,42 +116,42 @@
       </div>
       <div class="products-grid">
         <div class="product-card" onclick="navigate('product','Wooden Blinds')">
-          <div class="product-card-img img-placeholder">WOODEN</div>
+          <img src="/assets/wooden%20blinds.png" alt="Wooden Blinds" class="product-card-img">
           <div class="product-card-info">
             <h3>Wooden Blinds</h3>
             <div class="explore-link">Explore ↗</div>
           </div>
         </div>
         <div class="product-card" onclick="navigate('product','Shangri-La Blinds')">
-          <div class="product-card-img img-placeholder">TRIPLE SHADE</div>
+          <img src="/assets/Triple-Shade.png" alt="Triple Shade Blinds" class="product-card-img">
           <div class="product-card-info">
             <h3>Triple Shade Blinds</h3>
             <div class="explore-link">Explore ↗</div>
           </div>
         </div>
-        <div class="product-card" onclick="navigate('product','Zebra Blinds')">
-          <div class="product-card-img img-placeholder">ZEBRA</div>
+        <div class="product-card" onclick="navigate('zebra')">
+          <img src="/assets/zebra-blinds.png" alt="Zebra Blinds" class="product-card-img">
           <div class="product-card-info">
             <h3>Zebra Blinds</h3>
             <div class="explore-link">Explore ↗</div>
           </div>
         </div>
         <div class="product-card" onclick="navigate('product','Roller Blinds')">
-          <div class="product-card-img img-placeholder">ROLLER</div>
+          <img src="/assets/Roller-blinds.png" alt="Roller Blinds" class="product-card-img">
           <div class="product-card-info">
             <h3>Roller Blinds</h3>
             <div class="explore-link">Explore ↗</div>
           </div>
         </div>
         <div class="product-card" onclick="navigate('contact')">
-          <div class="product-card-img img-placeholder">ROLLUP</div>
+          <img src="/assets/rollup.png" alt="Rollup Blinds" class="product-card-img">
           <div class="product-card-info">
             <h3>Rollup Blinds</h3>
             <div class="explore-link">Explore ↗</div>
           </div>
         </div>
         <div class="product-card" onclick="navigate('product','Roman Style Blinds')">
-          <div class="product-card-img img-placeholder">ROMAN</div>
+          <img src="/assets/Roman.png" alt="Roman Blinds" class="product-card-img">
           <div class="product-card-info">
             <h3>Roman Blinds</h3>
             <div class="explore-link">Explore ↗</div>
@@ -194,30 +193,24 @@
           <div class="feature-panel active">
             <div class="feature-panel-img img-placeholder">LIGHT CONTROL</div>
             <div class="feature-panel-text">
-              <h3>Superior Light Control & Privacy</h3>
-              <p>Viento blinds offer precise control over how light enters your space — whether you want brightness,
-                softness, or complete blackout. And while you shape the mood, your privacy stays protected with fabrics
-                designed to shield without compromising style.</p>
+              <h3>Exceptional Light Control & Refined Privacy</h3>
+              <p>Viento blinds are crafted to give you complete mastery over light — from soft ambient glow to full brightness or total blackout, tailored to your preference. As you curate the perfect atmosphere, your privacy remains effortlessly protected with premium fabrics designed to conceal while elevating the elegance of your space.</p>
               <button class="btn-outline-light" onclick="window.navigate('contact')">Get a Free Quote →</button>
             </div>
           </div>
           <div class="feature-panel">
             <div class="feature-panel-img img-placeholder">MATERIAL</div>
             <div class="feature-panel-text">
-              <h3>Premium Material Durability</h3>
-              <p>Crafted from high-quality, tested materials, Viento blinds are built to last. Our fabrics resist
-                fading, warping, and wear — ensuring they stay as beautiful and functional as the day they're installed,
-                even with daily use and changing seasons.</p>
+              <h3>Premium Material Integrity</h3>
+              <p>Viento blinds are meticulously engineered using high-grade components and finely selected fabrics, ensuring exceptional strength and longevity. From precision-crafted mechanisms to resilient slats and advanced textile weaves, every element is designed to withstand daily use with ease. Resistant to fading, warping, and wear, they retain their refined appearance and flawless performance across seasons — delivering lasting beauty with uncompromising reliability.</p>
               <button class="btn-outline-light" onclick="window.navigate('contact')">Get a Free Quote →</button>
             </div>
           </div>
           <div class="feature-panel">
             <div class="feature-panel-img img-placeholder">ENERGY</div>
             <div class="feature-panel-text">
-              <h3>Energy Efficiency & Insulation</h3>
-              <p>Viento blinds do more than control light — they help regulate temperature too. By reducing heat gain in
-                summer and retaining warmth in winter, our fabrics improve insulation and lower energy costs, making
-                your space more comfortable year-round.</p>
+              <h3>Intelligent Insulation & Energy Efficiency</h3>
+              <p>Viento blinds are designed to enhance more than just light — they elevate the comfort of your space. Crafted with advanced fabric technologies, they help minimise heat ingress during warmer months while preserving indoor warmth in cooler seasons. This natural insulation not only creates a consistently comfortable environment but also contributes to improved energy efficiency, allowing your space to feel refined, balanced, and effortlessly efficient all year round.</p>
               <button class="btn-outline-light" onclick="window.navigate('contact')">Get a Free Quote →</button>
             </div>
           </div>
@@ -225,9 +218,7 @@
             <div class="feature-panel-img img-placeholder">UV PROTECT</div>
             <div class="feature-panel-text">
               <h3>UV Protection & Fade Resistance</h3>
-              <p>Viento blinds are designed to block harmful UV rays, protecting your interiors from sun damage. Our
-                fade-resistant fabrics help preserve the color and quality of your furniture, flooring, and décor so
-                your space stays vibrant, longer.</p>
+              <p>Viento blinds block harmful UV rays while preserving the richness of your interiors. Fade-resistant fabrics protect your furniture, flooring, and décor — keeping your space vibrant and refined for years to come.</p>
               <button class="btn-outline-light" onclick="window.navigate('contact')">Get a Free Quote →</button>
             </div>
           </div>
@@ -235,9 +226,7 @@
             <div class="feature-panel-img img-placeholder">SMART HOME</div>
             <div class="feature-panel-text">
               <h3>Smart Automation Compatibility</h3>
-              <p>Viento blinds integrate seamlessly with leading smart home systems, allowing you to control light and
-                privacy with a simple voice command or tap. Set schedules, automate scenes, and adjust your blinds
-                remotely for comfort, convenience, and modern living at its finest.</p>
+              <p>Viento blinds are designed to integrate seamlessly with leading smart home systems, offering effortless control over light and privacy. Adjust your blinds with a simple voice command, a tap on your smartphone, or through automated schedules tailored to your routine. Create personalised scenes, operate them remotely, and enjoy a space that adapts intelligently to your lifestyle — delivering elevated comfort, convenience, and modern sophistication.</p>
               <button class="btn-outline-light" onclick="window.navigate('contact')">Get a Free Quote →</button>
             </div>
           </div>
@@ -358,7 +347,7 @@
             <li onclick="navigate('product','Wooden Blinds')">Wooden Blinds</li>
             <li onclick="navigate('product','Honeycomb Blinds')">Honeycomb Blinds</li>
             <li onclick="navigate('product','Shangri-La Blinds')">Shangri-La Blinds</li>
-            <li onclick="navigate('product','Zebra Blinds')">Zebra Blinds</li>
+            <li onclick="navigate('zebra')">Zebra Blinds</li>
             <li onclick="navigate('product','Roller Blinds')">Roller Blinds</li>
             <li onclick="navigate('product','Blackout Blinds')">Blackout Blinds</li>
           </ul>
@@ -533,7 +522,7 @@
           <p class="footer-title">Products</p>
           <ul class="footer-links">
             <li onclick="navigate('product','Wooden Blinds')">Wooden Blinds</li>
-            <li onclick="navigate('product','Zebra Blinds')">Zebra Blinds</li>
+            <li onclick="navigate('zebra')">Zebra Blinds</li>
             <li onclick="navigate('product','Honeycomb Blinds')">Honeycomb Blinds</li>
           </ul>
         </div>
@@ -571,7 +560,7 @@
     </div>
     <div class="all-products-grid">
       <div class="product-card" onclick="navigate('product','Wooden Blinds')">
-        <div class="product-card-img img-placeholder" style="height:100%">WOODEN</div>
+        <img src="/assets/wooden%20blinds.png" alt="Wooden Blinds" class="product-card-img" style="height:100%">
         <div class="product-card-info">
           <h3>Wooden Blinds</h3>
           <div class="explore-link">Explore ↗</div>
@@ -585,21 +574,21 @@
         </div>
       </div>
       <div class="product-card" onclick="navigate('product','Shangri-La Blinds')">
-        <div class="product-card-img img-placeholder" style="height:100%">SHANGRI-LA</div>
+        <img src="/assets/Triple-Shade.png" alt="Triple Shade Blinds" class="product-card-img" style="height:100%">
         <div class="product-card-info">
-          <h3>Shangri-La Blinds</h3>
+          <h3>Triple Shade Blinds</h3>
           <div class="explore-link">Explore ↗</div>
         </div>
       </div>
-      <div class="product-card" onclick="navigate('product','Zebra Blinds')">
-        <div class="product-card-img img-placeholder" style="height:100%">ZEBRA</div>
+      <div class="product-card" onclick="navigate('zebra')">
+        <img src="/assets/zebra-blinds.png" alt="Zebra Blinds" class="product-card-img" style="height:100%">
         <div class="product-card-info">
           <h3>Zebra Blinds</h3>
           <div class="explore-link">Explore ↗</div>
         </div>
       </div>
       <div class="product-card" onclick="navigate('product','Roller Blinds')">
-        <div class="product-card-img img-placeholder" style="height:100%">SCREEN</div>
+        <img src="/assets/Roller-blinds.png" alt="Roller Blinds" class="product-card-img" style="height:100%">
         <div class="product-card-info">
           <h3>Roller Blinds</h3>
           <div class="explore-link">Explore ↗</div>
@@ -620,9 +609,9 @@
         </div>
       </div>
       <div class="product-card" onclick="navigate('product','Roman Style Blinds')">
-        <div class="product-card-img img-placeholder" style="height:100%">ROMAN</div>
+        <img src="/assets/Roman.png" alt="Roman Blinds" class="product-card-img" style="height:100%">
         <div class="product-card-info">
-          <h3>Roman Style Blinds</h3>
+          <h3>Roman Blinds</h3>
           <div class="explore-link">Explore ↗</div>
         </div>
       </div>
@@ -636,7 +625,129 @@
           <p class="footer-title">Products</p>
           <ul class="footer-links">
             <li onclick="navigate('product','Wooden Blinds')">Wooden Blinds</li>
-            <li onclick="navigate('product','Zebra Blinds')">Zebra Blinds</li>
+            <li onclick="navigate('zebra')">Zebra Blinds</li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer-title">Company</p>
+          <ul class="footer-links">
+            <li onclick="navigate('about')">About</li>
+            <li onclick="navigate('contact')">Contact</li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer-title">Contact</p>
+          <ul class="footer-links">
+            <li><a href="/cdn-cgi/l/email-protection" class="__cf_email__"
+                data-cfemail="acc4c9c0c0c3ecdac5c9c2d8c382c5c2">[email&#160;protected]</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Viento Blinds.</p>
+      </div>
+    </footer>
+  </div>
+
+  <!-- ===================== ZEBRA COLLECTION HUB ===================== -->
+  <div id="page-zebra" class="page">
+    <section class="zebra-hub">
+      <div class="zebra-hero-copy">
+        <span class="back-link" onclick="goBack('allproducts')">← Back</span>
+        <span class="section-label">Zebra Studio</span>
+        <h1>Zebra Blinds</h1>
+        <p>Instead of another flat product page, this hub lets customers compare the zebra families by mood, opacity, texture, and best room fit. Each option opens into the same product detail template, so the site can scale without building eight separate pages.</p>
+        <div class="zebra-stats">
+          <div><strong>08</strong><span>families</span></div>
+          <div><strong>60+</strong><span>colourways</span></div>
+          <div><strong>1</strong><span>guided path</span></div>
+        </div>
+      </div>
+      <div class="zebra-preview" aria-hidden="true">
+        <div class="zebra-window">
+          <span></span><span></span><span></span><span></span><span></span>
+        </div>
+        <div class="zebra-preview-note">
+          <span id="zebra-preview-name">Deco Shade</span>
+          <small id="zebra-preview-note">Architectural texture with a soft designer finish.</small>
+        </div>
+      </div>
+    </section>
+
+    <section class="zebra-browser">
+      <div class="zebra-browser-head">
+        <div>
+          <span class="section-label">Choose by use case</span>
+          <h2 class="section-title">Find the right stripe story</h2>
+        </div>
+        <button class="btn-outline" onclick="navigate('contact')">Request Swatches →</button>
+      </div>
+      <div class="zebra-map" id="zebra-map">
+        <button class="zebra-family active" data-zebra="Deco Shade" onclick="showZebraFamily('Deco Shade', this)">
+          <span class="zebra-family-code">01</span>
+          <span>Deco Shade</span>
+        </button>
+        <button class="zebra-family" data-zebra="Sun Shade" onclick="showZebraFamily('Sun Shade', this)">
+          <span class="zebra-family-code">02</span>
+          <span>Sun Shade</span>
+        </button>
+        <button class="zebra-family" data-zebra="Cello Zebra Shade" onclick="showZebraFamily('Cello Zebra Shade', this)">
+          <span class="zebra-family-code">03</span>
+          <span>Cello Zebra Shade</span>
+        </button>
+        <button class="zebra-family" data-zebra="Maple Zebra" onclick="showZebraFamily('Maple Zebra', this)">
+          <span class="zebra-family-code">04</span>
+          <span>Maple Zebra</span>
+        </button>
+        <button class="zebra-family" data-zebra="Vibrant Zebra" onclick="showZebraFamily('Vibrant Zebra', this)">
+          <span class="zebra-family-code">05</span>
+          <span>Vibrant Zebra</span>
+        </button>
+        <button class="zebra-family" data-zebra="B70-72 Series" onclick="showZebraFamily('B70-72 Series', this)">
+          <span class="zebra-family-code">06</span>
+          <span>B70-72 Series</span>
+        </button>
+        <button class="zebra-family" data-zebra="Blackout Zebra" onclick="showZebraFamily('Blackout Zebra', this)">
+          <span class="zebra-family-code">07</span>
+          <span>Blackout Zebra</span>
+        </button>
+        <button class="zebra-family" data-zebra="Sheer Linen Zebra" onclick="showZebraFamily('Sheer Linen Zebra', this)">
+          <span class="zebra-family-code">08</span>
+          <span>Sheer Linen Zebra</span>
+        </button>
+      </div>
+
+      <div class="zebra-stage">
+        <div class="zebra-stage-visual">
+          <div class="zebra-fabric-sample" id="zebra-fabric-sample"></div>
+        </div>
+        <div class="zebra-stage-copy">
+          <span class="section-label" id="zebra-family-kicker">Designer finish</span>
+          <h3 id="zebra-family-title">Deco Shade</h3>
+          <p id="zebra-family-desc">Architectural texture with a soft designer finish. Great for living rooms where the blind should read like part of the interior palette.</p>
+          <div class="zebra-fit-grid">
+            <div><span>Best for</span><strong id="zebra-family-room">Living rooms</strong></div>
+            <div><span>Light feel</span><strong id="zebra-family-light">Balanced glow</strong></div>
+            <div><span>Texture</span><strong id="zebra-family-texture">Woven matte</strong></div>
+          </div>
+          <div class="zebra-actions">
+            <button class="btn-primary" id="zebra-family-open" onclick="navigate('product','Deco Shade')">Open Collection →</button>
+            <button class="btn-outline" onclick="navigate('contact')">Book Consultation</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-grid">
+        <div class="footer-brand"><a class="logo" onclick="navigate('home')" style="display: flex; align-items: center; gap: 8px;"><img src="/assets/viento-logo.jpg" alt="Viento Blinds Logo" style="height: 32px;"> VIENTO BLINDS</a>
+          <p class="footer-desc">Premium window blinds crafted for modern homes.</p>
+        </div>
+        <div>
+          <p class="footer-title">Products</p>
+          <ul class="footer-links">
+            <li onclick="navigate('product','Wooden Blinds')">Wooden Blinds</li>
+            <li onclick="navigate('zebra')">Zebra Blinds</li>
           </ul>
         </div>
         <div>
@@ -664,7 +775,7 @@
   <div id="page-product" class="page">
     <div class="pd-hero">
       <div class="pd-hero-text">
-        <span class="back-link" onclick="navigate('allproducts')">← Back to Products</span>
+        <span class="back-link" onclick="goBack('allproducts')">← Back</span>
         <h1 id="pd-title">Wooden Blinds</h1>
         <p id="pd-subtitle">Natural warmth meets precision engineering. Our Wooden Blinds are crafted from sustainably
           sourced hardwoods, offering timeless elegance with exceptional light control.</p>
@@ -694,13 +805,19 @@
         <span class="section-label">Available Colours</span>
         <h2 class="section-title" style="font-size:2rem">Choose Your Shade</h2>
         <div class="divider"></div>
-        <div class="color-swatches">
+        <!-- Flat swatches: shown for products without catalogues -->
+        <div id="pd-flat-swatches" class="color-swatches">
           <div class="swatch swatch-w1 active" title="Natural"></div>
           <div class="swatch swatch-w2" title="Honey Oak"></div>
           <div class="swatch swatch-w3" title="Walnut"></div>
           <div class="swatch swatch-w4" title="Ebony"></div>
           <div class="swatch swatch-w5" title="Gilded"></div>
           <div class="swatch swatch-w6" title="Washed"></div>
+        </div>
+        <!-- Catalogue tabs: shown for products with catalogue data (e.g. Zebra, Roller) -->
+        <div id="pd-catalogues-container" style="display:none">
+          <div id="pd-catalogue-tabs" class="catalogue-tabs"></div>
+          <div id="pd-catalogue-content"></div>
         </div>
         <p style="font-size:0.72rem;color:var(--muted);margin-top:1rem;line-height:1.7">All colours available as
           samples. Request physical swatches to see the true finish in your light conditions.</p>
@@ -744,7 +861,7 @@
       <span class="section-label">Explore More</span>
       <h2 class="section-title" style="font-size:1.8rem">Related Products</h2>
       <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1.5px;margin-top:2.5rem">
-        <div class="product-card" style="aspect-ratio:3/4" onclick="navigate('product','Zebra Blinds')">
+        <div class="product-card" style="aspect-ratio:3/4" onclick="navigate('zebra')">
           <div class="product-card-img img-placeholder" style="height:100%">ZEBRA</div>
           <div class="product-card-info">
             <h3>Zebra Blinds</h3>
@@ -784,7 +901,7 @@
           <p class="footer-title">Products</p>
           <ul class="footer-links">
             <li onclick="navigate('product','Wooden Blinds')">Wooden Blinds</li>
-            <li onclick="navigate('product','Zebra Blinds')">Zebra Blinds</li>
+            <li onclick="navigate('zebra')">Zebra Blinds</li>
             <li onclick="navigate('product','Honeycomb Blinds')">Honeycomb Blinds</li>
           </ul>
         </div>
@@ -862,7 +979,7 @@
           <p class="footer-title">Products</p>
           <ul class="footer-links">
             <li onclick="navigate('product','Wooden Blinds')">Wooden Blinds</li>
-            <li onclick="navigate('product','Zebra Blinds')">Zebra Blinds</li>
+            <li onclick="navigate('zebra')">Zebra Blinds</li>
           </ul>
         </div>
         <div>
@@ -951,14 +1068,14 @@
         <div class="blog-card" onclick="navigate('blogdetail','How to Choose the Perfect Blinds')">
           <div class="blog-card-img" style="background-image: url('assets/blog1.png'); background-size: cover; background-position: center;"></div>
           <div class="blog-card-body"><span class="blog-card-date">10 FEB 2026</span>
-            <h3 class="blog-card-title">How to Choose the Perfect Window Blinds for Your Home</h3>
+            <h3 class="blog-card-title">How to Choose the Perfect Blinds for Your Home ?</h3>
             <span class="blog-card-link">Read More →</span>
           </div>
         </div>
         <div class="blog-card" onclick="navigate('blogdetail','The Art Behind Premium Blind Fabrics')">
           <div class="blog-card-img" style="background-image: url('assets/blog2.png'); background-size: cover; background-position: center;"></div>
           <div class="blog-card-body"><span class="blog-card-date">15 FEB 2026</span>
-            <h3 class="blog-card-title">The Art Behind Premium Blind Fabrics: What Makes Viento Different?</h3>
+            <h3 class="blog-card-title">The Art Behind Premium Blind Fabrics: What Makes Viento Different</h3>
             <span class="blog-card-link">Read More →</span>
           </div>
         </div>
@@ -987,7 +1104,7 @@
           <p class="footer-title">Products</p>
           <ul class="footer-links">
             <li onclick="navigate('product','Wooden Blinds')">Wooden Blinds</li>
-            <li onclick="navigate('product','Zebra Blinds')">Zebra Blinds</li>
+            <li onclick="navigate('zebra')">Zebra Blinds</li>
           </ul>
         </div>
         <div>
@@ -1143,7 +1260,7 @@
           <p class="footer-title">Products</p>
           <ul class="footer-links">
             <li onclick="navigate('product','Wooden Blinds')">Wooden Blinds</li>
-            <li onclick="navigate('product','Zebra Blinds')">Zebra Blinds</li>
+            <li onclick="navigate('zebra')">Zebra Blinds</li>
             <li onclick="navigate('product','Honeycomb Blinds')">Honeycomb Blinds</li>
           </ul>
         </div>
@@ -1169,8 +1286,9 @@
     </footer>
   </div>
 
-  <!-- ===================== SCRIPTS ===================== -->
-    <script src="js/main.js"></script>
+  
+
+  <script src="js/main.js"></script>
 </body>
 
 </html>
