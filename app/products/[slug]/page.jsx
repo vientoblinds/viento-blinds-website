@@ -116,29 +116,31 @@ export default async function ProductPage({ params }) {
               </div>
             </div>
           </div>
-          <div>
-            <span className="section-label">Available Colours</span>
-            <h2 className="section-title" style={{ fontSize: '2rem' }}>
-              Choose Your Shade
-            </h2>
-            <div className="divider" />
-            {product.catalogues ? (
-              <CatalogueTabs catalogues={product.catalogues} />
-            ) : (
-              <FlatSwatches />
-            )}
-            <p
-              style={{
-                fontSize: '0.72rem',
-                color: 'var(--muted)',
-                marginTop: '1rem',
-                lineHeight: 1.7,
-              }}
-            >
-              All colours available as samples. Request physical swatches to see the true finish in
-              your light conditions.
-            </p>
-          </div>
+          {(product.catalogues || product.slug === 'wooden-blinds') && (
+            <div>
+              <span className="section-label">Available Colours</span>
+              <h2 className="section-title" style={{ fontSize: '2rem' }}>
+                Choose Your Shade
+              </h2>
+              <div className="divider" />
+              {product.catalogues ? (
+                <CatalogueTabs catalogues={product.catalogues} />
+              ) : (
+                <FlatSwatches />
+              )}
+              <p
+                style={{
+                  fontSize: '0.72rem',
+                  color: 'var(--muted)',
+                  marginTop: '1rem',
+                  lineHeight: 1.7,
+                }}
+              >
+                All colours available as samples. Request physical swatches to see the true finish in
+                your light conditions.
+              </p>
+            </div>
+          )}
         </div>
 
         <section className="section" style={{ paddingTop: '3rem' }}>
