@@ -126,7 +126,7 @@ export default function HomePage() {
               'Honeycomb Blinds',
               'Smart Automation',
               'Custom Fit',
-              'Blackout Series',
+              'Eco Blackout Series',
               'Shangri-La Collection',
             ]
               .concat([
@@ -136,7 +136,7 @@ export default function HomePage() {
                 'Honeycomb Blinds',
                 'Smart Automation',
                 'Custom Fit',
-                'Blackout Series',
+                'Eco Blackout Series',
                 'Shangri-La Collection',
               ])
               .map((item, i) => (

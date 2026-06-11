@@ -41,7 +41,7 @@ export default function ContactForm() {
             <option>Shangri-La Blinds</option>
             <option>Zebra Blinds</option>
             <option>Roller Blinds</option>
-            <option>Blackout Blinds</option>
+            <option>Eco Blackout Blinds</option>
             <option>Translucent Blinds</option>
             <option>Roman Style Blinds</option>
           </select>
