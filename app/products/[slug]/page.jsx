@@ -174,11 +174,21 @@ export default async function ProductPage({ params }) {
                 }}
               >
                 {img ? (
-                  <img
-                    src={img.src}
-                    alt={img.alt || `${product.name} installation ${i + 1}`}
-                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                  />
+                  img.src.endsWith('.mp4') ? (
+                    <video
+                      src={img.src}
+                      controls
+                      playsInline
+                      preload="metadata"
+                      style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                    />
+                  ) : (
+                    <img
+                      src={img.src}
+                      alt={img.alt || `${product.name} installation ${i + 1}`}
+                      style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                    />
+                  )
                 ) : (
                   <div
                     className="img-placeholder"
