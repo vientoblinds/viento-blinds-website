@@ -125,7 +125,8 @@
     .dropdown-menu {
       position: absolute;
       top: calc(100% + 22px);
-      left: -20px;
+      right: -260px;
+      left: auto;
       background: var(--warm-white);
       border: 1px solid var(--border);
       min-width: 580px;
@@ -137,6 +138,16 @@
       transform: translateY(8px);
       transition: all 0.25s ease;
       box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+    }
+
+    .dropdown-menu::before {
+      content: '';
+      position: absolute;
+      top: -24px;
+      left: 0;
+      right: 0;
+      height: 24px;
+      background: transparent;
     }
 
     .nav-links li:hover .dropdown-menu {
@@ -589,9 +600,8 @@
 
     .feature-panel-img {
       width: 100%;
-      aspect-ratio: 5/4;
+      max-height: 500px;
       object-fit: cover;
-      background: linear-gradient(135deg, var(--mid-brown) 0%, var(--deep-brown) 100%);
       border: 1px solid rgba(200, 169, 110, 0.15);
     }
 

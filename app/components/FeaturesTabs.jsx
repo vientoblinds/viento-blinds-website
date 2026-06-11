@@ -6,7 +6,8 @@ import { useState } from 'react';
 const FEATURES = [
   {
     label: 'Light Control & Privacy',
-    imgText: 'LIGHT CONTROL',
+    image: '/assets/lightcontrol.jpeg',
+    imageAlt: 'Exceptional light control and refined privacy with Viento blinds',
     heading: 'Exceptional Light Control & Refined Privacy',
     body: 'Viento blinds are crafted to give you complete mastery over light — from soft ambient glow to full brightness or total blackout, tailored to your preference. As you curate the perfect atmosphere, your privacy remains effortlessly protected with premium fabrics designed to conceal while elevating the elegance of your space.',
   },

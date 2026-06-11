@@ -39,7 +39,7 @@ const HERO_PANELS = [
 
 const HOME_PRODUCTS = [
   { href: '/products/wooden-blinds', img: '/assets/wooden%20blinds.png', alt: 'Wooden Blinds', name: 'Wooden Blinds' },
-  { href: '/products/shangri-la-blinds', img: '/assets/tripleshadeblinds.png?v=20260425-1751', alt: 'Triple Shade Blinds', name: 'Triple Shade Blinds' },
+  { href: '/products/shangri-la-blinds', img: '/assets/tripleshadeblinds.png?v=20260425-1751', alt: 'Shangri-La Blinds', name: 'Shangri-La Blinds' },
   { href: '/products/zebra-blinds', img: '/assets/zebra-blinds.png', alt: 'Zebra Blinds', name: 'Zebra Blinds' },
   { href: '/products/roller-blinds', img: '/assets/Roller-blinds.png?v=20260417-2142', alt: 'Roller Blinds', name: 'Roller Blinds' },
   { href: '/products/exterior-blinds', img: '/assets/exterior-blinds.png?v=20260425-1738', alt: 'Exterior Blinds', name: 'Exterior Blinds' },

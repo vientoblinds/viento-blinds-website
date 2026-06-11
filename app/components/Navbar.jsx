@@ -73,9 +73,7 @@ export default function Navbar() {
                   className="dropdown-item"
                   onClick={() => setMobileOpen(false)}
                 >
-                  <div className="di-img img-placeholder" style={{ height: 55 }}>
-                    {p.name.split(' ')[0].slice(0, 4).toUpperCase()}
-                  </div>
+                  <img src={p.image} alt={p.name} className="di-img" />
                   <span>{p.name}</span>
                 </Link>
               ))}
