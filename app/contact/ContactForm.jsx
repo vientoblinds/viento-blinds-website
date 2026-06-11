@@ -42,7 +42,6 @@ export default function ContactForm() {
             <option>Zebra Blinds</option>
             <option>Roller Blinds</option>
             <option>Eco Blackout Blinds</option>
-            <option>Translucent Blinds</option>
             <option>Roman Style Blinds</option>
           </select>
         </div>
