@@ -152,28 +152,12 @@ export default async function ProductPage({ params }) {
           <p className="section-subtitle">
             Real {product.name.toLowerCase()} installations from our clients.
           </p>
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 320px))',
-              justifyContent: 'center',
-              gap: '1rem',
-              marginTop: '2rem',
-            }}
-          >
+          <div className="customer-images-grid">
             {(product.customerImages?.length
               ? product.customerImages
               : [null, null, null, null]
             ).map((img, i) => (
-              <div
-                key={i}
-                style={{
-                  aspectRatio: '4/5',
-                  background: 'var(--cream)',
-                  border: '1px solid var(--border)',
-                  overflow: 'hidden',
-                }}
-              >
+              <div key={i} className="customer-image-item">
                 {img ? (
                   img.src.endsWith('.mp4') ? (
                     <video

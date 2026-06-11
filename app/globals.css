@@ -2163,3 +2163,27 @@
       line-height: 0.95;
       letter-spacing: 0.04em;
     }
+
+    /* Customer Images Gallery Layout */
+    .customer-images-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 2rem;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+      width: 100%;
+    }
+
+    .customer-image-item {
+      aspect-ratio: 4/5;
+      background: var(--cream);
+      border: 1px solid var(--border);
+      overflow: hidden;
+      max-width: 320px;
+      width: 100%;
+      justify-self: center;
+    }
+
