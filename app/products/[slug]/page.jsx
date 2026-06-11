@@ -155,7 +155,8 @@ export default async function ProductPage({ params }) {
           <div
             style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 320px))',
+              justifyContent: 'center',
               gap: '1rem',
               marginTop: '2rem',
             }}
