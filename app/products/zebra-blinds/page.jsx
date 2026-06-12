@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import BackLink from '../../components/BackLink';
+import ImageCarousel from '../../components/ImageCarousel';
 import { zebraFamilies } from '../../../lib/zebraFamilies';
 
 export const metadata = {
@@ -30,30 +31,29 @@ export default function ZebraBlindsPage() {
             </p>
             <div className="zebra-stats">
               <div>
-                <strong>08</strong>
-                <span>families</span>
+                <strong>07</strong>
+                <span>premium collections</span>
               </div>
               <div>
-                <strong>60+</strong>
-                <span>colourways</span>
+                <strong>100+</strong>
+                <span>colorways</span>
               </div>
               <div>
-                <strong>01</strong>
-                <span>guided path</span>
+                <strong>10000+</strong>
+                <span>windows transformed</span>
               </div>
             </div>
           </div>
           <div className="zebra-preview" aria-hidden="true">
-            <div className="zebra-window">
-              <span />
-              <span />
-              <span />
-              <span />
-              <span />
-            </div>
+            <div 
+              className="zebra-window"
+              style={{
+                background: "url('/assets/Zebra_main.jpeg') center / cover no-repeat",
+                border: "1px solid rgba(245, 240, 232, 0.32)"
+              }}
+            />
             <div className="zebra-preview-note">
               <span>{featured.name}</span>
-              <small>{featured.subtitle}</small>
             </div>
           </div>
         </section>
@@ -71,9 +71,8 @@ export default function ZebraBlindsPage() {
 
           <div className="zebra-family-grid">
             {zebraFamilies.map((family, index) => (
-              <Link
+              <div
                 key={family.slug}
-                href={`/products/zebra-blinds/${family.slug}`}
                 className="zebra-family-card"
                 style={
                   family.image
@@ -86,14 +85,20 @@ export default function ZebraBlindsPage() {
                       }
                 }
               >
-                <div
-                  className="zebra-family-sample"
-                  style={
-                    family.image
-                      ? { background: `url('${family.image}') center / cover no-repeat` }
-                      : {}
-                  }
-                />
+                {family.images ? (
+                  <div className="zebra-family-sample" style={{ padding: 0, background: 'none' }}>
+                    <ImageCarousel images={family.images} />
+                  </div>
+                ) : (
+                  <div
+                    className="zebra-family-sample"
+                    style={
+                      family.image
+                        ? { background: `url('${family.image}') center / cover no-repeat` }
+                        : {}
+                    }
+                  />
+                )}
                 <div className="zebra-family-content">
                   <span className="zebra-family-code">{String(index + 1).padStart(2, '0')}</span>
                   <h3>{family.name}</h3>
@@ -112,9 +117,20 @@ export default function ZebraBlindsPage() {
                       <strong>{family.texture}</strong>
                     </div>
                   </div>
-                  <span className="zebra-card-link">Open Collection →</span>
+                  {family.catalog && (
+                    <a 
+                      href={family.catalog} 
+                      className="btn-outline" 
+                      style={{ marginTop: '1.5rem', display: 'inline-block' }}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      download
+                    >
+                      Download Catalog
+                    </a>
+                  )}
                 </div>
-              </Link>
+              </div>
             ))}
           </div>
         </section>

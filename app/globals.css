@@ -1946,10 +1946,8 @@
 
     .zebra-family-grid {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 1.5px;
-      background: var(--border);
-      border: 1px solid var(--border);
+      grid-template-columns: 1fr;
+      gap: 3rem;
     }
 
     .zebra-family-card {
@@ -1960,11 +1958,23 @@
       display: grid;
       grid-template-columns: 0.9fr 1.1fr;
       transition: background 0.25s, color 0.25s;
+      border: 1px solid var(--border);
     }
 
     .zebra-family-card:hover {
       background: var(--charcoal);
       color: var(--cream);
+    }
+
+    .zebra-family-card:hover .btn-outline {
+      border-color: rgba(245, 240, 232, 0.35);
+      color: var(--cream);
+    }
+
+    .zebra-family-card:hover .btn-outline:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+      background: transparent;
     }
 
     .zebra-family-sample,
