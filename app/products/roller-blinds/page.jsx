@@ -60,7 +60,7 @@ export default function RollerBlindsPage() {
           <div className="zebra-browser-head">
             <div>
               <span className="section-label">Choose by use case</span>
-              <h2 className="section-title">Find the right stripe story</h2>
+              <h2 className="section-title">Find your roller story</h2>
             </div>
             <Link className="btn-outline" href="/contact">
               Request Swatches →

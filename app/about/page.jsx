@@ -82,7 +82,10 @@ export default function AboutPage() {
         <div className="about-content">
           <div className="about-grid">
             <div className="about-img-block">
-              <div className="about-main-img img-placeholder">VIENTO STUDIO</div>
+              <div 
+                className="about-main-img" 
+                style={{ background: "url('/assets/founder.jpeg') top center / cover no-repeat" }}
+              />
               <div className="about-accent-img img-placeholder img-placeholder-light">
                 CRAFTSMANSHIP
               </div>
