@@ -30,14 +30,16 @@ export default function ContactPage() {
                 <div className="cd-icon">✉</div>
                 <div className="cd-text">
                   <span className="cd-label">Email Us</span>
-                  <span className="cd-value">hello@vientoblinds.com</span>
+                  <span className="cd-value">artexoverseas.p@gmail.com</span>
+                  <span className="cd-value">systemwindowinc@gmail.com</span>
                 </div>
               </div>
               <div className="contact-detail-item">
                 <div className="cd-icon">☎</div>
                 <div className="cd-text">
                   <span className="cd-label">Call Us</span>
-                  <span className="cd-value">+91 98765 43210</span>
+                  <span className="cd-value">+91 93204 27622</span>
+                  <span className="cd-value">+91 83691 19423</span>
                 </div>
               </div>
               <div className="contact-detail-item">

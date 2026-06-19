@@ -46,8 +46,10 @@ export default function Footer({ variant = 'full' }) {
         <div>
           <p className="footer-title">Contact</p>
           <ul className="footer-links">
-            <li>hello@vientoblinds.com</li>
-            <li>+91 98765 43210</li>
+            <li>artexoverseas.p@gmail.com</li>
+            <li>systemwindowinc@gmail.com</li>
+            <li>+91 93204 27622</li>
+            <li>+91 83691 19423</li>
             <li>Mumbai, India</li>
             <li style={{ marginTop: '1.2rem', color: 'var(--gold)', cursor: 'pointer' }}>
               Instagram
