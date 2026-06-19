@@ -70,6 +70,16 @@ export default function HomePage() {
           </Link>
         </section>
 
+        <section className="section features-section">
+          <span className="section-label">Why Viento</span>
+          <h2 className="section-title">Features</h2>
+          <p className="section-subtitle">
+            Every Viento blind is engineered to deliver superior performance across five essential
+            dimensions.
+          </p>
+          <FeaturesTabs />
+        </section>
+
         <section className="section products-section">
           <div className="products-header">
             <div>
@@ -93,16 +103,6 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className="section features-section">
-          <span className="section-label">Why Viento</span>
-          <h2 className="section-title">Features</h2>
-          <p className="section-subtitle">
-            Every Viento blind is engineered to deliver superior performance across five essential
-            dimensions.
-          </p>
-          <FeaturesTabs />
-        </section>
-
         <section className="section factory-video-section">
           <span className="section-label">Inside Viento</span>
           <h2 className="section-title">Our Factory</h2>
@@ -110,7 +110,7 @@ export default function HomePage() {
             A quick look at how we design, craft, and finish every blind with precision.
           </p>
           <div className="factory-video-wrap">
-            <video controls preload="metadata" playsInline>
+            <video autoPlay muted loop controls preload="metadata" playsInline>
               <source src="/assets/video.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
@@ -147,18 +147,21 @@ export default function HomePage() {
           </div>
         </div>
 
-        <section className="partners-section">
-          <span className="section-label">Trusted By</span>
+        <section className="partners-section" style={{ textAlign: 'center' }}>
+          <span className="section-label">Find Us</span>
           <h2 className="section-title" style={{ fontSize: '1.8rem' }}>
-            Our Partners
+            Pan India Distributors
           </h2>
-          <div className="partners-track">
-            {Array.from({ length: 8 }).map((_, i) => (
-              <div key={i} className="partner-logo">
-                PARTNER {String(i + 1).padStart(2, '0')}
-              </div>
-            ))}
-          </div>
+          <img
+            src="/assets/Map.jpeg"
+            alt="Viento Pan India Distributors Map"
+            style={{
+              width: '100%',
+              maxWidth: '650px',
+              margin: '2rem auto 0',
+              display: 'block',
+            }}
+          />
         </section>
 
         <section className="section blogs-section">
