@@ -44,13 +44,13 @@ const VALUES = [
 const PROCESS = [
   {
     num: '01',
-    title: 'Consultation',
-    desc: 'We visit your space, understand your needs, and recommend the perfect solutions.',
+    title: 'Window Measurement',
+    desc: 'Precision measurements taken by our expert team to ensure a perfect custom fit for every window.',
   },
   {
     num: '02',
-    title: 'Measurement',
-    desc: 'Precision measurements taken by our expert team for a perfect custom fit.',
+    title: 'Consultation',
+    desc: 'We understand your needs, recommend the perfect solutions, and help you choose the ideal fabrics.',
   },
   {
     num: '03',
@@ -86,9 +86,10 @@ export default function AboutPage() {
                 className="about-main-img" 
                 style={{ background: "url('/assets/founder.jpeg') top center / cover no-repeat" }}
               />
-              <div className="about-accent-img img-placeholder img-placeholder-light">
-                CRAFTSMANSHIP
-              </div>
+              <div 
+                className="about-accent-img"
+                style={{ background: "url('/assets/peace.jpg') center / cover no-repeat" }}
+              />
             </div>
             <div className="about-text-block">
               <span className="section-label">Who We Are</span>
@@ -191,52 +192,14 @@ export default function AboutPage() {
           <span className="section-label">How It Works</span>
           <h2 className="section-title">Our Process</h2>
           <div className="divider" />
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
-              gap: 0,
-              marginTop: '3rem',
-              border: '1px solid var(--border)',
-            }}
-          >
-            {PROCESS.map((p, i) => (
-              <div
-                key={p.num}
-                style={{
-                  padding: '2.5rem',
-                  borderRight:
-                    i < PROCESS.length - 1 ? '1px solid var(--border)' : 'none',
-                }}
-              >
-                <div
-                  style={{
-                    fontFamily: "'Cormorant Garamond',serif",
-                    fontSize: '3rem',
-                    color: 'var(--gold)',
-                    opacity: 0.3,
-                  }}
-                >
-                  {p.num}
-                </div>
-                <h4
-                  style={{
-                    fontFamily: "'Cormorant Garamond',serif",
-                    fontSize: '1.2rem',
-                    margin: '0.8rem 0',
-                  }}
-                >
-                  {p.title}
-                </h4>
-                <p
-                  style={{
-                    fontSize: '0.78rem',
-                    color: 'var(--muted)',
-                    lineHeight: 1.7,
-                  }}
-                >
-                  {p.desc}
-                </p>
+          <div className="process-timeline">
+            <div className="timeline-line" />
+            {PROCESS.map((p) => (
+              <div key={p.num} className="timeline-step">
+                <div className="timeline-dot" />
+                <div className="timeline-num">{p.num}</div>
+                <h4 className="timeline-title">{p.title}</h4>
+                <p className="timeline-desc">{p.desc}</p>
               </div>
             ))}
           </div>
