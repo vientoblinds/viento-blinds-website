@@ -51,10 +51,15 @@ export default function Footer({ variant = 'full' }) {
             <li>+91 93204 27622</li>
             <li>+91 83691 19423</li>
             <li>Mumbai, India</li>
-            <li style={{ marginTop: '1.2rem', color: 'var(--gold)', cursor: 'pointer' }}>
-              Instagram
+            <li style={{ marginTop: '1.2rem' }}>
+              <a href="https://www.facebook.com/share/1EL6bSH4Jw/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--gold)' }}>Facebook</a>
             </li>
-            <li style={{ color: 'var(--gold)', cursor: 'pointer' }}>LinkedIn</li>
+            <li>
+              <a href="https://www.instagram.com/viento_blinds?igsh=MW1yOG1mNnFqNTkzaw%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--gold)' }}>Instagram</a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/company/viento-blinds/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--gold)' }}>LinkedIn</a>
+            </li>
           </ul>
         </div>
       </div>
