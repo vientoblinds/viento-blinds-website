@@ -142,14 +142,14 @@ export default function FactoryPage() {
         ref={containerRef}
         className="relative max-w-6xl mx-auto px-6 md:px-0 py-12 mb-20 z-10"
       >
-        {/* Vertical Spine */}
-        <div className="absolute top-0 bottom-0 left-[16px] md:left-1/2 -translate-x-1/2 w-[2px]">
+        {/* Vertical Spine (Starts and ends exactly at the dot centers) */}
+        <div className="absolute top-[24px] bottom-[24px] left-[16px] md:left-1/2 -translate-x-1/2 w-[2px]">
           {/* Background static line */}
           <div className="w-full h-full bg-[var(--fc-line)] rounded-full" />
           {/* Animated drawing line */}
           <motion.div 
             style={{ scaleY, originY: 0 }}
-            className="absolute top-0 left-0 w-full h-full bg-[var(--fc-clay)] origin-top rounded-full"
+            className="absolute top-0 left-0 w-full h-full bg-[var(--fc-clay)] rounded-full"
           />
         </div>
 
@@ -211,16 +211,16 @@ function TimelineStage({ stage, index, isLeftText }) {
   return (
     <div 
       data-testid={`stage-${stage.id}`}
-      className="relative flex flex-col md:grid md:grid-cols-2 md:gap-x-16 lg:gap-x-24 items-center pl-10 md:pl-0"
+      className="relative flex flex-col md:grid md:grid-cols-2 md:gap-x-16 lg:gap-x-24 items-start pl-12 md:pl-0"
     >
-      {/* Node Dot on Spine */}
-      <div className="absolute left-[16px] md:left-1/2 top-4 md:top-1/2 -translate-y-1/2 -translate-x-1/2 z-20">
+      {/* Node Dot on Spine (Hollow clay circle with cream center, vertically centered with step number row) */}
+      <div className="absolute left-[16px] md:left-1/2 top-[24px] -translate-y-1/2 -translate-x-1/2 z-20">
         <motion.div
           initial={{ scale: 0 }}
           whileInView={{ scale: 1 }}
           viewport={{ once: true, amount: 0.5 }}
           transition={{ type: "spring", stiffness: 220, damping: 18 }}
-          className="w-4 h-4 rounded-full bg-[var(--fc-clay)] border-4 border-[var(--fc-cream)] shadow-sm"
+          className="w-5 h-5 rounded-full bg-[var(--fc-cream)] border-4 border-[var(--fc-clay)] shadow-sm"
         />
       </div>
 
@@ -236,9 +236,9 @@ function TimelineStage({ stage, index, isLeftText }) {
             : 'md:col-start-2 md:row-start-1 md:items-start md:text-left'
         }`}
       >
-        {/* Step Info Row */}
+        {/* Step Info Row (Height 12 / 48px to match dot center) */}
         <div 
-          className={`flex items-center gap-4 mb-4 justify-start ${
+          className={`flex items-center gap-4 mb-4 h-12 justify-start ${
             isLeftText ? 'md:justify-end md:flex-row-reverse' : ''
           }`}
         >
@@ -277,13 +277,13 @@ function TimelineStage({ stage, index, isLeftText }) {
             : 'md:col-start-1 md:row-start-1'
         }`}
       >
-        <div className="aspect-video w-full rounded-[1.5rem] border border-[var(--fc-line)] shadow-[0_12px_32px_rgba(32,32,29,0.06)] overflow-hidden bg-[var(--fc-cream-deep)] flex items-center justify-center p-1">
+        <div className="aspect-video w-full rounded-[2rem] bg-[var(--fc-cream-deep)] shadow-[0_12px_32px_rgba(32,32,29,0.06)] overflow-hidden flex items-center justify-center p-4 border border-[var(--fc-line)]/30">
           {stage.image ? (
             <img 
               data-testid={`stage-image-${stage.id}`}
               src={stage.image} 
               alt={`${stage.title} process stage`} 
-              className="w-full h-full object-cover rounded-[1.2rem]"
+              className="w-full h-full object-cover rounded-[1.5rem]"
               loading="lazy"
             />
           ) : (
@@ -295,12 +295,12 @@ function TimelineStage({ stage, index, isLeftText }) {
   );
 }
 
-// Image Placeholder Component
+// Image Placeholder Component with Inset Dashed Border
 function ImagePlaceholder({ stage }) {
   return (
     <div 
       data-testid={`stage-image-placeholder-${stage.id}`}
-      className="flex flex-col items-center justify-center p-8 text-center w-full h-full border-2 border-dashed border-[var(--fc-line)] rounded-[1.2rem] bg-[var(--fc-cream-deep)]"
+      className="flex flex-col items-center justify-center p-8 text-center w-full h-full border-2 border-dashed border-[var(--fc-line)] rounded-[1.5rem]"
     >
       <ImageIcon className="w-12 h-12 text-[var(--fc-sand)] mb-3" />
       <span className="font-semibold text-[var(--fc-ink)] text-lg mb-1">
