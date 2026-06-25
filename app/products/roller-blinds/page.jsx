@@ -133,6 +133,23 @@ export default function RollerBlindsPage() {
           </div>
         </section>
 
+        {rollerFamilies.filter(f => f.customerImages?.length).map((family) => (
+          <section key={family.slug} className="customer-images-section">
+            <div className="customer-images-header">
+              <span className="section-label">Real Installations</span>
+              <h2 className="section-title">Customer Images</h2>
+              <p className="customer-images-subtitle">See how our customers have transformed their spaces with {family.name} blinds.</p>
+            </div>
+            <div className="customer-images-grid">
+              {family.customerImages.map((img, i) => (
+                <div key={i} className="customer-image-card">
+                  <img src={img} alt={`${family.name} customer installation ${i + 1}`} loading="lazy" />
+                </div>
+              ))}
+            </div>
+          </section>
+        ))}
+
         <Footer variant="compact" />
       </div>
     </>
