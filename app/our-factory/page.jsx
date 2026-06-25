@@ -12,6 +12,8 @@ import {
   Image as ImageIcon, 
   ArrowDown 
 } from 'lucide-react';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 // Code comment: To use real images, drop image files in /public/images/
 // and set the image field to e.g., "/images/weaving.jpg"
@@ -79,96 +81,101 @@ export default function FactoryPage() {
   const scaleY = useTransform(scrollYProgress, [0, 1], [0, 1]);
 
   return (
-    <div className="page active factory-page-container py-24 md:py-32">
-      {/* Subtle SVG paper-grain noise overlay */}
-      <div className="paper-grain" />
+    <>
+      <Navbar />
+      <div className="page active factory-page-container py-24 md:py-32">
+        {/* Subtle SVG paper-grain noise overlay */}
+        <div className="paper-grain" />
 
-      {/* HERO SECTION */}
-      <header className="relative z-10 max-w-4xl mx-auto text-center px-6 mb-24 md:mb-32 mt-12 md:mt-20">
-        <motion.span 
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="block text-sm font-semibold uppercase tracking-[0.35em] text-[var(--fc-clay)] mb-4"
-        >
-          Inside Our Factory
-        </motion.span>
-        
-        <motion.h1 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="font-display text-4xl sm:text-5xl lg:text-6xl font-semibold text-[var(--fc-ink)] leading-tight tracking-tight mb-6"
-        >
-          How our blinds are made — from <span className="text-[var(--fc-clay)]">thread</span> to your window.
-        </motion.h1>
-
-        <motion.p 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="text-base md:text-lg text-[var(--fc-ink-soft)] leading-relaxed max-w-2xl mx-auto mb-8"
-        >
-          Scroll through the six stages of our craft — every blind passes through each step before it leaves our floor.
-        </motion.p>
-
-        <motion.div 
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-        >
-          <motion.div
-            animate={{ y: [0, 6, 0] }}
-            transition={{
-              repeat: Infinity,
-              duration: 1.6,
-              ease: "easeInOut"
-            }}
-            className="w-12 h-12 rounded-full border border-[var(--fc-line)] flex items-center justify-center text-[var(--fc-clay)] mx-auto cursor-pointer shadow-sm bg-[var(--fc-cream-deep)]/30"
-            onClick={() => {
-              const el = document.getElementById('factory-timeline');
-              if (el) el.scrollIntoView({ behavior: 'smooth' });
-            }}
+        {/* HERO SECTION */}
+        <header className="relative z-10 max-w-4xl mx-auto text-center px-6 mb-24 md:mb-32 mt-12 md:mt-20">
+          <motion.span 
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="block text-sm font-semibold uppercase tracking-[0.35em] text-[var(--fc-clay)] mb-4"
           >
-            <ArrowDown className="w-5 h-5" />
-          </motion.div>
-        </motion.div>
-      </header>
+            Inside Our Factory
+          </motion.span>
+          
+          <motion.h1 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="font-display text-4xl sm:text-5xl lg:text-6xl font-semibold text-[var(--fc-ink)] leading-tight tracking-tight mb-6"
+          >
+            How our blinds are made — from <span className="text-[var(--fc-clay)]">thread</span> to your window.
+          </motion.h1>
 
-      {/* TIMELINE SECTION */}
-      <section 
-        id="factory-timeline"
-        data-testid="factory-timeline"
-        ref={containerRef}
-        className="relative max-w-6xl mx-auto px-6 md:px-0 py-12 mb-20 z-10"
-      >
-        {/* Vertical Spine (Starts and ends exactly at the dot centers) */}
-        <div className="absolute top-[24px] bottom-[24px] left-[16px] md:left-1/2 -translate-x-1/2 w-[2px]">
-          {/* Background static line */}
-          <div className="w-full h-full bg-[var(--fc-line)] rounded-full" />
-          {/* Animated drawing line */}
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="text-base md:text-lg text-[var(--fc-ink-soft)] leading-relaxed max-w-2xl mx-auto mb-8"
+          >
+            Scroll through the six stages of our craft — every blind passes through each step before it leaves our floor.
+          </motion.p>
+
           <motion.div 
-            style={{ scaleY, originY: 0 }}
-            className="absolute top-0 left-0 w-full h-full bg-[var(--fc-clay)] rounded-full"
-          />
-        </div>
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+          >
+            <motion.div
+              animate={{ y: [0, 6, 0] }}
+              transition={{
+                repeat: Infinity,
+                duration: 1.6,
+                ease: "easeInOut"
+              }}
+              className="w-12 h-12 rounded-full border border-[var(--fc-line)] flex items-center justify-center text-[var(--fc-clay)] mx-auto cursor-pointer shadow-sm bg-[var(--fc-cream-deep)]/30"
+              onClick={() => {
+                const el = document.getElementById('factory-timeline');
+                if (el) el.scrollIntoView({ behavior: 'smooth' });
+              }}
+            >
+              <ArrowDown className="w-5 h-5" />
+            </motion.div>
+          </motion.div>
+        </header>
 
-        {/* Process Stages */}
-        <div className="space-y-24 md:space-y-36">
-          {STAGES.map((stage, index) => {
-            const isLeftText = index % 2 === 0;
-            return (
-              <TimelineStage 
-                key={stage.id} 
-                stage={stage} 
-                index={index} 
-                isLeftText={isLeftText} 
-              />
-            );
-          })}
-        </div>
-      </section>
-    </div>
+        {/* TIMELINE SECTION */}
+        <section 
+          id="factory-timeline"
+          data-testid="factory-timeline"
+          ref={containerRef}
+          className="relative max-w-6xl mx-auto px-6 md:px-0 py-12 mb-20 z-10"
+        >
+          {/* Vertical Spine (Starts and ends exactly at the dot centers) */}
+          <div className="absolute top-[24px] bottom-[24px] left-[16px] md:left-1/2 -translate-x-1/2 w-[2px]">
+            {/* Background static line */}
+            <div className="w-full h-full bg-[var(--fc-line)] rounded-full" />
+            {/* Animated drawing line */}
+            <motion.div 
+              style={{ scaleY, originY: 0 }}
+              className="absolute top-0 left-0 w-full h-full bg-[var(--fc-clay)] rounded-full"
+            />
+          </div>
+
+          {/* Process Stages */}
+          <div className="space-y-24 md:space-y-36">
+            {STAGES.map((stage, index) => {
+              const isLeftText = index % 2 === 0;
+              return (
+                <TimelineStage 
+                  key={stage.id} 
+                  stage={stage} 
+                  index={index} 
+                  isLeftText={isLeftText} 
+                />
+              );
+            })}
+          </div>
+        </section>
+
+        <Footer />
+      </div>
+    </>
   );
 }
 

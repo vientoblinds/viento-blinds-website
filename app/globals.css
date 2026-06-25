@@ -13,14 +13,14 @@
   --border: rgba(126, 138, 87, 0.28);
 
   /* Factory Page Color Palette */
-  --fc-cream: #F4EEE3;
-  --fc-cream-deep: #ECE3D4;
-  --fc-ink: #20201D;
-  --fc-ink-soft: #4A463E;
-  --fc-clay: #C0532B;
-  --fc-clay-deep: #9C3E1E;
-  --fc-sand: #D8C9AE;
-  --fc-line: #CDBFA6;
+  --fc-cream: var(--warm-white);
+  --fc-cream-deep: var(--cream);
+  --fc-ink: var(--charcoal);
+  --fc-ink-soft: var(--muted);
+  --fc-clay: var(--gold);
+  --fc-clay-deep: var(--deep-brown);
+  --fc-sand: var(--tan);
+  --fc-line: var(--border);
 }
 
     * {
@@ -2299,11 +2299,11 @@
        FACTORY PAGE CUSTOM STYLES
        ======================================================== */
     .font-display {
-      font-family: 'Fraunces', Georgia, serif;
+      font-family: 'Cormorant Garamond', serif;
     }
 
     .factory-page-container {
-      font-family: 'Hanken Grotesk', system-ui, sans-serif;
+      font-family: 'Jost', sans-serif;
       background-color: var(--fc-cream);
       color: var(--fc-ink);
       position: relative;
