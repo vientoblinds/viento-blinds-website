@@ -16,8 +16,8 @@ module.exports = {
         'fc-line': 'var(--fc-line)',
       },
       fontFamily: {
-        display: ['Fraunces', 'serif'],
-        sans: ['Hanken Grotesk', 'sans-serif'],
+        display: ['Cormorant Garamond', 'serif'],
+        sans: ['Jost', 'sans-serif'],
       },
     },
   },
