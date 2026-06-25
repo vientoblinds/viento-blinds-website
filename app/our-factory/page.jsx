@@ -168,38 +168,6 @@ export default function FactoryPage() {
           })}
         </div>
       </section>
-
-      {/* CLOSING BAND */}
-      <footer className="relative z-10 border-t border-[var(--fc-line)] pt-20 pb-12 text-center max-w-3xl mx-auto px-6 mt-16 md:mt-24">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <ShieldCheck className="mx-auto w-12 h-12 text-[var(--fc-clay)] mb-6" />
-        </motion.div>
-        
-        <motion.h2 
-          initial={{ opacity: 0, y: 15 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold text-[var(--fc-ink)] mb-4"
-        >
-          Six stages. One standard of quality.
-        </motion.h2>
-
-        <motion.p 
-          initial={{ opacity: 0, y: 15 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-base md:text-lg text-[var(--fc-ink-soft)] leading-relaxed max-w-xl mx-auto"
-        >
-          From the first thread to the final dispatch, every blind is crafted with care on our factory floor.
-        </motion.p>
-      </footer>
     </div>
   );
 }
