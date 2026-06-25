@@ -83,12 +83,12 @@ export default function FactoryPage() {
   return (
     <>
       <Navbar />
-      <div className="page active factory-page-container py-24 md:py-32">
+      <div className="page active factory-page-container">
         {/* Subtle SVG paper-grain noise overlay */}
         <div className="paper-grain" />
 
         {/* HERO SECTION */}
-        <header className="relative z-10 max-w-4xl mx-auto text-center px-6 mb-24 md:mb-32 mt-12 md:mt-20">
+        <header className="relative z-10 w-full max-w-4xl mx-auto text-center px-6 mb-24 md:mb-32 mt-4 md:mt-8">
           <motion.span 
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
@@ -144,7 +144,7 @@ export default function FactoryPage() {
           id="factory-timeline"
           data-testid="factory-timeline"
           ref={containerRef}
-          className="relative max-w-6xl mx-auto px-6 md:px-0 py-12 mb-20 z-10"
+          className="relative w-full max-w-6xl mx-auto px-6 md:px-0 py-12 mb-20 z-10"
         >
           {/* Vertical Spine (Starts and ends exactly at the dot centers) */}
           <div className="absolute top-[24px] bottom-[24px] left-[16px] md:left-1/2 -translate-x-1/2 w-[2px]">

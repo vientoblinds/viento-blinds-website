@@ -2309,6 +2309,8 @@
       position: relative;
       overflow: hidden;
       min-height: 100vh;
+      padding-top: 140px; /* Accounts for fixed navbar */
+      padding-bottom: 80px;
     }
 
     /* Custom Selection Scoped to Factory Page */
