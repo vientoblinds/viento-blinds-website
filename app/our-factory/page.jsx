@@ -253,9 +253,9 @@ function TimelineStage({ stage, index, isLeftText }) {
         whileInView={{ opacity: 1, x: 0, y: 0 }}
         viewport={{ once: true, amount: 0.4 }}
         transition={{ duration: 0.6, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
-        className={`w-full mt-8 md:mt-0 ${
-          isLeftText 
-            ? 'md:col-start-2 md:row-start-1' 
+        className={`w-full mt-8 md:mt-0 mb-6! md:mb-10! ${
+          isLeftText
+            ? 'md:col-start-2 md:row-start-1'
             : 'md:col-start-1 md:row-start-1'
         }`}
       >
