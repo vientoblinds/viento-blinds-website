@@ -30,6 +30,12 @@ const EXTERIOR_SHADES = [
   { color: '#3F3D3B', title: 'Charcoal Grey', img: '/assets/exterior-color-picker5.jpeg' },
 ];
 
+const ECO_BLACKOUT_SHADES = [
+  { color: '#8C7F72', title: 'Warm Taupe', img: '/assets/ecoblackout-color-picker1.png' },
+  { color: '#5A5A5A', title: 'Charcoal', img: '/assets/ecoblackout-color-picker2.png' },
+  { color: '#7C7873', title: 'Stone Grey', img: '/assets/ecoblackout-color-picker3.png' },
+];
+
 export function generateStaticParams() {
   return getAllSlugs().map((slug) => ({ slug }));
 }
@@ -139,7 +145,7 @@ export default async function ProductPage({ params }) {
               </div>
             </div>
           </div>
-          {(product.catalogues || product.slug === 'wooden-blinds' || product.slug === 'honeycomb-blinds' || product.slug === 'shangri-la-blinds' || product.slug === 'exterior-blinds') && (
+          {(product.catalogues || product.slug === 'wooden-blinds' || product.slug === 'honeycomb-blinds' || product.slug === 'shangri-la-blinds' || product.slug === 'exterior-blinds' || product.slug === 'eco-blackout-blinds') && (
             <div>
               <span className="section-label">Available Colours</span>
               <h2 className="section-title" style={{ fontSize: '2rem' }}>
@@ -157,6 +163,8 @@ export default async function ProductPage({ params }) {
                       ? TRIPLESHADE_SHADES
                       : product.slug === 'exterior-blinds'
                       ? EXTERIOR_SHADES
+                      : product.slug === 'eco-blackout-blinds'
+                      ? ECO_BLACKOUT_SHADES
                       : undefined
                   }
                 />
