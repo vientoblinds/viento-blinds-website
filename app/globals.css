@@ -1531,6 +1531,11 @@
     .cd-text .cd-value {
       font-size: 0.82rem;
       color: rgba(245, 240, 232, 0.7);
+      display: block;
+    }
+
+    .cd-text .cd-value + .cd-value {
+      margin-top: 0.3rem;
     }
 
     .contact-form-section {

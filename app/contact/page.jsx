@@ -46,7 +46,7 @@ export default function ContactPage() {
                 <div className="cd-icon">◉</div>
                 <div className="cd-text">
                   <span className="cd-label">Studio</span>
-                  <span className="cd-value">Bandra Kurla Complex, Mumbai 400051</span>
+                  <span className="cd-value">Gala No. 30, Sona Udyog, Andheri East, Mumbai 400069</span>
                 </div>
               </div>
               <div className="contact-detail-item">
