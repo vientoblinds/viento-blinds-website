@@ -2354,4 +2354,20 @@
       animation: bobUpDown 1.6s ease-in-out infinite;
     }
 
+    /* ===================== FACTORY REVIEW BUBBLES ===================== */
+    /* Plain CSS, not utilities: the unlayered `*` reset above outranks
+       Tailwind's layered classes, so grid/spacing has to be declared here. */
+    .review-bubble-row {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      column-gap: 1.5rem;
+      row-gap: 3rem;
+    }
+
+    @media (max-width: 900px) {
+      .review-bubble-row {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
 
