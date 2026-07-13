@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 
-const SHADES = [
+const DEFAULT_SHADES = [
   { cls: 'swatch-w1', title: 'Natural', img: '/assets/Woodenshade1.png' },
   { cls: 'swatch-w2', title: 'Honey Oak', img: '/assets/Woodenshade2.png' },
   { cls: 'swatch-w3', title: 'Walnut', img: '/assets/Woodenshade3.png' },
@@ -11,9 +11,9 @@ const SHADES = [
   { cls: 'swatch-w6', title: 'Washed', img: '/assets/woodenshade6.png' },
 ];
 
-export default function FlatSwatches() {
+export default function FlatSwatches({ shades = DEFAULT_SHADES }) {
   const [active, setActive] = useState(0);
-  const current = SHADES[active];
+  const current = shades[active];
 
   return (
     <div>
@@ -45,7 +45,7 @@ export default function FlatSwatches() {
         {current.title}
       </p>
       <div className="color-swatches">
-        {SHADES.map((s, i) => (
+        {shades.map((s, i) => (
           <div
             key={s.cls}
             className={`swatch ${s.cls}` + (active === i ? ' active' : '')}
