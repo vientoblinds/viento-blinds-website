@@ -7,6 +7,16 @@ import CatalogueTabs from '../../components/CatalogueTabs';
 import FlatSwatches from '../../components/FlatSwatches';
 import { getAllSlugs, getProductBySlug, getRelatedProducts } from '../../../lib/products';
 
+const HONEYCOMB_IMG = '/assets/Honeycomb.jpeg';
+const HONEYCOMB_SHADES = [
+  { cls: 'swatch-w1', title: 'Ivory', img: HONEYCOMB_IMG },
+  { cls: 'swatch-w2', title: 'Honey Almond', img: HONEYCOMB_IMG },
+  { cls: 'swatch-w3', title: 'Mocha', img: HONEYCOMB_IMG },
+  { cls: 'swatch-w4', title: 'Espresso', img: HONEYCOMB_IMG },
+  { cls: 'swatch-w5', title: 'Amber Gold', img: HONEYCOMB_IMG },
+  { cls: 'swatch-w6', title: 'Vanilla Cream', img: HONEYCOMB_IMG },
+];
+
 export function generateStaticParams() {
   return getAllSlugs().map((slug) => ({ slug }));
 }
@@ -116,7 +126,7 @@ export default async function ProductPage({ params }) {
               </div>
             </div>
           </div>
-          {(product.catalogues || product.slug === 'wooden-blinds') && (
+          {(product.catalogues || product.slug === 'wooden-blinds' || product.slug === 'honeycomb-blinds') && (
             <div>
               <span className="section-label">Available Colours</span>
               <h2 className="section-title" style={{ fontSize: '2rem' }}>
@@ -126,7 +136,7 @@ export default async function ProductPage({ params }) {
               {product.catalogues ? (
                 <CatalogueTabs catalogues={product.catalogues} />
               ) : (
-                <FlatSwatches />
+                <FlatSwatches shades={product.slug === 'honeycomb-blinds' ? HONEYCOMB_SHADES : undefined} />
               )}
               <p
                 style={{
