@@ -66,9 +66,16 @@ export default function ContactPage() {
             >
               <span className="section-label">Follow Us</span>
               <div style={{ display: 'flex', gap: '1rem', marginTop: '0.8rem' }}>
-                {['in', 'ig', 'fb'].map((label) => (
-                  <div
+                {[
+                  { label: 'in', href: 'https://www.linkedin.com/company/viento-blinds/' },
+                  { label: 'ig', href: 'https://www.instagram.com/viento_blinds?igsh=MW1yOG1mNnFqNTkzaw%3D%3D&utm_source=qr' },
+                  { label: 'fb', href: 'https://www.facebook.com/share/1EL6bSH4Jw/?mibextid=wwXIfr' },
+                ].map(({ label, href }) => (
+                  <a
                     key={label}
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     style={{
                       width: 40,
                       height: 40,
@@ -79,10 +86,11 @@ export default function ContactPage() {
                       cursor: 'pointer',
                       color: 'var(--gold)',
                       fontSize: '0.8rem',
+                      textDecoration: 'none',
                     }}
                   >
                     {label}
-                  </div>
+                  </a>
                 ))}
               </div>
             </div>
