@@ -34,6 +34,9 @@ export default function Footer({ variant = 'full' }) {
               <Link href="/about">About Viento</Link>
             </li>
             <li>
+              <Link href="/our-factory">Our Factory</Link>
+            </li>
+            <li>
               <Link href="/blogs">Our Blog</Link>
             </li>
             <li>
