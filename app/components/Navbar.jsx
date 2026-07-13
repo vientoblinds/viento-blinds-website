@@ -33,7 +33,7 @@ export default function Navbar() {
       <div className="scroll-progress" id="scrollProgress" />
       <nav id="navbar" className={scrolled ? 'scrolled' : ''}>
         <Link href="/" className="logo" style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-          <img src="/assets/viento-logo.jpg" alt="Viento Blinds Logo" style={{ height: 32 }} />
+          <img src="/assets/viento-logo-transparent.png" alt="Viento Blinds Logo" style={{ height: 32 }} />
           VIENTO BLINDS
         </Link>
         <ul

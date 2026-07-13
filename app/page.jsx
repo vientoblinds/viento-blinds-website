@@ -65,8 +65,12 @@ export default function HomePage() {
             </Link>
           ))}
           <Link href="/about" className="hero-badge">
-            <span>Viento</span>
-            <span>Est. 2015</span>
+            <img
+              src="/assets/viento-mark.png"
+              alt="Viento"
+              style={{ width: '46px', height: 'auto', objectFit: 'contain', marginBottom: '2px' }}
+            />
+            <span style={{ fontSize: '0.5rem' }}>Est. 2015</span>
           </Link>
         </section>
 
