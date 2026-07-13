@@ -135,8 +135,6 @@ export default async function ProductPage({ params }) {
               ) : (
                 <FlatSwatches
                   shades={product.slug === 'honeycomb-blinds' ? HONEYCOMB_SHADES : undefined}
-                  aspectRatio={product.slug === 'honeycomb-blinds' ? '16/10' : undefined}
-                  fit={product.slug === 'honeycomb-blinds' ? 'contain' : undefined}
                 />
               )}
               <p
