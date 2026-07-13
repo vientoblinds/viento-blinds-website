@@ -133,7 +133,10 @@ export default async function ProductPage({ params }) {
               {product.catalogues ? (
                 <CatalogueTabs catalogues={product.catalogues} />
               ) : (
-                <FlatSwatches shades={product.slug === 'honeycomb-blinds' ? HONEYCOMB_SHADES : undefined} />
+                <FlatSwatches
+                  shades={product.slug === 'honeycomb-blinds' ? HONEYCOMB_SHADES : undefined}
+                  aspectRatio={product.slug === 'honeycomb-blinds' ? '4/5' : undefined}
+                />
               )}
               <p
                 style={{
