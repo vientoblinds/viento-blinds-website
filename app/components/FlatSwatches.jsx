@@ -47,8 +47,9 @@ export default function FlatSwatches({ shades = DEFAULT_SHADES }) {
       <div className="color-swatches">
         {shades.map((s, i) => (
           <div
-            key={s.cls}
-            className={`swatch ${s.cls}` + (active === i ? ' active' : '')}
+            key={s.title}
+            className={`swatch ${s.cls || ''}` + (active === i ? ' active' : '')}
+            style={s.color ? { background: s.color } : undefined}
             title={s.title}
             onClick={() => setActive(i)}
           />
