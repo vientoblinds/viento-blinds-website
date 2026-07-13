@@ -22,6 +22,14 @@ const TRIPLESHADE_SHADES = [
   { color: '#8B8B82', title: 'Grey Taupe', img: '/assets/Tripleshade-color-picker5.png' },
 ];
 
+const EXTERIOR_SHADES = [
+  { color: '#C99A46', title: 'Golden Bamboo', img: '/assets/exterior-color-picker1.jpeg' },
+  { color: '#EAE3D3', title: 'White Wash', img: '/assets/exterior-color-picker2.jpeg' },
+  { color: '#A9803F', title: 'Natural Reed', img: '/assets/exterior-color-picker3.jpeg' },
+  { color: '#C4913F', title: 'Honey Teak', img: '/assets/exterior-color-picker4.jpeg' },
+  { color: '#3F3D3B', title: 'Charcoal Grey', img: '/assets/exterior-color-picker5.jpeg' },
+];
+
 export function generateStaticParams() {
   return getAllSlugs().map((slug) => ({ slug }));
 }
@@ -131,7 +139,7 @@ export default async function ProductPage({ params }) {
               </div>
             </div>
           </div>
-          {(product.catalogues || product.slug === 'wooden-blinds' || product.slug === 'honeycomb-blinds' || product.slug === 'shangri-la-blinds') && (
+          {(product.catalogues || product.slug === 'wooden-blinds' || product.slug === 'honeycomb-blinds' || product.slug === 'shangri-la-blinds' || product.slug === 'exterior-blinds') && (
             <div>
               <span className="section-label">Available Colours</span>
               <h2 className="section-title" style={{ fontSize: '2rem' }}>
@@ -147,6 +155,8 @@ export default async function ProductPage({ params }) {
                       ? HONEYCOMB_SHADES
                       : product.slug === 'shangri-la-blinds'
                       ? TRIPLESHADE_SHADES
+                      : product.slug === 'exterior-blinds'
+                      ? EXTERIOR_SHADES
                       : undefined
                   }
                 />
