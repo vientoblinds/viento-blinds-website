@@ -14,6 +14,10 @@ const HONEYCOMB_SHADES = [
   { color: '#EDE2C9', title: 'Vanilla Cream', img: '/assets/honeycomb-color-picker4.jpeg' },
 ];
 
+const TRIPLESHADE_SHADES = [
+  { color: '#E4D9BE', title: 'Floral Gold', img: '/assets/Tripleshade-color-picker1.png' },
+];
+
 export function generateStaticParams() {
   return getAllSlugs().map((slug) => ({ slug }));
 }
@@ -123,7 +127,7 @@ export default async function ProductPage({ params }) {
               </div>
             </div>
           </div>
-          {(product.catalogues || product.slug === 'wooden-blinds' || product.slug === 'honeycomb-blinds') && (
+          {(product.catalogues || product.slug === 'wooden-blinds' || product.slug === 'honeycomb-blinds' || product.slug === 'shangri-la-blinds') && (
             <div>
               <span className="section-label">Available Colours</span>
               <h2 className="section-title" style={{ fontSize: '2rem' }}>
@@ -134,7 +138,13 @@ export default async function ProductPage({ params }) {
                 <CatalogueTabs catalogues={product.catalogues} />
               ) : (
                 <FlatSwatches
-                  shades={product.slug === 'honeycomb-blinds' ? HONEYCOMB_SHADES : undefined}
+                  shades={
+                    product.slug === 'honeycomb-blinds'
+                      ? HONEYCOMB_SHADES
+                      : product.slug === 'shangri-la-blinds'
+                      ? TRIPLESHADE_SHADES
+                      : undefined
+                  }
                 />
               )}
               <p
