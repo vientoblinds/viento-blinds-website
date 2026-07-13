@@ -7,14 +7,11 @@ import CatalogueTabs from '../../components/CatalogueTabs';
 import FlatSwatches from '../../components/FlatSwatches';
 import { getAllSlugs, getProductBySlug, getRelatedProducts } from '../../../lib/products';
 
-const HONEYCOMB_IMG = '/assets/Honeycomb.jpeg';
 const HONEYCOMB_SHADES = [
-  { cls: 'swatch-w1', title: 'Ivory', img: HONEYCOMB_IMG },
-  { cls: 'swatch-w2', title: 'Honey Almond', img: HONEYCOMB_IMG },
-  { cls: 'swatch-w3', title: 'Mocha', img: HONEYCOMB_IMG },
-  { cls: 'swatch-w4', title: 'Espresso', img: HONEYCOMB_IMG },
-  { cls: 'swatch-w5', title: 'Amber Gold', img: HONEYCOMB_IMG },
-  { cls: 'swatch-w6', title: 'Vanilla Cream', img: HONEYCOMB_IMG },
+  { color: '#A9AB98', title: 'Sage', img: '/assets/honeycomb-color-picker1.jpeg' },
+  { color: '#5C4C3E', title: 'Espresso', img: '/assets/honeycomb-color-picker2.jpeg' },
+  { color: '#B0A28E', title: 'Taupe', img: '/assets/honeycomb-color-picker3.jpeg' },
+  { color: '#EDE2C9', title: 'Vanilla Cream', img: '/assets/honeycomb-color-picker4.jpeg' },
 ];
 
 export function generateStaticParams() {
