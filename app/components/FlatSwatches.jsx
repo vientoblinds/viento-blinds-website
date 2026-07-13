@@ -11,7 +11,7 @@ const DEFAULT_SHADES = [
   { cls: 'swatch-w6', title: 'Washed', img: '/assets/woodenshade6.png' },
 ];
 
-export default function FlatSwatches({ shades = DEFAULT_SHADES }) {
+export default function FlatSwatches({ shades = DEFAULT_SHADES, aspectRatio = '16/10' }) {
   const [active, setActive] = useState(0);
   const current = shades[active];
 
@@ -20,7 +20,7 @@ export default function FlatSwatches({ shades = DEFAULT_SHADES }) {
       <div
         style={{
           width: '100%',
-          aspectRatio: '16/10',
+          aspectRatio,
           background: 'var(--cream)',
           border: '1px solid var(--border)',
           overflow: 'hidden',
