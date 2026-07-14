@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useRef, useState } from 'react';
-import { motion, useScroll, useTransform, useReducedMotion } from 'framer-motion';
+import { motion, useScroll, useTransform, useReducedMotion, useInView } from 'framer-motion';
 import {
   Scissors,
   Droplets,
@@ -12,7 +12,13 @@ import {
   Image as ImageIcon,
   ArrowDown,
   Quote,
-  Star
+  Star,
+  Ruler,
+  Package,
+  Percent,
+  LayoutGrid,
+  CheckCircle2,
+  Gauge
 } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -68,6 +74,15 @@ const STAGES = [
     image: '/assets/Dispatch.jpeg',
     description: 'Approved blinds are carefully packed, labelled and loaded for delivery — ready to travel from our factory floor to your window.'
   }
+];
+
+const STATS = [
+  { id: 'fabric', Icon: Ruler, value: 100000, suffix: '+', label: 'Meters of Fabric Engineered' },
+  { id: 'rolls', Icon: Package, value: 5000, suffix: '+', label: 'Monthly Rolls Delivered' },
+  { id: 'quality', Icon: Percent, value: 98, suffix: '%', label: 'Quality Precision' },
+  { id: 'sqft', Icon: LayoutGrid, value: 25000, suffix: '+', label: 'sqft Blinds Made' },
+  { id: 'projects', Icon: CheckCircle2, value: 3948, suffix: '+', label: 'Projects Completed' },
+  { id: 'dyeing', Icon: Gauge, value: 120000, suffix: '', label: 'Dyeing Capacity — Monthly (m)' }
 ];
 
 const REVIEWS = [
@@ -261,6 +276,9 @@ export default function FactoryPage() {
         {/* REVIEWS SECTION */}
         <ReviewsSection />
 
+        {/* STATS STRIP */}
+        <StatsStrip />
+
         <Footer />
       </div>
     </>
@@ -372,8 +390,8 @@ function ReviewBubble({ review, index, isActive, isDimmed, onHover }) {
           right: 0,
           marginLeft: 'auto',
           marginRight: 'auto',
-          width: '236px',
-          height: '236px',
+          width: 'min(236px, 90%)',
+          aspectRatio: '1 / 1',
           borderRadius: '50%',
           padding: '1.9rem',
           willChange: 'transform'
@@ -438,6 +456,155 @@ function ReviewBubble({ review, index, isActive, isDimmed, onHover }) {
         </div>
       </motion.div>
     </motion.article>
+  );
+}
+
+// Stats Strip — four counters that animate from 0 to their target once scrolled into view
+function StatsStrip() {
+  return (
+    <section
+      data-testid="factory-stats"
+      className="relative z-10"
+      style={{
+        maxWidth: '1152px',
+        width: '100%',
+        marginLeft: 'auto',
+        marginRight: 'auto',
+        padding: '0 1.5rem 6rem'
+      }}
+    >
+      <div
+        className="grid grid-cols-2 md:grid-cols-3 rounded-[1.75rem] bg-[var(--fc-ink)] border border-[var(--fc-line)]/20 shadow-[0_24px_60px_rgba(32,32,29,0.14)]"
+        style={{ padding: '2.75rem 1.5rem' }}
+      >
+        {STATS.map((stat, index) => (
+          <StatItem key={stat.id} stat={stat} index={index} />
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function StatItem({ stat, index }) {
+  const { Icon } = stat;
+  return (
+    <motion.div
+      data-testid={`stat-${stat.id}`}
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.5 }}
+      transition={{ duration: 0.5, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
+      className="flex flex-col items-center text-center gap-2"
+      style={{ padding: '0.75rem 1rem' }}
+    >
+      <Icon className="w-5 h-5 text-[var(--fc-clay)] mb-1" />
+      <span className="font-display text-3xl sm:text-4xl font-semibold text-[var(--fc-cream)] leading-none">
+        <CountUp target={stat.value} suffix={stat.suffix} />
+      </span>
+      <span className="text-[0.7rem] uppercase tracking-[0.15em] text-[var(--fc-cream)]/70">
+        {stat.label}
+      </span>
+    </motion.div>
+  );
+}
+
+// Odometer counter. Swapping textContent every frame can't be smooth in a proportional
+// serif — digit widths differ, so the layout wobbles on every update. Here each digit is
+// a fixed-width column that rolls vertically on a transform: fully GPU-composited, no
+// text mutation, no reflow. Lower-order digits travel through extra 0–9 cycles, so they
+// visibly spin faster while every column settles in sync.
+function CountUp({ target, suffix = '', duration = 2.2 }) {
+  const wrapRef = useRef(null);
+  const isInView = useInView(wrapRef, { once: true, amount: 0.6 });
+  const reduceMotion = useReducedMotion();
+  const finalText = target.toLocaleString('en-IN');
+
+  if (reduceMotion) {
+    return (
+      <span>
+        {finalText}
+        {suffix}
+      </span>
+    );
+  }
+
+  const chars = finalText.split('');
+  const digitCount = chars.filter((c) => c >= '0' && c <= '9').length;
+  let digitsSeen = 0;
+
+  return (
+    <span
+      ref={wrapRef}
+      style={{
+        display: 'inline-flex',
+        height: '1em',
+        lineHeight: 1,
+        overflow: 'hidden',
+        // Cormorant defaults to old-style figures whose ascenders/descenders paint
+        // outside the 1em row box and bleed into the clip window — lining figures
+        // are uniform-height and stay inside it.
+        fontVariantNumeric: 'lining-nums',
+        fontFeatureSettings: '"lnum" 1'
+      }}
+    >
+      {chars.map((ch, i) => {
+        if (ch < '0' || ch > '9') {
+          return (
+            <span key={i} style={{ display: 'inline-block' }}>
+              {ch}
+            </span>
+          );
+        }
+        // Digits to the right get extra full cycles (max 2) so ones spin fastest.
+        const placeFromRight = digitCount - 1 - digitsSeen;
+        digitsSeen += 1;
+        return (
+          <RollingDigit
+            key={i}
+            digit={ch.charCodeAt(0) - 48}
+            spins={Math.min(placeFromRight, 2)}
+            play={isInView}
+            duration={duration}
+          />
+        );
+      })}
+      {suffix && <span style={{ display: 'inline-block' }}>{suffix}</span>}
+    </span>
+  );
+}
+
+function RollingDigit({ digit, spins, play, duration }) {
+  // Column: `spins` full 0–9 runs, then 0..digit — lands exactly on the target digit.
+  const rows = [];
+  for (let s = 0; s < spins; s++) for (let d = 0; d <= 9; d++) rows.push(d);
+  for (let d = 0; d <= digit; d++) rows.push(d);
+  const distance = rows.length - 1;
+
+  return (
+    <span
+      style={{
+        display: 'inline-block',
+        width: '0.62em',
+        height: '1em',
+        overflow: 'hidden'
+      }}
+    >
+      <motion.span
+        style={{ display: 'block', willChange: 'transform' }}
+        initial={false}
+        animate={{ y: play ? `-${distance}em` : '0em' }}
+        transition={{ duration, ease: [0.16, 1, 0.3, 1] }}
+      >
+        {rows.map((d, idx) => (
+          <span
+            key={idx}
+            style={{ display: 'block', height: '1em', lineHeight: 1, textAlign: 'center' }}
+          >
+            {d}
+          </span>
+        ))}
+      </motion.span>
+    </span>
   );
 }
 

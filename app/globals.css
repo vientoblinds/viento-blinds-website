@@ -2370,4 +2370,11 @@
       }
     }
 
+    @media (max-width: 480px) {
+      .review-bubble-row {
+        grid-template-columns: 1fr;
+        row-gap: 4rem;
+      }
+    }
+
 
