@@ -75,6 +75,7 @@ export default function ContactPage() {
                   { label: 'in', href: 'https://www.linkedin.com/company/viento-blinds/' },
                   { label: 'ig', href: 'https://www.instagram.com/viento_blinds?igsh=MW1yOG1mNnFqNTkzaw%3D%3D&utm_source=qr' },
                   { label: 'fb', href: 'https://www.facebook.com/share/1EL6bSH4Jw/?mibextid=wwXIfr' },
+                  { label: 'wa', href: "https://wa.me/919320427622?text=Hi%20Viento%20Blinds%2C%20I%27d%20like%20to%20know%20more%20about%20your%20blinds." },
                 ].map(({ label, href }) => (
                   <a
                     key={label}

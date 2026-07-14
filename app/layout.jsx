@@ -1,4 +1,5 @@
 import './globals.css';
+import WhatsAppBubble from './components/WhatsAppBubble';
 
 export const metadata = {
   title: 'Viento | Premium Blinds',
@@ -14,7 +15,10 @@ export default function RootLayout({ children }) {
           rel="stylesheet"
         />
       </head>
-      <body>{children}</body>
+      <body>
+        {children}
+        <WhatsAppBubble />
+      </body>
     </html>
   );
 }

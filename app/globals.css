@@ -2532,3 +2532,44 @@
         animation: none !important;
       }
     }
+
+    /* ===================== WHATSAPP BUBBLE ===================== */
+    .whatsapp-bubble {
+      position: fixed;
+      right: 1.4rem;
+      bottom: 1.4rem;
+      z-index: 1100;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: #25d366;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 20px rgba(32, 32, 29, 0.28);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      animation: waBubbleIn 0.6s cubic-bezier(0.22, 1, 0.36, 1) 1.2s backwards;
+    }
+
+    .whatsapp-bubble:hover {
+      transform: scale(1.1);
+      box-shadow: 0 10px 28px rgba(32, 32, 29, 0.35);
+    }
+
+    @keyframes waBubbleIn {
+      from {
+        transform: translateY(24px) scale(0.5);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .whatsapp-bubble {
+        animation: none;
+      }
+    }

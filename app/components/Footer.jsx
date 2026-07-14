@@ -63,6 +63,9 @@ export default function Footer({ variant = 'full' }) {
             <li>
               <a href="https://www.linkedin.com/company/viento-blinds/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--gold)' }}>LinkedIn</a>
             </li>
+            <li>
+              <a href="https://wa.me/919320427622?text=Hi%20Viento%20Blinds%2C%20I%27d%20like%20to%20know%20more%20about%20your%20blinds." target="_blank" rel="noopener noreferrer" style={{ color: 'var(--gold)' }}>WhatsApp</a>
+            </li>
           </ul>
         </div>
       </div>
