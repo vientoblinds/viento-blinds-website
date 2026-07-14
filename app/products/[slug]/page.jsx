@@ -34,6 +34,8 @@ const ECO_BLACKOUT_SHADES = [
   { color: '#8C7F72', title: 'Warm Taupe', img: '/assets/ecoblackout-color-picker1.png' },
   { color: '#5A5A5A', title: 'Charcoal', img: '/assets/ecoblackout-color-picker2.png' },
   { color: '#7C7873', title: 'Stone Grey', img: '/assets/ecoblackout-color-picker3.png' },
+  { color: '#161617', title: 'Jet Black', img: '/assets/ecoblackout-color-picker4.jpeg' },
+  { color: '#D5D3D1', title: 'Bright White', img: '/assets/ecoblackout-color-picker5.jpeg' },
 ];
 
 const ROMAN_SHADES = [
