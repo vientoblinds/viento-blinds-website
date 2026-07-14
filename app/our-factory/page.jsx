@@ -18,7 +18,12 @@ import {
   Percent,
   LayoutGrid,
   CheckCircle2,
-  Gauge
+  Gauge,
+  Factory,
+  BadgeCheck,
+  Timer,
+  SlidersHorizontal,
+  Sparkles
 } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -85,6 +90,39 @@ const STATS = [
   { id: 'dyeing', Icon: Gauge, value: 120000, suffix: '', label: 'Dyeing Capacity — Monthly (m)' }
 ];
 
+const WHY_VIENTO = [
+  {
+    id: 'in-house',
+    Icon: Factory,
+    title: 'In-house Control',
+    text: 'Every stage happens under one roof, so nothing leaves our floor unchecked.'
+  },
+  {
+    id: 'quality',
+    Icon: BadgeCheck,
+    title: 'Consistent Quality',
+    text: 'The same standards applied to every metre, every batch, every order.'
+  },
+  {
+    id: 'delivery',
+    Icon: Timer,
+    title: 'Faster Delivery',
+    text: 'No middlemen or outsourced steps. Orders move straight through production.'
+  },
+  {
+    id: 'custom',
+    Icon: SlidersHorizontal,
+    title: 'Custom Manufacturing',
+    text: 'Sizes, fabrics and finishes made to your exact specification.'
+  },
+  {
+    id: 'finishing',
+    Icon: Sparkles,
+    title: 'Premium Finishing',
+    text: 'Hand-checked detailing that shows in the final blind.'
+  }
+];
+
 const REVIEWS = [
   {
     id: 'sonal-shah',
@@ -97,14 +135,14 @@ const REVIEWS = [
     id: 'office-client',
     quote: 'We ordered for our office space and the blinds look super professional. The light control is excellent and the material feels durable. Will definitely recommend everyone.',
     name: 'Verified Buyer',
-    role: 'Office Fit-Out',
+    role: 'Corporate Client',
     initials: 'VB'
   },
   {
     id: 'eco-blackout',
     quote: 'I chose the eco blackout white fabric and I’m honestly very impressed. The shade looks clean and minimal, while still blocking out light really well. The fabric feels thick and high-quality, not flimsy at all. Also, the team was very supportive in helping me pick the right option and ensured everything was installed perfectly. Great experience overall!',
     name: 'Verified Buyer',
-    role: 'Eco Blackout Shades',
+    role: 'Corporate Client',
     initials: 'VB'
   },
   {
@@ -278,6 +316,9 @@ export default function FactoryPage() {
 
         {/* STATS STRIP */}
         <StatsStrip />
+
+        {/* WHY VIENTO FACTORY */}
+        <WhyViento />
 
         <Footer />
       </div>
@@ -504,6 +545,88 @@ function StatItem({ stat, index }) {
       <span className="text-[0.7rem] uppercase tracking-[0.15em] text-[var(--fc-cream)]/70">
         {stat.label}
       </span>
+    </motion.div>
+  );
+}
+
+// Why Viento Factory — five reason cards under the stats strip. Flex-wrap with a fixed
+// basis so the odd fifth card centers itself instead of leaving a grid hole.
+function WhyViento() {
+  return (
+    <section
+      data-testid="factory-why"
+      className="relative z-10"
+      style={{
+        maxWidth: '1152px',
+        width: '100%',
+        marginLeft: 'auto',
+        marginRight: 'auto',
+        padding: '0 1.5rem 7rem'
+      }}
+    >
+      <motion.div
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.4 }}
+        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+        className="flex flex-col items-center text-center gap-4"
+        style={{ marginBottom: '3.5rem' }}
+      >
+        <span className="block text-sm font-semibold uppercase tracking-[0.35em] text-[var(--fc-clay)]">
+          The Difference
+        </span>
+        <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-semibold text-[var(--fc-ink)] leading-tight tracking-tight">
+          Why Viento Factory?
+        </h2>
+      </motion.div>
+
+      <div
+        style={{
+          display: 'flex',
+          flexWrap: 'wrap',
+          justifyContent: 'center',
+          gap: '1.25rem'
+        }}
+      >
+        {WHY_VIENTO.map((item, index) => (
+          <WhyCard key={item.id} item={item} index={index} />
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function WhyCard({ item, index }) {
+  const { Icon } = item;
+  return (
+    <motion.div
+      data-testid={`why-${item.id}`}
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.4 }}
+      transition={{ duration: 0.55, delay: index * 0.08, ease: [0.22, 1, 0.36, 1] }}
+      whileHover={{ y: -6 }}
+      className="flex flex-col items-center text-center bg-[var(--fc-cream-deep)] border border-[var(--fc-line)]/40 rounded-[1.5rem] shadow-[0_10px_30px_rgba(32,32,29,0.06)] transition-[border-color,box-shadow] duration-300 hover:border-[var(--fc-clay)]/60 hover:shadow-[0_18px_44px_rgba(32,32,29,0.12)]"
+      style={{
+        // Fixed basis so five cards sit 5-across on desktop and wrap into
+        // centered rows on smaller screens. Padding inline: the unlayered
+        // `* { padding: 0 }` reset in globals.css beats Tailwind's p-*.
+        flex: '1 1 190px',
+        maxWidth: '250px',
+        minWidth: '170px',
+        padding: '1.9rem 1.4rem',
+        gap: '0.8rem'
+      }}
+    >
+      <div className="w-12 h-12 rounded-xl bg-[var(--fc-ink)] flex items-center justify-center text-[var(--fc-cream)] shadow-sm">
+        <Icon className="w-6 h-6" />
+      </div>
+      <h3 className="font-display text-xl font-semibold text-[var(--fc-ink)] leading-snug">
+        {item.title}
+      </h3>
+      <p className="text-[0.82rem] leading-relaxed text-[var(--fc-ink-soft)]">
+        {item.text}
+      </p>
     </motion.div>
   );
 }

@@ -13,8 +13,8 @@
   --border: rgba(126, 138, 87, 0.28);
 
   /* Factory Page Color Palette */
-  --fc-cream: var(--warm-white);
-  --fc-cream-deep: var(--cream);
+  --fc-cream: var(--cream);
+  --fc-cream-deep: var(--warm-white);
   --fc-ink: var(--charcoal);
   --fc-ink-soft: var(--muted);
   --fc-clay: var(--gold);
