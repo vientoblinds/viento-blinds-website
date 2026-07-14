@@ -16,9 +16,9 @@ const HONEYCOMB_SHADES = [
 
 const TRIPLESHADE_SHADES = [
   { color: '#E4D9BE', title: 'Floral Gold', img: '/assets/Tripleshade-color-picker1.png' },
-  { color: '#A97C4F', title: 'Warm Oak', img: '/assets/Tripleshade-color-picker2.png' },
-  { color: '#E8DCC5', title: 'Ivory Cream', img: '/assets/Tripleshade-color-picker3.png' },
-  { color: '#EFE7D3', title: 'Vanilla', img: '/assets/Tripleshade-color-picker4.png' },
+  { color: '#A97C4F', title: 'Warm Oak', img: '/assets/Tripleshade-color-picker3.png' },
+  { color: '#E8DCC5', title: 'Ivory Cream', img: '/assets/Tripleshade-color-picker4.png' },
+  { color: '#EFE7D3', title: 'Vanilla', img: '/assets/Tripleshade-color-picker2.png' },
   { color: '#8B8B82', title: 'Grey Taupe', img: '/assets/Tripleshade-color-picker5.png' },
 ];
 
