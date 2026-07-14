@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import FeaturesTabs from './components/FeaturesTabs';
+import PanIndiaMap from './components/PanIndiaMap';
 import { blogs } from '../lib/blogs';
 
 export const metadata = {
@@ -152,16 +153,7 @@ export default function HomePage() {
           <h2 className="section-title" style={{ fontSize: '1.8rem' }}>
             Pan India Distributors
           </h2>
-          <img
-            src="/assets/Map.jpeg"
-            alt="Viento Pan India Distributors Map"
-            style={{
-              width: '100%',
-              maxWidth: '650px',
-              margin: '2rem auto 0',
-              display: 'block',
-            }}
-          />
+          <PanIndiaMap />
         </section>
 
         <section className="section blogs-section">
