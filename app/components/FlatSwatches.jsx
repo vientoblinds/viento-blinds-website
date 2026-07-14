@@ -29,28 +29,16 @@ export default function FlatSwatches({ shades = DEFAULT_SHADES, aspectRatio = '1
       >
         <img
           src={current.img}
-          alt={current.title}
+          alt="Shade preview"
           style={{ width: '100%', height: '100%', objectFit: fit, display: 'block' }}
         />
       </div>
-      <p
-        style={{
-          fontSize: '0.72rem',
-          letterSpacing: '0.15em',
-          textTransform: 'uppercase',
-          color: 'var(--muted)',
-          marginBottom: '0.75rem',
-        }}
-      >
-        {current.title}
-      </p>
       <div className="color-swatches">
         {shades.map((s, i) => (
           <div
             key={s.title}
             className={`swatch ${s.cls || ''}` + (active === i ? ' active' : '')}
             style={s.color ? { background: s.color } : undefined}
-            title={s.title}
             onClick={() => setActive(i)}
           />
         ))}
