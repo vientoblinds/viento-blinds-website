@@ -2,6 +2,11 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import ContactForm from './ContactForm';
 
+const DISTRIBUTOR_FORM_URL =
+  'https://docs.google.com/forms/d/e/1FAIpQLSc4SaoNrQuKT9VUm8UFPtqcQFlOX2eOueEndG38rd5wwFcmBA/viewform';
+const CAREERS_FORM_URL =
+  'https://docs.google.com/forms/d/e/1FAIpQLSefAtpp_NH1hH4K3db6jYBU59uXxHzZh-zgY2wdgNOu-vq9Zw/viewform';
+
 export const metadata = {
   title: 'Contact Viento | Request a Quote',
   description:
@@ -104,6 +109,44 @@ export default function ContactPage() {
             <ContactForm />
           </div>
         </div>
+
+        <section
+          className="section"
+          style={{ background: 'var(--cream)', textAlign: 'center', padding: '5rem 5vw' }}
+        >
+          <span className="section-label">Grow With Us</span>
+          <h2 className="section-title" style={{ fontSize: '2.4rem' }}>
+            Join the Viento Family
+          </h2>
+          <div className="divider" style={{ marginLeft: 'auto', marginRight: 'auto' }} />
+          <p
+            className="section-subtitle"
+            style={{ maxWidth: '540px', margin: '0 auto 2.2rem' }}
+          >
+            Partner with us as a distributor or build your career on our factory floor — tell us
+            about yourself and we'll get back to you.
+          </p>
+          <div
+            style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', justifyContent: 'center' }}
+          >
+            <a
+              className="btn-primary"
+              href={DISTRIBUTOR_FORM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Become a Distributor
+            </a>
+            <a
+              className="btn-outline"
+              href={CAREERS_FORM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Work With Us
+            </a>
+          </div>
+        </section>
         <Footer variant="compact" />
       </div>
     </>
