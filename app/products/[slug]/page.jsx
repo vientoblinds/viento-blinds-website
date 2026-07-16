@@ -121,14 +121,7 @@ export default async function ProductPage({ params }) {
               <span className="section-label" style={{ marginBottom: '0.5rem' }}>
                 Technical Specs
               </span>
-              <div
-                style={{
-                  display: 'grid',
-                  gridTemplateColumns: '1fr 1fr',
-                  gap: '0.8rem 2rem',
-                  marginTop: '1rem',
-                }}
-              >
+              <div className="pd-specs-grid">
                 {Object.entries(product.specs).map(([label, value]) => (
                   <div key={label}>
                     <p

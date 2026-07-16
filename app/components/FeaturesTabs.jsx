@@ -48,20 +48,20 @@ export default function FeaturesTabs() {
     <div className="features-tabs">
       <div className="features-nav">
         {FEATURES.map((feat, i) => (
-          <div
+          <button
             key={feat.label}
             className={'feature-tab' + (i === active ? ' active' : '')}
             onClick={() => setActive(i)}
           >
             <span className="feature-tab-num">{String(i + 1).padStart(2, '0')}</span>
             <span className="feature-tab-title">{feat.label}</span>
-          </div>
+          </button>
         ))}
       </div>
       <div className="features-content">
         <div className="feature-panel active">
           {f.image ? (
-            <img className="feature-panel-img" src={f.image} alt={f.imageAlt} />
+            <img className="feature-panel-img" src={f.image} alt={f.imageAlt} loading="lazy" />
           ) : (
             <div className="feature-panel-img img-placeholder">{f.imgText}</div>
           )}

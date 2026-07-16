@@ -17,20 +17,20 @@ export default function ContactForm() {
         <div className="form-row">
           <div className="form-group">
             <label htmlFor="first-name">First Name</label>
-            <input id="first-name" name="firstName" type="text" placeholder="Aarav" required />
+            <input id="first-name" name="firstName" type="text" placeholder="Aarav" autoComplete="given-name" required />
           </div>
           <div className="form-group">
             <label htmlFor="last-name">Last Name</label>
-            <input id="last-name" name="lastName" type="text" placeholder="Sharma" required />
+            <input id="last-name" name="lastName" type="text" placeholder="Sharma" autoComplete="family-name" required />
           </div>
         </div>
         <div className="form-group">
           <label htmlFor="email">Email Address</label>
-          <input id="email" name="email" type="email" placeholder="aarav@email.com" required />
+          <input id="email" name="email" type="email" placeholder="aarav@email.com" autoComplete="email" inputMode="email" required />
         </div>
         <div className="form-group">
           <label htmlFor="phone">Phone Number</label>
-          <input id="phone" name="phone" type="tel" placeholder="+91 00000 00000" />
+          <input id="phone" name="phone" type="tel" placeholder="+91 00000 00000" autoComplete="tel" inputMode="tel" />
         </div>
         <div className="form-group">
           <label htmlFor="product">Product of Interest</label>

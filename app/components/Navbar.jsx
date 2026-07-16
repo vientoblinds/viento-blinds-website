@@ -1,12 +1,26 @@
 'use client';
 
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import { products } from '../../lib/products';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [productsOpen, setProductsOpen] = useState(false);
+
+  const closeAll = useCallback(() => {
+    setMobileOpen(false);
+    setProductsOpen(false);
+    document.body.style.overflow = '';
+  }, []);
+
+  const toggleMobile = () => {
+    const next = !mobileOpen;
+    setMobileOpen(next);
+    if (!next) setProductsOpen(false);
+    document.body.style.overflow = next ? 'hidden' : '';
+  };
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -28,6 +42,12 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
+  useEffect(() => {
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, []);
+
   return (
     <>
       <div className="scroll-progress" id="scrollProgress" />
@@ -36,42 +56,28 @@ export default function Navbar() {
           <img src="/assets/viento-logo-transparent.png" alt="Viento Blinds Logo" style={{ height: 32 }} />
           VIENTO BLINDS
         </Link>
-        <ul
-          className="nav-links"
-          data-open={mobileOpen ? 'true' : undefined}
-          style={
-            mobileOpen
-              ? {
-                  display: 'flex',
-                  flexDirection: 'column',
-                  position: 'fixed',
-                  top: 72,
-                  left: 0,
-                  right: 0,
-                  background: 'var(--warm-white)',
-                  padding: '2rem',
-                  borderTop: '1px solid var(--border)',
-                  zIndex: 999,
-                  gap: '1.5rem',
-                  boxShadow: '0 20px 40px rgba(0,0,0,0.08)',
-                }
-              : undefined
-          }
-        >
+        <ul className={`nav-links${mobileOpen ? ' open' : ''}`}>
           <li>
-            <Link href="/" onClick={() => setMobileOpen(false)}>
-              Home
-            </Link>
+            <Link href="/" onClick={closeAll}>Home</Link>
           </li>
-          <li className="has-dropdown">
-            <span className="nav-btn">Products ▾</span>
+          <li className={`has-dropdown${productsOpen ? ' open' : ''}`}>
+            <button
+              className="nav-btn"
+              onClick={(e) => {
+                e.preventDefault();
+                setProductsOpen((o) => !o);
+              }}
+              aria-expanded={productsOpen}
+            >
+              Products ▾
+            </button>
             <div className="dropdown-menu">
               {products.map((p) => (
                 <Link
                   key={p.slug}
                   href={`/products/${p.slug}`}
                   className="dropdown-item"
-                  onClick={() => setMobileOpen(false)}
+                  onClick={closeAll}
                 >
                   <img src={p.image} alt={p.name} className="di-img" />
                   <span>{p.name}</span>
@@ -80,29 +86,22 @@ export default function Navbar() {
             </div>
           </li>
           <li>
-            <Link href="/about" onClick={() => setMobileOpen(false)}>
-              About
-            </Link>
+            <Link href="/about" onClick={closeAll}>About</Link>
           </li>
           <li>
-            <Link href="/our-factory" onClick={() => setMobileOpen(false)}>
-              Our Factory
-            </Link>
+            <Link href="/our-factory" onClick={closeAll}>Our Factory</Link>
           </li>
           <li>
-            <Link href="/blogs" onClick={() => setMobileOpen(false)}>
-              Blogs
-            </Link>
+            <Link href="/blogs" onClick={closeAll}>Blogs</Link>
           </li>
           <li>
-            <Link href="/contact" className="nav-cta" onClick={() => setMobileOpen(false)}>
-              Contact Us
-            </Link>
+            <Link href="/contact" className="nav-cta" onClick={closeAll}>Contact Us</Link>
           </li>
         </ul>
         <button
           className="hamburger"
-          onClick={() => setMobileOpen((o) => !o)}
+          onClick={toggleMobile}
+          aria-expanded={mobileOpen}
           aria-label="Menu"
         >
           <span />
