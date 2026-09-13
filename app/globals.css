@@ -268,7 +268,8 @@
         top: 72px;
         left: 0;
         right: 0;
-        bottom: 0;
+        /* Explicit height, not bottom: 0 — nav's backdrop-filter makes it the containing block */
+        height: calc(100dvh - 72px);
         background: var(--warm-white);
         padding: 2rem;
         border-top: 1px solid var(--border);
@@ -343,7 +344,7 @@
       overflow: hidden;
     }
 
-    /* Accordion: all panels equal, no hover-resize */
+    /* Accordion hover: hovered panel grows, siblings give way (mouse devices only) */
     .hero-panel {
       position: relative;
       overflow: hidden;
@@ -351,6 +352,20 @@
       height: 100%;
       flex: 1 1 0;
       min-width: 0;
+    }
+
+    @media (hover: hover) and (pointer: fine) and (min-width: 901px) {
+      .hero-panel {
+        transition: flex 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+
+      .hero:has(.hero-panel:hover) .hero-panel {
+        flex: 0.75 1 0;
+      }
+
+      .hero:has(.hero-panel:hover) .hero-panel:hover {
+        flex: 1.9 1 0;
+      }
     }
 
     .hero-panel::before {

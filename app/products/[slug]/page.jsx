@@ -209,6 +209,7 @@ export default async function ProductPage({ params }) {
                     <video
                       src={img.src}
                       controls
+                      muted
                       playsInline
                       preload="metadata"
                       style={{ width: '100%', height: '100%', objectFit: 'cover' }}
