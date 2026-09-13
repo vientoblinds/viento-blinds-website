@@ -374,6 +374,7 @@ function ReviewsSection() {
             isActive={activeIndex === index}
             isDimmed={activeIndex !== null && activeIndex !== index}
             onHover={() => setActiveIndex(index)}
+            onToggle={() => setActiveIndex((prev) => (prev === index ? null : index))}
           />
         ))}
       </div>
@@ -382,8 +383,9 @@ function ReviewsSection() {
 }
 
 // Individual Review Bubble — collapsed cell keeps grid stable; the card grows out of it on hover
-function ReviewBubble({ review, index, isActive, isDimmed, onHover }) {
+function ReviewBubble({ review, index, isActive, isDimmed, onHover, onToggle }) {
   const reduceMotion = useReducedMotion();
+  const pointerType = useRef(null);
   const float = FLOAT[index % FLOAT.length];
   // Only the hovered bubble stops drifting; the others keep floating behind it
   const drifting = !reduceMotion && !isActive;
@@ -395,8 +397,12 @@ function ReviewBubble({ review, index, isActive, isDimmed, onHover }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.3 }}
       transition={{ duration: 0.6, delay: index * 0.08, ease: [0.22, 1, 0.36, 1] }}
-      onMouseEnter={onHover}
-      onFocus={onHover}
+      // Mouse opens on hover, keyboard on focus, touch toggles on tap. Touch also fires
+      // emulated mouseenter/focus before click, so those are filtered out.
+      onPointerDown={(e) => { pointerType.current = e.pointerType; }}
+      onPointerEnter={(e) => { if (e.pointerType === 'mouse') onHover(); }}
+      onFocus={(e) => { if (e.currentTarget.matches(':focus-visible')) onHover(); }}
+      onClick={() => { if (pointerType.current !== 'mouse') onToggle(); }}
       tabIndex={0}
       // Fixed-size cell: the expanded bubble overflows it instead of pushing the grid around
       className={`relative outline-none ${isActive ? 'z-30' : 'z-10'}`}

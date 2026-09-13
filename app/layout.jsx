@@ -4,18 +4,64 @@ import WhatsAppBubble from './components/WhatsAppBubble';
 
 const GA_ID = 'G-FBY4T4T0ST';
 
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  viewportFit: 'cover',
+};
+
+const SITE_URL = 'https://www.vientoblinds.com';
+
 export const metadata = {
+  metadataBase: new URL(SITE_URL),
   title: 'Viento | Premium Blinds',
   description: 'Premium window blinds crafted for modern homes.',
+  applicationName: 'Viento Blinds',
+  openGraph: {
+    siteName: 'Viento Blinds',
+    title: 'Viento | Premium Blinds',
+    description: 'Premium window blinds crafted for modern homes.',
+    url: SITE_URL,
+    type: 'website',
+    images: [{ url: '/assets/viento-logo.jpg', width: 1024, height: 1024, alt: 'Viento Blinds' }],
+  },
+};
+
+// Structured data: Google uses WebSite.name for the site name shown in search results
+// and Organization.logo for the brand logo.
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebSite',
+      '@id': `${SITE_URL}/#website`,
+      name: 'Viento Blinds',
+      alternateName: ['Viento', 'vientoblinds.com'],
+      url: `${SITE_URL}/`,
+    },
+    {
+      '@type': 'Organization',
+      '@id': `${SITE_URL}/#organization`,
+      name: 'Viento Blinds',
+      url: `${SITE_URL}/`,
+      logo: `${SITE_URL}/assets/viento-logo-square.png`,
+    },
+  ],
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
-          href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@200;300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@200;300;400;500;600&display=swap"
           rel="stylesheet"
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
       </head>
       <body>

@@ -33,7 +33,7 @@ export default function ImageCarousel({ images }) {
   };
 
   return (
-    <div style={{ position: 'relative', width: '100%', height: '100%', minHeight: '100%' }}>
+    <div style={{ position: 'relative', width: '100%', height: '100%', minHeight: '100%' }} className="image-carousel">
       <div
         ref={scrollRef}
         className="hide-scrollbar"

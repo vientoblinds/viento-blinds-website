@@ -98,7 +98,7 @@ export default function HomePage() {
           <div className="products-grid">
             {HOME_PRODUCTS.map((p) => (
               <Link key={p.name} href={p.href} className="product-card">
-                <img src={p.img} alt={p.alt} className="product-card-img" />
+                <img src={p.img} alt={p.alt} className="product-card-img" loading="lazy" />
                 <div className="product-card-info">
                   <h3>{p.name}</h3>
                   <div className="explore-link">Explore ↗</div>
@@ -115,7 +115,7 @@ export default function HomePage() {
             A quick look at how we design, craft, and finish every blind with precision.
           </p>
           <div className="factory-video-wrap">
-            <video autoPlay muted loop controls preload="metadata" playsInline>
+            <video autoPlay muted loop controls preload="none" playsInline>
               <source src="/assets/video.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
@@ -170,14 +170,7 @@ export default function HomePage() {
               More Blogs →
             </Link>
           </div>
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
-              gap: '1rem',
-              marginTop: '2rem',
-            }}
-          >
+          <div className="home-blogs-grid">
             {BLOGS.map((b) => (
               <Link
                 key={b.slug}

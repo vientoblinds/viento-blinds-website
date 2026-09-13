@@ -34,6 +34,7 @@ export default function AllProductsPage() {
                   alt={p.name}
                   className="product-card-img"
                   style={{ height: '100%' }}
+                  loading="lazy"
                 />
               ) : (
                 <div
