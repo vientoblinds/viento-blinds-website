@@ -1,6 +1,7 @@
 import './globals.css';
 import Script from 'next/script';
 import WhatsAppBubble from './components/WhatsAppBubble';
+import { SITE_URL } from '../lib/site';
 
 const GA_ID = 'G-FBY4T4T0ST';
 
@@ -10,7 +11,6 @@ export const viewport = {
   viewportFit: 'cover',
 };
 
-const SITE_URL = 'https://www.vientoblinds.com';
 
 export const metadata = {
   metadataBase: new URL(SITE_URL),
